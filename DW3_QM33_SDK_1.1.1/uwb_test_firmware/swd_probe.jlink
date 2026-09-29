@@ -1,0 +1,9 @@
+ShowHWStatus
+speed 100
+SWDSelect
+SWDReadDP 0
+SWDWriteDP 0 0x0000001E
+SWDWriteDP 1 0x50000000
+sleep 100
+SWDReadDP 1
+exit

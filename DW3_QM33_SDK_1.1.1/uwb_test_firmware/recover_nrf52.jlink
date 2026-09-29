@@ -1,0 +1,19 @@
+ShowHWStatus
+SWDSelect
+WriteDP 0 0x0000001E
+WriteDP 1 0x50000000
+sleep 100
+ReadDP 1
+WriteDP 2 0x000000F0
+ReadAP 3
+WriteDP 2 0x00000000
+ReadAP 3
+WriteAP 1 0x00000001
+sleep 3000
+ReadAP 2
+ReadAP 3
+WriteAP 0 0x00000001
+sleep 100
+WriteAP 0 0x00000000
+sleep 500
+exit
