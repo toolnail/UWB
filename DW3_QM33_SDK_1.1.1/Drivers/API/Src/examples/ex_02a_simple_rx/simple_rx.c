@@ -35,9 +35,12 @@ extern void test_run_info(unsigned char *data);
 #define TEST_TYPE_END 1U
 #define TEST_PACKET_TARGET 300000UL
 #define TEST_FRAME_LENGTH (TEST_FRAME_BYTES + FCS_LEN)
+#define TEST_RECEIVED_BITMAP_BYTES ((TEST_PACKET_TARGET + 7UL) / 8UL)
 
 /* Buffer to store received frame. See NOTE 1 below. */
 static uint8_t rx_buffer[FRAME_LEN_MAX];
+/* One bit per transmitted data sequence number, so late/out-of-order valid frames count once. */
+static uint8_t received_bitmap[TEST_RECEIVED_BITMAP_BYTES];
 
 extern dwt_config_t config_options;
 
@@ -71,6 +74,20 @@ static int validate_test_frame(const uint8_t *frame, uint32_t sequence, uint8_t 
     return 1;
 }
 
+static int mark_sequence_received(uint32_t sequence)
+{
+    uint32_t byte_index = sequence >> 3U;
+    uint8_t mask = (uint8_t)(1U << (sequence & 7U));
+
+    if ((received_bitmap[byte_index] & mask) != 0U)
+    {
+        return 0;
+    }
+
+    received_bitmap[byte_index] |= mask;
+    return 1;
+}
+
 static void print_rx_report(char *report, size_t report_size, const char *prefix,
                             uint32_t valid, uint32_t lost, uint32_t duplicate,
                             uint32_t out_of_order, uint32_t invalid, uint32_t phy_errors)
@@ -83,6 +100,23 @@ static void print_rx_report(char *report, size_t report_size, const char *prefix
              prefix, (unsigned long)total, (unsigned long)valid, (unsigned long)lost,
              (unsigned long)duplicate, (unsigned long)out_of_order, (unsigned long)invalid,
              (unsigned long)phy_errors, (unsigned long)loss_ppm);
+    test_run_info((unsigned char *)report);
+}
+
+static void print_rx_complete_report(char *report, size_t report_size,
+                                     uint32_t valid, uint32_t duplicate,
+                                     uint32_t out_of_order, uint32_t invalid,
+                                     uint32_t phy_errors)
+{
+    uint32_t failed = TEST_PACKET_TARGET - valid;
+    uint32_t success_ppm = (uint32_t)(((uint64_t)valid * 1000000ULL) / TEST_PACKET_TARGET);
+
+    snprintf(report, report_size,
+             "RX_COMPLETE RESULT=%s target=%lu success=%lu failed=%lu success_ppm=%lu dup=%lu ooo=%lu invalid=%lu phy_err=%lu",
+             (failed == 0U) ? "PASS_95CI" : "FAIL",
+             (unsigned long)TEST_PACKET_TARGET, (unsigned long)valid, (unsigned long)failed,
+             (unsigned long)success_ppm, (unsigned long)duplicate, (unsigned long)out_of_order,
+             (unsigned long)invalid, (unsigned long)phy_errors);
     test_run_info((unsigned char *)report);
 }
 
@@ -191,39 +225,40 @@ int simple_rx(void)
                 {
                     if (!final_report_printed)
                     {
-                        if (expected_sequence < TEST_PACKET_TARGET)
-                        {
-                            lost_count += TEST_PACKET_TARGET - expected_sequence;
-                            expected_sequence = TEST_PACKET_TARGET;
-                        }
-
-                        print_rx_report(report, sizeof(report),
-                                        ((lost_count == 0U) && (invalid_count == 0U))
-                                            ? "RX_COMPLETE RESULT=PASS_95CI"
-                                            : "RX_COMPLETE RESULT=FAIL",
-                                        valid_count, lost_count, duplicate_count, out_of_order_count,
-                                        invalid_count, phy_error_count);
+                        print_rx_complete_report(report, sizeof(report), valid_count,
+                                                 duplicate_count, out_of_order_count,
+                                                 invalid_count, phy_error_count);
                         final_report_printed = 1;
                     }
                 }
-                else if (sequence == expected_sequence)
+                else if (sequence >= TEST_PACKET_TARGET)
                 {
-                    valid_count++;
-                    expected_sequence++;
-                }
-                else if (sequence > expected_sequence)
-                {
-                    lost_count += sequence - expected_sequence;
-                    valid_count++;
-                    expected_sequence = sequence + 1U;
-                }
-                else if (sequence + 1U == expected_sequence)
-                {
-                    duplicate_count++;
+                    invalid_count++;
                 }
                 else
                 {
-                    out_of_order_count++;
+                    if (mark_sequence_received(sequence))
+                    {
+                        valid_count++;
+                    }
+
+                    if (sequence == expected_sequence)
+                    {
+                        expected_sequence++;
+                    }
+                    else if (sequence > expected_sequence)
+                    {
+                        lost_count += sequence - expected_sequence;
+                        expected_sequence = sequence + 1U;
+                    }
+                    else if (sequence + 1U == expected_sequence)
+                    {
+                        duplicate_count++;
+                    }
+                    else
+                    {
+                        out_of_order_count++;
+                    }
                 }
 
                 if (!final_report_printed && ((valid_count / 1000UL) > last_report_bucket))

@@ -248,6 +248,11 @@
         <folder Name="ex_07b_ack_data_rx">
           <file file_name="$(DW3000APIDir)/Src/examples/ex_07b_ack_data_rx/ack_data_rx.c" />
         </folder>
+        <folder Name="ex_08_reliable_p2p">
+          <file file_name="$(DW3000APIDir)/Src/examples/ex_08_reliable_p2p/reliable_p2p_protocol.h" />
+          <file file_name="$(DW3000APIDir)/Src/examples/ex_08_reliable_p2p/reliable_p2p_tx.c" />
+          <file file_name="$(DW3000APIDir)/Src/examples/ex_08_reliable_p2p/reliable_p2p_rx.c" />
+        </folder>
         <folder Name="ex_11a_spi_crc">
           <file file_name="$(DW3000APIDir)/Src/examples/ex_11a_spi_crc/spi_crc.c" />
         </folder>

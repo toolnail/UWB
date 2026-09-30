@@ -76,6 +76,9 @@ extern "C"
 //#define TEST_ACK_DATA_TX
 //#define TEST_ACK_DATA_RX
 
+//#define TEST_RELIABLE_P2P_TX
+//#define TEST_RELIABLE_P2P_RX
+
 //#define TEST_SPI_CRC
 //#define TEST_GPIO
 //#define TEST_TIMER

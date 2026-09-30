@@ -1,0 +1,34 @@
+RELIABLE P2P RX v1.0
+RX READY target=300000 window=32 channel=5
+TEST START target=300000 interval_ms=1 window=32 session=26093001
+RX_PROGRESS unique=10000 target=300000 duplicates=0 invalid=0 phy_err=1
+RX_PROGRESS unique=20000 target=300000 duplicates=0 invalid=0 phy_err=2
+RX_PROGRESS unique=30000 target=300000 duplicates=0 invalid=0 phy_err=6
+RX_PROGRESS unique=40000 target=300000 duplicates=0 invalid=0 phy_err=6
+RX_PROGRESS unique=50000 target=300000 duplicates=32 invalid=0 phy_err=8
+RX_PROGRESS unique=60000 target=300000 duplicates=64 invalid=0 phy_err=10
+RX_PROGRESS unique=70000 target=300000 duplicates=64 invalid=0 phy_err=13
+RX_PROGRESS unique=80000 target=300000 duplicates=64 invalid=0 phy_err=14
+RX_PROGRESS unique=90000 target=300000 duplicates=64 invalid=0 phy_err=15
+RX_PROGRESS unique=100000 target=300000 duplicates=64 invalid=0 phy_err=17
+RX_PROGRESS unique=110000 target=300000 duplicates=64 invalid=0 phy_err=17
+RX_PROGRESS unique=120000 target=300000 duplicates=64 invalid=0 phy_err=18
+RX_PROGRESS unique=130000 target=300000 duplicates=64 invalid=0 phy_err=23
+RX_PROGRESS unique=140000 target=300000 duplicates=64 invalid=0 phy_err=25
+RX_PROGRESS unique=150000 target=300000 duplicates=64 invalid=0 phy_err=25
+RX_PROGRESS unique=160000 target=300000 duplicates=64 invalid=0 phy_err=28
+RX_PROGRESS unique=170000 target=300000 duplicates=64 invalid=0 phy_err=31
+RX_PROGRESS unique=180000 target=300000 duplicates=64 invalid=0 phy_err=32
+RX_PROGRESS unique=190000 target=300000 duplicates=64 invalid=0 phy_err=37
+RX_PROGRESS unique=200000 target=300000 duplicates=64 invalid=0 phy_err=40
+RX_PROGRESS unique=210000 target=300000 duplicates=64 invalid=0 phy_err=41
+RX_PROGRESS unique=220000 target=300000 duplicates=64 invalid=0 phy_err=43
+RX_PROGRESS unique=230000 target=300000 duplicates=64 invalid=0 phy_err=46
+RX_PROGRESS unique=240000 target=300000 duplicates=64 invalid=0 phy_err=46
+RX_PROGRESS unique=250000 target=300000 duplicates=64 invalid=0 phy_err=46
+RX_PROGRESS unique=260000 target=300000 duplicates=64 invalid=0 phy_err=52
+RX_PROGRESS unique=270000 target=300000 duplicates=64 invalid=0 phy_err=52
+RX_PROGRESS unique=280000 target=300000 duplicates=64 invalid=0 phy_err=53
+RX_PROGRESS unique=290000 target=300000 duplicates=64 invalid=0 phy_err=55
+RX_PROGRESS unique=300000 target=300000 duplicates=64 invalid=0 phy_err=56
+RX_COMPLETE RESULT=PASS target=300000 unique=300000 final_lost=0 duplicates=64 invalid=0 phy_err=56

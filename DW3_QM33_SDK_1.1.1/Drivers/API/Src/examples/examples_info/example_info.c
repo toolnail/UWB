@@ -295,6 +295,20 @@ void build_examples(void)
 
 #endif
 
+#ifdef TEST_RELIABLE_P2P_TX
+    extern int reliable_p2p_tx(void);
+
+    example_pointer = reliable_p2p_tx;
+    test_cnt++;
+#endif
+
+#ifdef TEST_RELIABLE_P2P_RX
+    extern int reliable_p2p_rx(void);
+
+    example_pointer = reliable_p2p_rx;
+    test_cnt++;
+#endif
+
 #ifdef TEST_GPIO
     extern int gpio_example(void);
 

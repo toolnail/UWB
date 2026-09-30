@@ -1,0 +1,64 @@
+RELIABLE P2P TX v1.0
+TEST START target=600000 interval_ms=1 window=32 max_rounds=5 session=26093001
+TX_PROGRESS completed=10016 target=600000 final_failed=0 attempts=10017 retransmissions=1 ack_timeouts=0
+TX_PROGRESS completed=20000 target=600000 final_failed=0 attempts=20001 retransmissions=1 ack_timeouts=0
+TX_PROGRESS completed=30016 target=600000 final_failed=0 attempts=30020 retransmissions=4 ack_timeouts=0
+TX_PROGRESS completed=40000 target=600000 final_failed=0 attempts=40008 retransmissions=8 ack_timeouts=0
+TX_PROGRESS completed=50016 target=600000 final_failed=0 attempts=50025 retransmissions=9 ack_timeouts=0
+TX_PROGRESS completed=60000 target=600000 final_failed=0 attempts=60011 retransmissions=11 ack_timeouts=0
+TX_PROGRESS completed=70016 target=600000 final_failed=0 attempts=70029 retransmissions=13 ack_timeouts=0
+TX_PROGRESS completed=80000 target=600000 final_failed=0 attempts=80013 retransmissions=13 ack_timeouts=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TX_PROGRESS completed=260000 target=600000 final_failed=0 attempts=260148 retransmissions=148 ack_timeouts=3
+TX_PROGRESS completed=270016 target=600000 final_failed=0 attempts=270164 retransmissions=148 ack_timeouts=3
+TX_PROGRESS completed=280000 target=600000 final_failed=0 attempts=280149 retransmissions=149 ack_timeouts=3
+TX_PROGRESS completed=290016 target=600000 final_failed=0 attempts=290166 retransmissions=150 ack_timeouts=3
+TX_PROGRESS completed=300000 target=600000 final_failed=0 attempts=300150 retransmissions=150 ack_timeouts=3
+TX_PROGRESS completed=310016 target=600000 final_failed=0 attempts=310167 retransmissions=151 ack_timeouts=3
+TX_PROGRESS completed=320000 target=600000 final_failed=0 attempts=320155 retransmissions=155 ack_timeouts=3
+TX_PROGRESS completed=330016 target=600000 final_failed=0 attempts=330173 retransmissions=157 ack_timeouts=3
+TX_PROGRESS completed=340000 target=600000 final_failed=0 attempts=340162 retransmissions=162 ack_timeouts=3
+TX_PROGRESS completed=350016 target=600000 final_failed=0 attempts=350182 retransmissions=166 ack_timeouts=3
+TX_PROGRESS completed=360000 target=600000 final_failed=0 attempts=360170 retransmissions=170 ack_timeouts=3
+TX_PROGRESS completed=370016 target=600000 final_failed=0 attempts=370189 retransmissions=173 ack_timeouts=3
+TX_PROGRESS completed=380000 target=600000 final_failed=0 attempts=380174 retransmissions=174 ack_timeouts=3
+TX_PROGRESS completed=390016 target=600000 final_failed=0 attempts=390191 retransmissions=175 ack_timeouts=3
+TX_PROGRESS completed=400000 target=600000 final_failed=0 attempts=400177 retransmissions=177 ack_timeouts=3
+TX_PROGRESS completed=410016 target=600000 final_failed=0 attempts=410197 retransmissions=181 ack_timeouts=3
+TX_PROGRESS completed=420000 target=600000 final_failed=0 attempts=420182 retransmissions=182 ack_timeouts=3
+TX_PROGRESS completed=430016 target=600000 final_failed=0 attempts=430199 retransmissions=183 ack_timeouts=3
+TX_PROGRESS completed=440000 target=600000 final_failed=0 attempts=440187 retransmissions=187 ack_timeouts=3
+TX_PROGRESS completed=450016 target=600000 final_failed=0 attempts=450207 retransmissions=191 ack_timeouts=3
+TX_PROGRESS completed=460000 target=600000 final_failed=0 attempts=460194 retransmissions=194 ack_timeouts=3
+TX_PROGRESS completed=470016 target=600000 final_failed=0 attempts=470211 retransmissions=195 ack_timeouts=3
+TX_PROGRESS completed=480000 target=600000 final_failed=0 attempts=480199 retransmissions=199 ack_timeouts=3
+TX_PROGRESS completed=490016 target=600000 final_failed=0 attempts=490216 retransmissions=200 ack_timeouts=3
+TX_PROGRESS completed=500000 target=600000 final_failed=0 attempts=500201 retransmissions=201 ack_timeouts=3
+TX_PROGRESS completed=510016 target=600000 final_failed=0 attempts=510218 retransmissions=202 ack_timeouts=3
+TX_PROGRESS completed=520000 target=600000 final_failed=0 attempts=520202 retransmissions=202 ack_timeouts=3
+TX_PROGRESS completed=530016 target=600000 final_failed=0 attempts=530223 retransmissions=207 ack_timeouts=3
+TX_PROGRESS completed=540000 target=600000 final_failed=0 attempts=540208 retransmissions=208 ack_timeouts=3
+TX_PROGRESS completed=550016 target=600000 final_failed=0 attempts=550226 retransmissions=210 ack_timeouts=3
+TX_PROGRESS completed=560000 target=600000 final_failed=0 attempts=560213 retransmissions=213 ack_timeouts=3
+TX_PROGRESS completed=570016 target=600000 final_failed=0 attempts=570231 retransmissions=215 ack_timeouts=3
+TX_PROGRESS completed=580000 target=600000 final_failed=0 attempts=580217 retransmissions=217 ack_timeouts=3
+TX_PROGRESS completed=590016 target=600000 final_failed=0 attempts=590237 retransmissions=221 ack_timeouts=3
+TX_PROGRESS completed=600000 target=600000 final_failed=0 attempts=600221 retransmissions=221 ack_timeouts=3
+TX_REMOTE summary_received=1 unique=600000 lost=0 duplicates=95 invalid=0 phy_err=130
+TX_COMPLETE RESULT=PASS target=600000 acknowledged=600000 final_failed=0 attempts=600221 retransmissions=221 ack_requests=18877 ack_timeouts=3 invalid_responses=0 retried_windows=127

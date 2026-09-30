@@ -68,6 +68,8 @@
 "Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o"
 "Output/Debug/Obj/dw3000_api/ack_data_tx.o"
 "Output/Debug/Obj/dw3000_api/ack_data_rx.o"
+"Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o"
+"Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o"
 "Output/Debug/Obj/dw3000_api/spi_crc.o"
 "Output/Debug/Obj/dw3000_api/gpio_example.o"
 "Output/Debug/Obj/dw3000_api/otp_write.o"

@@ -298,7 +298,8 @@
     || defined(TEST_RX_ADC_CAPTURE) || defined(TEST_CONTINUOUS_FRAME) || defined(TEST_DS_TWR_INITIATOR) \
     || defined(TEST_DS_TWR_RESPONDER) || defined(TEST_SS_TWR_INITIATOR) || defined(TEST_SS_TWR_RESPONDER) \
     || defined(TEST_AES_SS_TWR_INITIATOR) || defined(TEST_AES_SS_TWR_RESPONDER) || defined(TEST_ACK_DATA_TX) \
-    || defined(TEST_ACK_DATA_RX) || defined(TEST_LE_PEND_RX) || defined(TEST_LE_PEND_TX) \
+    || defined(TEST_ACK_DATA_RX) || defined(TEST_RELIABLE_P2P_TX) || defined(TEST_RELIABLE_P2P_RX) \
+    || defined(TEST_LE_PEND_RX) || defined(TEST_LE_PEND_TX) \
     || defined(TEST_BW_CAL) || defined(TEST_TX_POWER_ADJUSTMENT)
     #define CONFIG_OPTION CONFIG_OPTION_35
 #elif defined(TEST_PLL_CAL) || defined(TEST_LINEAR_TX_POWER)
