@@ -17,34 +17,66 @@
 #include <port.h>
 #include <shared_defines.h>
 #include <shared_functions.h>
+#include <stdio.h>
 
 #if defined(TEST_SIMPLE_TX)
 
 extern void test_run_info(unsigned char *data);
 
 /* Example application name */
-#define APP_NAME "SIMPLE TX v1.0"
+#define APP_NAME "P2P 5NINES TX v1.0"
 
 #define USE_SPI2 1 // set this to 1 to use DW37X0 SPI2
 
-/* The frame sent in this example is an 802.15.4e standard blink. It is a 12-byte frame composed of the following fields:
- *     - byte 0: frame type (0xC5 for a blink).
- *     - byte 1: sequence number, incremented for each new frame.
- *     - byte 2 -> 9: device ID, see NOTE 1 below.
+/* Five-nines packet-delivery experiment frame (FCS is appended by the DW IC):
+ * byte 0       : 802.15.4e blink frame type.
+ * byte 1       : low 8 bits of the sequence number.
+ * bytes 2..5  : experiment magic "5NIN".
+ * bytes 6..9  : 32-bit little-endian sequence number.
+ * byte 10      : 0 for data, 1 for end-of-test marker.
+ * bytes 11..31: deterministic payload checked by the receiver.
  */
-static uint8_t tx_msg[] = { 0xC5, 0, 'D', 'E', 'C', 'A', 'W', 'A', 'V', 'E' };
-/* Index to access to sequence number of the blink frame in the tx_msg array. */
-#define BLINK_FRAME_SN_IDX 1
+#define TEST_FRAME_BYTES 32U
+#define TEST_SEQUENCE_IDX 6U
+#define TEST_TYPE_IDX 10U
+#define TEST_PAYLOAD_IDX 11U
+#define TEST_TYPE_DATA 0U
+#define TEST_TYPE_END 1U
+#define TEST_PACKET_TARGET 300000UL
+#define TEST_END_MARKER_REPEATS 100U
+static uint8_t tx_msg[TEST_FRAME_BYTES] = { 0 };
 
 #define FRAME_LENGTH (sizeof(tx_msg) + FCS_LEN) // The real length that is going to be transmitted
 
 /* Inter-frame delay period, in milliseconds. */
-#define TX_DELAY_MS 500
+#define TX_DELAY_MS 10
 
 /* Values for the PG_DELAY and TX_POWER registers reflect the bandwidth and power of the spectrum at the current
  * temperature. These values can be calibrated prior to taking reference measurements. See NOTE 2 below. */
 extern dwt_config_t config_options;
 extern dwt_txconfig_t txconfig_options;
+
+static void prepare_test_frame(uint32_t sequence, uint8_t frame_type)
+{
+    uint32_t i;
+
+    tx_msg[0] = 0xC5;
+    tx_msg[1] = (uint8_t)sequence;
+    tx_msg[2] = '5';
+    tx_msg[3] = 'N';
+    tx_msg[4] = 'I';
+    tx_msg[5] = 'N';
+    tx_msg[TEST_SEQUENCE_IDX + 0U] = (uint8_t)(sequence >> 0U);
+    tx_msg[TEST_SEQUENCE_IDX + 1U] = (uint8_t)(sequence >> 8U);
+    tx_msg[TEST_SEQUENCE_IDX + 2U] = (uint8_t)(sequence >> 16U);
+    tx_msg[TEST_SEQUENCE_IDX + 3U] = (uint8_t)(sequence >> 24U);
+    tx_msg[TEST_TYPE_IDX] = frame_type;
+
+    for (i = TEST_PAYLOAD_IDX; i < TEST_FRAME_BYTES; i++)
+    {
+        tx_msg[i] = (uint8_t)(sequence + (i * 37U) + frame_type);
+    }
+}
 
 /**
  * Application entry point.
@@ -55,6 +87,9 @@ int simple_tx(void)
     uint8_t sema_res;
 #endif
     uint32_t dev_id;
+    uint32_t sequence = 0;
+    uint32_t end_marker_count = 0;
+    char report[128];
 
     /* Print application name on the console. */
     test_run_info((unsigned char *)APP_NAME);
@@ -130,9 +165,16 @@ int simple_tx(void)
     /* Configure the TX spectrum parameters (power PG delay and PG Count) */
     dwt_configuretxrf(&txconfig_options);
 
-    /* Loop forever sending frames periodically. */
-    while (1)
+    snprintf(report, sizeof(report), "TEST START target=%lu interval_ms=%u channel=%u",
+             (unsigned long)TEST_PACKET_TARGET, (unsigned int)TX_DELAY_MS, (unsigned int)config_options.chan);
+    test_run_info((unsigned char *)report);
+
+    /* Send the numbered test frames, then repeat an end marker so the receiver
+     * can account for any packets lost at the end of the run. */
+    while (sequence < TEST_PACKET_TARGET)
     {
+        prepare_test_frame(sequence, TEST_TYPE_DATA);
+
         /* Write frame data to DW IC and prepare transmission. See NOTE 3 below.*/
         dwt_writetxdata(FRAME_LENGTH - FCS_LEN, tx_msg, 0); /* Zero offset in TX buffer. */
 
@@ -153,13 +195,38 @@ int simple_tx(void)
         /* Clear TX frame sent event. */
         dwt_writesysstatuslo(DWT_INT_TXFRS_BIT_MASK);
 
-        test_run_info((unsigned char *)"TX Frame Sent");
+        sequence++;
+
+        if ((sequence % 1000UL) == 0UL)
+        {
+            snprintf(report, sizeof(report), "TX_PROGRESS sent=%lu target=%lu",
+                     (unsigned long)sequence, (unsigned long)TEST_PACKET_TARGET);
+            test_run_info((unsigned char *)report);
+        }
 
         /* Execute a delay between transmissions. */
         Sleep(TX_DELAY_MS);
+    }
 
-        /* Increment the blink frame sequence number (modulo 256). */
-        tx_msg[BLINK_FRAME_SN_IDX]++;
+    prepare_test_frame(TEST_PACKET_TARGET, TEST_TYPE_END);
+    while (end_marker_count < TEST_END_MARKER_REPEATS)
+    {
+        dwt_writetxdata(FRAME_LENGTH - FCS_LEN, tx_msg, 0);
+        dwt_writetxfctrl(FRAME_LENGTH, 0, 0);
+        dwt_starttx(DWT_START_TX_IMMEDIATE);
+        waitforsysstatus(NULL, NULL, DWT_INT_TXFRS_BIT_MASK, 0);
+        dwt_writesysstatuslo(DWT_INT_TXFRS_BIT_MASK);
+        end_marker_count++;
+        Sleep(TX_DELAY_MS);
+    }
+
+    snprintf(report, sizeof(report), "TX_COMPLETE sent=%lu end_markers=%u",
+             (unsigned long)sequence, (unsigned int)end_marker_count);
+    test_run_info((unsigned char *)report);
+
+    while (1)
+    {
+        Sleep(1000);
     }
 }
 
