@@ -1,0 +1,12 @@
+P2P 5NINES RX v1.0
+TEST START target=10000 channel=5
+RX_PROGRESS total=1000 valid=1000 lost=0 dup=0 ooo=0 invalid=0 phy_err=0 crc_err=0 loss_ppm=0
+RX_PROGRESS total=2001 valid=2000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=499
+RX_PROGRESS total=3001 valid=3000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=333
+RX_PROGRESS total=4001 valid=4000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=249
+RX_PROGRESS total=5001 valid=5000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=199
+RX_PROGRESS total=6001 valid=6000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=166
+RX_PROGRESS total=7001 valid=7000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=142
+RX_PROGRESS total=8001 valid=8000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=124
+RX_PROGRESS total=9001 valid=9000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0 loss_ppm=111
+RX_COMPLETE RESULT=FAIL target=10000 end_seq=10000 success=9999 failed=1 lost=1 invalid_failed=0 success_ppm=999900 dup=0 ooo=0 invalid=0 phy_err=1 crc_err=0

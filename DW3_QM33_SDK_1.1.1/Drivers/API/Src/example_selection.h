@@ -12,6 +12,12 @@
 #ifndef TEST_SELECTION_
 #define TEST_SELECTION_
 
+//#define TEST_SIMPLE_TX
+
+//#define TEST_SIMPLE_TX
+
+//#define TEST_SIMPLE_TX
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -99,6 +105,7 @@ extern "C"
 //#define TEST_LINEAR_TX_POWER
 
 //#define TEST_SIMPLE_AES
+
 #ifdef __cplusplus
 }
 #endif

@@ -10,12 +10,12 @@ sheet.showGridLines = false;
 
 sheet.getRange("A1:G7").values = [
   ["发送间隔", "发送数", "有效接收", "丢包+错误数", "丢包率+错误率", "成功率", "实测约耗时"],
-  ["10 ms", 300000, 299822, 489, null, null, "50分03.870秒"],
-  ["5 ms", 300000, 299905, 191, null, null, "26分33.919秒"],
-  ["4 ms", 300000, 299888, 225, null, null, "21分39.105秒"],
-  ["3 ms", 300000, 299914, 175, null, null, "16分43.817秒"],
-  ["2 ms", 300000, 299866, 269, null, null, "11分46.987秒"],
-  ["1 ms", 300000, 299896, 210, null, null, "6分52.440秒"],
+  ["10 ms", 300000, 299822, 178, null, null, "50分03.870秒"],
+  ["5 ms", 300000, 299905, 95, null, null, "26分33.919秒"],
+  ["4 ms", 300000, 299888, 112, null, null, "21分39.105秒"],
+  ["3 ms", 300000, 299914, 86, null, null, "16分43.817秒"],
+  ["2 ms", 300000, 299866, 134, null, null, "11分46.987秒"],
+  ["1 ms", 300000, 299896, 104, null, null, "6分52.440秒"],
 ];
 sheet.getRange("E2").formulas = [["=D2/B2"]];
 sheet.getRange("E2:E7").fillDown();
@@ -53,8 +53,8 @@ sheet.getRange("F:F").format.columnWidth = 16;
 sheet.getRange("G:G").format.columnWidth = 21;
 
 sheet.getRange("A9:A11").values = [
-  ["口径：丢包+错误数 = lost + phy_err + invalid；成功率 = (发送数 − 失败数) / 发送数。"],
-  ["注意：phy_err 可能与 lost 对应同一丢失数据包；按要求直接相加可能重复计数。"],
+  ["计数口径：按包统计失败数 = lost + invalid（本批 invalid=0）；成功率 = (发送数 − 失败数) / 发送数。"],
+  ["phy_err 仅作诊断，不叠加进失败包数；各轮事件数（10/5/4/3/2/1 ms）= 311/96/113/89/135/106，可能与 lost 重叠。"],
   ["来源：interval_packet_loss_summary.csv；耗时沿用用户提供表格中的实测值。"],
 ];
 sheet.getRange("A9:G11").format = {
@@ -79,4 +79,5 @@ await fs.writeFile(".tmp_uwb_interval_summary/preview.png", new Uint8Array(await
 const xlsx = await SpreadsheetFile.exportXlsx(workbook);
 await xlsx.save(`${outputDir}/uwb_点对点通信统计.xlsx`);
 console.log(`Saved ${outputDir}/uwb_点对点通信统计.xlsx`);
+
 

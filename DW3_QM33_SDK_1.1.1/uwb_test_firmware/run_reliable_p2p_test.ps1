@@ -168,7 +168,7 @@ try {
     $rx = Parse-KeyValues -Line $rxLine
 
     $unique = [int64]$rx['unique']
-    $lost = [int64]$rx['final_lost']
+    $failed = [int64]$target - $unique
     $invalid = [int64]$rx['invalid']
     $attempts = [int64]$tx['attempts']
     $retransmissions = [int64]$tx['retransmissions']
@@ -179,7 +179,7 @@ try {
         window_size = 32
         target_packets = $target
         received_unique = $unique
-        final_lost = $lost
+        failed_packets = $failed
         invalid = $invalid
         duplicates = [int64]$rx['duplicates']
         phy_errors = [int64]$rx['phy_err']
@@ -189,8 +189,9 @@ try {
         ack_requests = [int64]$tx['ack_requests']
         ack_timeouts = [int64]$tx['ack_timeouts']
         retried_windows = [int64]$tx['retried_windows']
-        final_error_rate_percent = [math]::Round(($lost + $invalid) * 100.0 / $target, 6)
+        packet_failure_rate_percent = [math]::Round($failed * 100.0 / $target, 6)
         success_rate_percent = [math]::Round($unique * 100.0 / $target, 6)
+        success_ppm = [math]::Floor($unique * 1000000.0 / $target)
         tx_result = $tx['RESULT']
         rx_result = $rx['RESULT']
         elapsed_seconds = $elapsed

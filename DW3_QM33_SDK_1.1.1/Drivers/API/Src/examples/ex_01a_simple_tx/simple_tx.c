@@ -18,6 +18,7 @@
 #include <shared_defines.h>
 #include <shared_functions.h>
 #include <stdio.h>
+#include <nrf.h>
 
 #if defined(TEST_SIMPLE_TX)
 
@@ -40,16 +41,22 @@ extern void test_run_info(unsigned char *data);
 #define TEST_SEQUENCE_IDX 6U
 #define TEST_TYPE_IDX 10U
 #define TEST_PAYLOAD_IDX 11U
+#define TEST_TIMING_IDX 24U
+#define TEST_TIMING_BYTES 8U
 #define TEST_TYPE_DATA 0U
 #define TEST_TYPE_END 1U
+#ifndef TEST_PACKET_TARGET
 #define TEST_PACKET_TARGET 300000UL
+#endif
 #define TEST_END_MARKER_REPEATS 100U
 static uint8_t tx_msg[TEST_FRAME_BYTES] = { 0 };
 
 #define FRAME_LENGTH (sizeof(tx_msg) + FCS_LEN) // The real length that is going to be transmitted
 
 /* Inter-frame delay period, in milliseconds. */
-#define TX_DELAY_MS 10
+#ifndef TX_DELAY_MS
+#define TX_DELAY_MS 10U
+#endif
 
 /* Values for the PG_DELAY and TX_POWER registers reflect the bandwidth and power of the spectrum at the current
  * temperature. These values can be calibrated prior to taking reference measurements. See NOTE 2 below. */
@@ -89,6 +96,9 @@ int simple_tx(void)
     uint32_t dev_id;
     uint32_t sequence = 0;
     uint32_t end_marker_count = 0;
+    uint32_t tx_last_cycles;
+    uint64_t tx_elapsed_cycles = 0ULL;
+    uint64_t tx_elapsed_us = 0ULL;
     char report[128];
 
     /* Print application name on the console. */
@@ -171,6 +181,17 @@ int simple_tx(void)
 
     /* Send the numbered test frames, then repeat an end marker so the receiver
      * can account for any packets lost at the end of the run. */
+    /* Accumulate per-packet deltas so the 32-bit cycle counter may wrap during
+     * long tests. Timing ends at the final data TXFRS, before end markers. */
+    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CYCCNT = 0U;
+    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+    if (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk)
+    {
+        test_run_info((unsigned char *)"TX_ABORT reason=cycle_counter_unavailable");
+        while (1) { Sleep(1000); }
+    }
+    tx_last_cycles = DWT->CYCCNT;
     while (sequence < TEST_PACKET_TARGET)
     {
         prepare_test_frame(sequence, TEST_TYPE_DATA);
@@ -185,7 +206,11 @@ int simple_tx(void)
         dwt_writetxfctrl(FRAME_LENGTH, 0, 0); /* Zero offset in TX buffer, no ranging. */
 
         /* Start transmission. */
-        dwt_starttx(DWT_START_TX_IMMEDIATE);
+        if (dwt_starttx(DWT_START_TX_IMMEDIATE) != DWT_SUCCESS)
+        {
+            test_run_info((unsigned char *)"TX_ABORT reason=data_start_failed");
+            while (1) { Sleep(1000); }
+        }
         /* Poll DW IC until TX frame sent event set. See NOTE 4 below.
          * STATUS register is 4 bytes long but, as the event we are looking
          * at is in the first byte of the register, we can use this simplest
@@ -196,6 +221,15 @@ int simple_tx(void)
         dwt_writesysstatuslo(DWT_INT_TXFRS_BIT_MASK);
 
         sequence++;
+        {
+            uint32_t tx_now_cycles = DWT->CYCCNT;
+            tx_elapsed_cycles += (uint32_t)(tx_now_cycles - tx_last_cycles);
+            tx_last_cycles = tx_now_cycles;
+        }
+        if (sequence == TEST_PACKET_TARGET)
+        {
+            tx_elapsed_us = tx_elapsed_cycles / (SystemCoreClock / 1000000UL);
+        }
 
         if ((sequence % 1000UL) == 0UL)
         {
@@ -209,11 +243,23 @@ int simple_tx(void)
     }
 
     prepare_test_frame(TEST_PACKET_TARGET, TEST_TYPE_END);
+    /* Carry the sender's measured duration in the CRC-protected end marker. */
+    {
+        uint32_t i;
+        for (i = 0U; i < TEST_TIMING_BYTES; i++)
+        {
+            tx_msg[TEST_TIMING_IDX + i] = (uint8_t)(tx_elapsed_us >> (i * 8U));
+        }
+    }
     while (end_marker_count < TEST_END_MARKER_REPEATS)
     {
         dwt_writetxdata(FRAME_LENGTH - FCS_LEN, tx_msg, 0);
         dwt_writetxfctrl(FRAME_LENGTH, 0, 0);
-        dwt_starttx(DWT_START_TX_IMMEDIATE);
+        if (dwt_starttx(DWT_START_TX_IMMEDIATE) != DWT_SUCCESS)
+        {
+            test_run_info((unsigned char *)"TX_ABORT reason=end_start_failed");
+            while (1) { Sleep(1000); }
+        }
         waitforsysstatus(NULL, NULL, DWT_INT_TXFRS_BIT_MASK, 0);
         dwt_writesysstatuslo(DWT_INT_TXFRS_BIT_MASK);
         end_marker_count++;

@@ -144,13 +144,13 @@ int reliable_p2p_tx(void)
     uint32_t final_failed = 0U;
     uint32_t next_progress = 10000U;
     uint32_t remote_unique = 0U;
-    uint32_t remote_lost = RELIABLE_P2P_TARGET;
+    uint32_t remote_failed = RELIABLE_P2P_TARGET;
     uint32_t remote_duplicates = 0U;
     uint32_t remote_invalid = 0U;
     uint32_t remote_phy_errors = 0U;
     uint32_t control_attempt;
     int summary_received = 0;
-    char report[224];
+    char report[320];
 
     test_run_info((unsigned char *)APP_NAME);
     port_set_dw_ic_spi_fastrate();
@@ -277,7 +277,7 @@ int reliable_p2p_tx(void)
                                       final_failed,
                                       RELIABLE_P2P_MSG_SUMMARY,
                                       &remote_unique,
-                                      &remote_lost,
+                                      &remote_failed,
                                       &remote_duplicates,
                                       &remote_invalid,
                                       &remote_phy_errors))
@@ -289,21 +289,22 @@ int reliable_p2p_tx(void)
     }
 
     snprintf(report, sizeof(report),
-             "TX_REMOTE summary_received=%u unique=%lu lost=%lu duplicates=%lu invalid=%lu phy_err=%lu",
+             "TX_REMOTE summary_received=%u unique=%lu failed=%lu duplicates=%lu invalid=%lu phy_err=%lu",
              (unsigned int)summary_received,
              (unsigned long)remote_unique,
-             (unsigned long)remote_lost,
+             (unsigned long)remote_failed,
              (unsigned long)remote_duplicates,
              (unsigned long)remote_invalid,
              (unsigned long)remote_phy_errors);
     test_run_info((unsigned char *)report);
 
     snprintf(report, sizeof(report),
-             "TX_COMPLETE RESULT=%s target=%lu acknowledged=%lu final_failed=%lu attempts=%lu retransmissions=%lu ack_requests=%lu ack_timeouts=%lu invalid_responses=%lu retried_windows=%lu",
-             ((final_failed == 0U) && summary_received && (remote_lost == 0U) &&
-              (remote_invalid == 0U)) ? "PASS" : "FAIL",
+             "TX_COMPLETE RESULT=%s target=%lu success=%lu failed=%lu ack_missing=%lu attempts=%lu retransmissions=%lu ack_requests=%lu ack_timeouts=%lu invalid_responses=%lu retried_windows=%lu",
+             (summary_received && (remote_unique + remote_failed == RELIABLE_P2P_TARGET) &&
+              (remote_failed == 0U)) ? "PASS" : "FAIL",
              (unsigned long)RELIABLE_P2P_TARGET,
-             (unsigned long)(RELIABLE_P2P_TARGET - final_failed),
+             (unsigned long)remote_unique,
+             (unsigned long)remote_failed,
              (unsigned long)final_failed,
              (unsigned long)data_attempts,
              (unsigned long)retransmissions,

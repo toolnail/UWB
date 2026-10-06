@@ -144,29 +144,28 @@ try {
         $completeLine = Select-String -LiteralPath $rxData -Pattern 'RX_COMPLETE' |
                         Select-Object -Last 1 -ExpandProperty Line
         $match = [regex]::Match($completeLine,
-            'RESULT=(?<result>\S+) total=(?<total>\d+) valid=(?<valid>\d+) lost=(?<lost>\d+) dup=(?<dup>\d+) ooo=(?<ooo>\d+) invalid=(?<invalid>\d+) phy_err=(?<phy>\d+) loss_ppm=(?<ppm>\d+)')
+            'RESULT=(?<result>\S+) target=(?<target>\d+) success=(?<success>\d+) failed=(?<failed>\d+) success_ppm=(?<ppm>\d+) dup=(?<dup>\d+) ooo=(?<ooo>\d+) invalid=(?<invalid>\d+) phy_err=(?<phy>\d+)')
         if (-not $match.Success) {
             throw "Could not parse RX result: $completeLine"
         }
 
-        $total = [int64]$match.Groups['total'].Value
-        $lost = [int64]$match.Groups['lost'].Value
+        $success = [int64]$match.Groups['success'].Value
+        $failed = [int64]$match.Groups['failed'].Value
         $invalid = [int64]$match.Groups['invalid'].Value
         $elapsed = [math]::Round(((Get-Date) - $runStart).TotalSeconds, 3)
         $row = [pscustomobject]@{
             interval_ms = $interval
             target = $target
-            total = $total
-            valid = [int64]$match.Groups['valid'].Value
-            lost = $lost
+            total = [int64]$match.Groups['target'].Value
+            success = $success
+            failed = $failed
             duplicate = [int64]$match.Groups['dup'].Value
             out_of_order = [int64]$match.Groups['ooo'].Value
             invalid = $invalid
             phy_errors = [int64]$match.Groups['phy'].Value
-            loss_ppm = [int64]$match.Groups['ppm'].Value
-            loss_rate_percent = [math]::Round(($lost * 100.0 / $target), 6)
-            invalid_rate_percent = [math]::Round(($invalid * 100.0 / $target), 6)
-            observed_failure_rate_percent = [math]::Round((($lost + $invalid) * 100.0 / $target), 6)
+            success_ppm = [int64]$match.Groups['ppm'].Value
+            success_rate_percent = [math]::Round(($success * 100.0 / $target), 6)
+            packet_failure_rate_percent = [math]::Round(($failed * 100.0 / $target), 6)
             result = $match.Groups['result'].Value
             elapsed_seconds = $elapsed
             rx_log = $rxData

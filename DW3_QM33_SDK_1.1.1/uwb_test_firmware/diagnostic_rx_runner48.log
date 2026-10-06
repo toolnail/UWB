@@ -1,0 +1,7 @@
+RX_PROGRESS total=1001 valid=1000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 loss_ppm=999
+RX_PROGRESS total=2001 valid=2000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 loss_ppm=499
+RX_PROGRESS total=3001 valid=3000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 loss_ppm=333
+RX_PROGRESS total=4001 valid=4000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 loss_ppm=249
+RX_PROGRESS total=5001 valid=5000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 loss_ppm=199
+RX_PROGRESS total=6001 valid=6000 lost=1 dup=0 ooo=0 invalid=0 phy_err=1 loss_ppm=166
+RX_PROGRESS total=7002 valid=7000 lost=2 dup=0 ooo=0 invalid=0 phy_err=2 loss_ppm=285
