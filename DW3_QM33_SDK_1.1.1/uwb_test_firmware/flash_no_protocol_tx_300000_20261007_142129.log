@@ -1,0 +1,139 @@
+SEGGER J-Link Commander V9.80 (Compiled Sep 23 2026 13:21:17)
+DLL version V9.80, compiled Sep 23 2026 13:20:16
+
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>r
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link OB-nRF5340-NordicSemi compiled Jun 11 2026 13:12:28
+Hardware version: V1.00
+J-Link uptime (since boot): 0d 00h 02m 24s
+S/N: 1050244938
+License(s): RDI,FlashBP,FlashDL,JFlash,GDB
+USB speed mode: Full speed (12 MBit/s)
+VTref=3.300V
+Target connection not established yet but required for command.
+Device "NRF52840_XXAA" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+CTRL-AP indicates that the device is secured.
+For debugger connection the device needs to be unsecured.
+Note: Unsecuring will trigger a mass erase of the internal flash.
+
+Executing default behavior previously saved in the registry.
+Device will be unsecured now.
+InitTarget() end - Took 58.4ms
+Found SW-DP with ID 0x2BA01477
+DPIDR: 0x2BA01477
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[2]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x24770011, ADDR: 0x00000000)
+AP[1]: JTAG-AP (IDR: 0x02880000, ADDR: 0x01000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0xE00FF000
+CPUID register: 0x410FC241. Implementer code: 0x41 (ARM)
+Found Cortex-M4 r0p1, Little endian.
+FPUnit: 0 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ E00FF000
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M4 identified.
+Reset delay: 0 ms
+Reset type: NORMAL (https://kb.segger.com/J-Link_Reset_Strategies)
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via AIRCR.SYSRESETREQ.
+Reset: SYSRESETREQ has confused core.
+Found SW-DP with ID 0x2BA01477
+DPIDR: 0x2BA01477
+CoreSight SoC-400 or earlier
+AP map detection skipped. Manually configured AP map found.
+AP[0]: AHB-AP (IDR: Not set, ADDR: 0x00000000)
+AP[0]: Skipped. Could not read CPUID register
+Attach to CPU failed. Executing connect under reset.
+Failed to power up DAP
+Reset: Using fallback: VECTRESET.
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via AIRCR.VECTRESET.
+Reset: VECTRESET has confused core.
+Reset: Using fallback: Reset pin.
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via reset pin
+Reset: VC_CORERESET did not halt CPU. (Debug logic also reset by reset pin?).
+Reset: Reconnecting and manually halting CPU.
+Found SW-DP with ID 0x2BA01477
+DPIDR: 0x2BA01477
+CoreSight SoC-400 or earlier
+AP map detection skipped. Manually configured AP map found.
+AP[0]: AHB-AP (IDR: Not set, ADDR: 0x00000000)
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0xE00FF000
+CPUID register: 0x410FC241. Implementer code: 0x41 (ARM)
+Found Cortex-M4 r0p1, Little endian.
+
+**************************
+WARNING: T-bit of XPSR is 0 but should be 1. Changed to 1.
+**************************
+
+J-Link>h
+PC = 006F0068, CycleCnt = 00000000
+R0 = 006F0053, R1 = 00740066, R2 = 00610077, R3 = 00650072
+R4 = 0053005C, R5 = 00470045, R6 = 00450047, R7 = 005C0052
+R8 = 002D004A, R9 = 0069004C, R10= 006B006E, R11= 0044005C
+R12= 006E006F
+SP(R13)= 00610067, MSP= 00610067, PSP= 006E0069, R14(LR) = 00530074
+XPSR = 01410077: APSR = nzcvq, EPSR = 01000000, IPSR = 017 (INTISR7)
+CFBP = 00300000, CONTROL = 00, FAULTMASK = 30, BASEPRI = 00, PRIMASK = 00
+
+FPS0 = 00330031, FPS1 = 002E0039, FPS2 = 002D0031, FPS3 = 0061006D
+FPS4 = 006E0069, FPS5 = 0073002D, FPS6 = 0063006F, FPS7 = 0000006B
+FPS8 = 00530056, FPS9 = 004F0043, FPS10= 00450044, FPS11= 004E005F
+FPS12= 0053004C, FPS13= 0043005F, FPS14= 004E004F, FPS15= 00490046
+FPS16= 003D0047, FPS17= 0022007B, FPS18= 00730075, FPS19= 00720065
+FPS20= 006F004C, FPS21= 00610063, FPS22= 0065006C, FPS23= 003A0022
+FPS24= 00650022, FPS25= 002D006E, FPS26= 00730075, FPS27= 002C0022
+FPS28= 006F0022, FPS29= 004C0073, FPS30= 0063006F, FPS31= 006C0061
+FPSCR= 002E0031
+J-Link>erase
+No address range specified, 'Erase Chip' will be executed
+'erase': Performing implicit reset & halt of MCU.
+Reset type: NORMAL (https://kb.segger.com/J-Link_Reset_Strategies)
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via AIRCR.SYSRESETREQ.
+Reset: Core did not halt after reset, trying to disable WDT.
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via AIRCR.SYSRESETREQ.
+Erasing device...
+J-Link: Flash download: Only internal flash banks will be erased.
+To enable erasing of other flash banks like QSPI or CFI, it needs to be enabled via "exec EnableEraseAllFlashBanks"
+J-Link: Flash download: Total time needed: 0.742s (Prepare: 0.296s, Compare: 0.000s, Erase: 0.201s, Program: 0.000s, Verify: 0.000s, Restore: 0.244s)
+Erasing done.
+J-Link>loadfile C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\nrf52840_dwm3000_5nines_TX_300000_20261007_142129.hex
+'loadfile': Performing implicit reset & halt of MCU.
+Reset type: NORMAL (https://kb.segger.com/J-Link_Reset_Strategies)
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via AIRCR.SYSRESETREQ.
+Downloading file [C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\nrf52840_dwm3000_5nines_TX_300000_20261007_142129.hex]...
+J-Link: Flash download: Bank 0 @ 0x00000000: 2 ranges affected (122880 bytes)
+J-Link: Flash download: Total: 4.971s (Prepare: 0.294s, Compare: 0.168s, Erase: 2.495s, Program: 1.699s, Verify: 0.070s, Restore: 0.243s)
+J-Link: Flash download: Program & Verify speed: 67 KB/s
+O.K.
+J-Link>r
+Reset delay: 0 ms
+Reset type: NORMAL (https://kb.segger.com/J-Link_Reset_Strategies)
+Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Reset: Reset device via AIRCR.SYSRESETREQ.
+J-Link>g
+Memory map 'after startup completion point' is active
+J-Link>sleep 2000
+Sleep(2000)
+J-Link>exit
+
+Script processing completed.
+

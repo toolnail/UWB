@@ -3087,7 +3087,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xcc Output/Debug/Obj/dw3000_api/read_dev_id.o
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/read_dev_id.o
  .debug_line    0x0000000000000000      0x764 Output/Debug/Obj/dw3000_api/read_dev_id.o
- .debug_str     0x0000000000000000    0x92dc6 Output/Debug/Obj/dw3000_api/read_dev_id.o
+ .debug_str     0x0000000000000000    0x92dc9 Output/Debug/Obj/dw3000_api/read_dev_id.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/read_dev_id.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/read_dev_id.o
@@ -3329,7 +3329,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_sleep.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_sleep.o
  .debug_line    0x0000000000000000      0x7b8 Output/Debug/Obj/dw3000_api/tx_sleep.o
- .debug_str     0x0000000000000000    0x935a1 Output/Debug/Obj/dw3000_api/tx_sleep.o
+ .debug_str     0x0000000000000000    0x935a4 Output/Debug/Obj/dw3000_api/tx_sleep.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_sleep.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_sleep.o
@@ -3458,7 +3458,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
  .debug_line    0x0000000000000000      0x7bf Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
- .debug_str     0x0000000000000000    0x935a8 Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
+ .debug_str     0x0000000000000000    0x935ab Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_sleep_idleRC.o
@@ -3585,7 +3585,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
  .debug_line    0x0000000000000000      0x7ae Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
- .debug_str     0x0000000000000000    0x93460 Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
+ .debug_str     0x0000000000000000    0x93463 Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_sleep_auto.o
@@ -3714,7 +3714,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
  .debug_line    0x0000000000000000      0x7c4 Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
- .debug_str     0x0000000000000000    0x935ad Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
+ .debug_str     0x0000000000000000    0x935b0 Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_timed_sleep.o
@@ -3843,7 +3843,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_with_cca.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_with_cca.o
  .debug_line    0x0000000000000000      0x7be Output/Debug/Obj/dw3000_api/tx_with_cca.o
- .debug_str     0x0000000000000000    0x935a7 Output/Debug/Obj/dw3000_api/tx_with_cca.o
+ .debug_str     0x0000000000000000    0x935aa Output/Debug/Obj/dw3000_api/tx_with_cca.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_with_cca.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_with_cca.o
@@ -3972,7 +3972,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
  .debug_line    0x0000000000000000      0x7ca Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
- .debug_str     0x0000000000000000    0x935b3 Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
+ .debug_str     0x0000000000000000    0x935b6 Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_tx_sts_sdc.o
@@ -4101,7 +4101,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
  .debug_line    0x0000000000000000      0x7c4 Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
- .debug_str     0x0000000000000000    0x935ad Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
+ .debug_str     0x0000000000000000    0x935b0 Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_tx_pdoa.o
@@ -4232,7 +4232,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_tx_aes.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/simple_tx_aes.o
  .debug_line    0x0000000000000000      0x7f7 Output/Debug/Obj/dw3000_api/simple_tx_aes.o
- .debug_str     0x0000000000000000    0x9361e Output/Debug/Obj/dw3000_api/simple_tx_aes.o
+ .debug_str     0x0000000000000000    0x93621 Output/Debug/Obj/dw3000_api/simple_tx_aes.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_tx_aes.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_tx_aes.o
@@ -4363,7 +4363,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
  .debug_line    0x0000000000000000      0x805 Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
- .debug_str     0x0000000000000000    0x9362c Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
+ .debug_str     0x0000000000000000    0x9362f Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_tx_automotive.o
@@ -4492,7 +4492,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_rx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_rx.o
  .debug_line    0x0000000000000000      0x7ba Output/Debug/Obj/dw3000_api/simple_rx.o
- .debug_str     0x0000000000000000    0x935a3 Output/Debug/Obj/dw3000_api/simple_rx.o
+ .debug_str     0x0000000000000000    0x935a6 Output/Debug/Obj/dw3000_api/simple_rx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_rx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_rx.o
@@ -4623,7 +4623,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
  .debug_line    0x0000000000000000      0x7c9 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
- .debug_str     0x0000000000000000    0x93c51 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
+ .debug_str     0x0000000000000000    0x93c54 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_rx_nlos.o
@@ -4752,7 +4752,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/rx_diagnostics.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/rx_diagnostics.o
  .debug_line    0x0000000000000000      0x7c4 Output/Debug/Obj/dw3000_api/rx_diagnostics.o
- .debug_str     0x0000000000000000    0x935ad Output/Debug/Obj/dw3000_api/rx_diagnostics.o
+ .debug_str     0x0000000000000000    0x935b0 Output/Debug/Obj/dw3000_api/rx_diagnostics.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/rx_diagnostics.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/rx_diagnostics.o
@@ -4881,7 +4881,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/rx_sniff.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/rx_sniff.o
  .debug_line    0x0000000000000000      0x7b8 Output/Debug/Obj/dw3000_api/rx_sniff.o
- .debug_str     0x0000000000000000    0x935a1 Output/Debug/Obj/dw3000_api/rx_sniff.o
+ .debug_str     0x0000000000000000    0x935a4 Output/Debug/Obj/dw3000_api/rx_sniff.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/rx_sniff.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/rx_sniff.o
@@ -5010,7 +5010,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/double_buffer_rx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/double_buffer_rx.o
  .debug_line    0x0000000000000000      0x7c3 Output/Debug/Obj/dw3000_api/double_buffer_rx.o
- .debug_str     0x0000000000000000    0x935ac Output/Debug/Obj/dw3000_api/double_buffer_rx.o
+ .debug_str     0x0000000000000000    0x935af Output/Debug/Obj/dw3000_api/double_buffer_rx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/double_buffer_rx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/double_buffer_rx.o
@@ -5141,7 +5141,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
  .debug_macro   0x0000000000000000      0x10d Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
  .debug_line    0x0000000000000000      0x7d7 Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
- .debug_str     0x0000000000000000    0x93c5f Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
+ .debug_str     0x0000000000000000    0x93c62 Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/rx_with_xtal_trim.o
@@ -5272,7 +5272,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
  .debug_line    0x0000000000000000      0x7d5 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
- .debug_str     0x0000000000000000    0x93770 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
+ .debug_str     0x0000000000000000    0x93773 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_rx_sts_sdc.o
@@ -5401,7 +5401,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
  .debug_line    0x0000000000000000      0x7c4 Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
- .debug_str     0x0000000000000000    0x935ad Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
+ .debug_str     0x0000000000000000    0x935b0 Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_rx_pdoa.o
@@ -5532,7 +5532,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_rx_aes.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/simple_rx_aes.o
  .debug_line    0x0000000000000000      0x7f7 Output/Debug/Obj/dw3000_api/simple_rx_aes.o
- .debug_str     0x0000000000000000    0x9361e Output/Debug/Obj/dw3000_api/simple_rx_aes.o
+ .debug_str     0x0000000000000000    0x93621 Output/Debug/Obj/dw3000_api/simple_rx_aes.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_rx_aes.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_rx_aes.o
@@ -5663,7 +5663,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
  .debug_line    0x0000000000000000      0x7d0 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
- .debug_str     0x0000000000000000    0x93614 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
+ .debug_str     0x0000000000000000    0x93617 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/rx_adc_capture.o
@@ -5792,7 +5792,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_rx_cir.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_rx_cir.o
  .debug_line    0x0000000000000000      0x7c2 Output/Debug/Obj/dw3000_api/simple_rx_cir.o
- .debug_str     0x0000000000000000    0x935ab Output/Debug/Obj/dw3000_api/simple_rx_cir.o
+ .debug_str     0x0000000000000000    0x935ae Output/Debug/Obj/dw3000_api/simple_rx_cir.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_rx_cir.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_rx_cir.o
@@ -5921,7 +5921,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_wait_resp.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_wait_resp.o
  .debug_line    0x0000000000000000      0x7c0 Output/Debug/Obj/dw3000_api/tx_wait_resp.o
- .debug_str     0x0000000000000000    0x935a9 Output/Debug/Obj/dw3000_api/tx_wait_resp.o
+ .debug_str     0x0000000000000000    0x935ac Output/Debug/Obj/dw3000_api/tx_wait_resp.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_wait_resp.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_wait_resp.o
@@ -6050,7 +6050,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/rx_send_resp.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/rx_send_resp.o
  .debug_line    0x0000000000000000      0x7c0 Output/Debug/Obj/dw3000_api/rx_send_resp.o
- .debug_str     0x0000000000000000    0x935a9 Output/Debug/Obj/dw3000_api/rx_send_resp.o
+ .debug_str     0x0000000000000000    0x935ac Output/Debug/Obj/dw3000_api/rx_send_resp.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/rx_send_resp.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/rx_send_resp.o
@@ -6177,7 +6177,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
  .debug_line    0x0000000000000000      0x7b9 Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
- .debug_str     0x0000000000000000    0x934d7 Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
+ .debug_str     0x0000000000000000    0x934da Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_wait_resp_int.o
@@ -6302,7 +6302,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xcc Output/Debug/Obj/dw3000_api/continuous_wave.o
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/continuous_wave.o
  .debug_line    0x0000000000000000      0x777 Output/Debug/Obj/dw3000_api/continuous_wave.o
- .debug_str     0x0000000000000000    0x9337d Output/Debug/Obj/dw3000_api/continuous_wave.o
+ .debug_str     0x0000000000000000    0x93380 Output/Debug/Obj/dw3000_api/continuous_wave.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/continuous_wave.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/continuous_wave.o
@@ -6427,7 +6427,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xcc Output/Debug/Obj/dw3000_api/continuous_frame.o
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/continuous_frame.o
  .debug_line    0x0000000000000000      0x779 Output/Debug/Obj/dw3000_api/continuous_frame.o
- .debug_str     0x0000000000000000    0x9337f Output/Debug/Obj/dw3000_api/continuous_frame.o
+ .debug_str     0x0000000000000000    0x93382 Output/Debug/Obj/dw3000_api/continuous_frame.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/continuous_frame.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/continuous_frame.o
@@ -6556,7 +6556,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
  .debug_line    0x0000000000000000      0x7c3 Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
- .debug_str     0x0000000000000000    0x935ac Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
+ .debug_str     0x0000000000000000    0x935af Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ds_twr_initiator.o
@@ -6687,7 +6687,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
  .debug_line    0x0000000000000000      0x7d3 Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
- .debug_str     0x0000000000000000    0x93617 Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
+ .debug_str     0x0000000000000000    0x9361a Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ds_twr_initiator_sts.o
@@ -6816,7 +6816,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ds_twr_responder.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ds_twr_responder.o
  .debug_line    0x0000000000000000      0x7c3 Output/Debug/Obj/dw3000_api/ds_twr_responder.o
- .debug_str     0x0000000000000000    0x935ac Output/Debug/Obj/dw3000_api/ds_twr_responder.o
+ .debug_str     0x0000000000000000    0x935af Output/Debug/Obj/dw3000_api/ds_twr_responder.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ds_twr_responder.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ds_twr_responder.o
@@ -6947,7 +6947,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
  .debug_line    0x0000000000000000      0x7d3 Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
- .debug_str     0x0000000000000000    0x93617 Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
+ .debug_str     0x0000000000000000    0x9361a Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ds_twr_responder_sts.o
@@ -7076,7 +7076,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
  .debug_line    0x0000000000000000      0x7d3 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
- .debug_str     0x0000000000000000    0x935bc Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
+ .debug_str     0x0000000000000000    0x935bf Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_initiator.o
@@ -7205,7 +7205,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
  .debug_line    0x0000000000000000      0x7d3 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
- .debug_str     0x0000000000000000    0x935bc Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
+ .debug_str     0x0000000000000000    0x935bf Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ds_twr_sts_sdc_responder.o
@@ -7334,7 +7334,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
  .debug_line    0x0000000000000000      0x7c8 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
- .debug_str     0x0000000000000000    0x935b1 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
+ .debug_str     0x0000000000000000    0x935b4 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_twr_initiator.o
@@ -7465,7 +7465,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
  .debug_line    0x0000000000000000      0x7d8 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
- .debug_str     0x0000000000000000    0x9361c Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
+ .debug_str     0x0000000000000000    0x9361f Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts.o
@@ -7596,7 +7596,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
  .debug_line    0x0000000000000000      0x7e0 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
- .debug_str     0x0000000000000000    0x93624 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
+ .debug_str     0x0000000000000000    0x93627 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_twr_initiator_sts_no_data.o
@@ -7725,7 +7725,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
  .debug_line    0x0000000000000000      0x7c8 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
- .debug_str     0x0000000000000000    0x935b1 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
+ .debug_str     0x0000000000000000    0x935b4 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_twr_responder.o
@@ -7856,7 +7856,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
  .debug_line    0x0000000000000000      0x7d8 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
- .debug_str     0x0000000000000000    0x9361c Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
+ .debug_str     0x0000000000000000    0x9361f Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts.o
@@ -7987,7 +7987,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
  .debug_macro   0x0000000000000000       0x22 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
  .debug_line    0x0000000000000000      0x7e0 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
- .debug_str     0x0000000000000000    0x93624 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
+ .debug_str     0x0000000000000000    0x93627 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_twr_responder_sts_no_data.o
@@ -8118,7 +8118,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
  .debug_line    0x0000000000000000      0x7f9 Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
- .debug_str     0x0000000000000000    0x93d53 Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
+ .debug_str     0x0000000000000000    0x93d56 Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_aes_twr_initiator.o
@@ -8249,7 +8249,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
  .debug_line    0x0000000000000000      0x7f9 Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
- .debug_str     0x0000000000000000    0x93d53 Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
+ .debug_str     0x0000000000000000    0x93d56 Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ss_aes_twr_responder.o
@@ -8378,7 +8378,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ack_data_tx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ack_data_tx.o
  .debug_line    0x0000000000000000      0x7be Output/Debug/Obj/dw3000_api/ack_data_tx.o
- .debug_str     0x0000000000000000    0x935a7 Output/Debug/Obj/dw3000_api/ack_data_tx.o
+ .debug_str     0x0000000000000000    0x935aa Output/Debug/Obj/dw3000_api/ack_data_tx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ack_data_tx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ack_data_tx.o
@@ -8507,7 +8507,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/ack_data_rx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/ack_data_rx.o
  .debug_line    0x0000000000000000      0x7be Output/Debug/Obj/dw3000_api/ack_data_rx.o
- .debug_str     0x0000000000000000    0x935a7 Output/Debug/Obj/dw3000_api/ack_data_rx.o
+ .debug_str     0x0000000000000000    0x935aa Output/Debug/Obj/dw3000_api/ack_data_rx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/ack_data_rx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/ack_data_rx.o
@@ -8638,7 +8638,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
  .debug_macro   0x0000000000000000       0xc4 Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
  .debug_line    0x0000000000000000      0x7dd Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
- .debug_str     0x0000000000000000    0x9396b Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
+ .debug_str     0x0000000000000000    0x9396e Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/reliable_p2p_tx.o
@@ -8769,7 +8769,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
  .debug_macro   0x0000000000000000       0xc4 Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
  .debug_line    0x0000000000000000      0x7dd Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
- .debug_str     0x0000000000000000    0x9396b Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
+ .debug_str     0x0000000000000000    0x9396e Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/reliable_p2p_rx.o
@@ -8896,7 +8896,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/spi_crc.o
  .debug_macro   0x0000000000000000       0x10 Output/Debug/Obj/dw3000_api/spi_crc.o
  .debug_line    0x0000000000000000      0x79e Output/Debug/Obj/dw3000_api/spi_crc.o
- .debug_str     0x0000000000000000    0x92f31 Output/Debug/Obj/dw3000_api/spi_crc.o
+ .debug_str     0x0000000000000000    0x92f34 Output/Debug/Obj/dw3000_api/spi_crc.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/spi_crc.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/spi_crc.o
@@ -9019,7 +9019,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xcc Output/Debug/Obj/dw3000_api/gpio_example.o
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/gpio_example.o
  .debug_line    0x0000000000000000      0x75b Output/Debug/Obj/dw3000_api/gpio_example.o
- .debug_str     0x0000000000000000    0x92dbd Output/Debug/Obj/dw3000_api/gpio_example.o
+ .debug_str     0x0000000000000000    0x92dc0 Output/Debug/Obj/dw3000_api/gpio_example.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/gpio_example.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/gpio_example.o
@@ -9142,7 +9142,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xcc Output/Debug/Obj/dw3000_api/otp_write.o
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/otp_write.o
  .debug_line    0x0000000000000000      0x75c Output/Debug/Obj/dw3000_api/otp_write.o
- .debug_str     0x0000000000000000    0x92dbe Output/Debug/Obj/dw3000_api/otp_write.o
+ .debug_str     0x0000000000000000    0x92dc1 Output/Debug/Obj/dw3000_api/otp_write.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/otp_write.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/otp_write.o
@@ -9271,7 +9271,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/le_pend_rx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/le_pend_rx.o
  .debug_line    0x0000000000000000      0x7b8 Output/Debug/Obj/dw3000_api/le_pend_rx.o
- .debug_str     0x0000000000000000    0x935a1 Output/Debug/Obj/dw3000_api/le_pend_rx.o
+ .debug_str     0x0000000000000000    0x935a4 Output/Debug/Obj/dw3000_api/le_pend_rx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/le_pend_rx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/le_pend_rx.o
@@ -9400,7 +9400,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/le_pend_tx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/le_pend_tx.o
  .debug_line    0x0000000000000000      0x7b8 Output/Debug/Obj/dw3000_api/le_pend_tx.o
- .debug_str     0x0000000000000000    0x935a1 Output/Debug/Obj/dw3000_api/le_pend_tx.o
+ .debug_str     0x0000000000000000    0x935a4 Output/Debug/Obj/dw3000_api/le_pend_tx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/le_pend_tx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/le_pend_tx.o
@@ -9531,7 +9531,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/pll_cal.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/pll_cal.o
  .debug_line    0x0000000000000000      0x7bf Output/Debug/Obj/dw3000_api/pll_cal.o
- .debug_str     0x0000000000000000    0x93c47 Output/Debug/Obj/dw3000_api/pll_cal.o
+ .debug_str     0x0000000000000000    0x93c4a Output/Debug/Obj/dw3000_api/pll_cal.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/pll_cal.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/pll_cal.o
@@ -9660,7 +9660,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
  .debug_line    0x0000000000000000      0x7c2 Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
- .debug_str     0x0000000000000000    0x935ab Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
+ .debug_str     0x0000000000000000    0x935ae Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/bandwidth_calibration.o
@@ -9783,7 +9783,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xcc Output/Debug/Obj/dw3000_api/timer_example.o
  .debug_macro   0x0000000000000000       0x7c Output/Debug/Obj/dw3000_api/timer_example.o
  .debug_line    0x0000000000000000      0x75c Output/Debug/Obj/dw3000_api/timer_example.o
- .debug_str     0x0000000000000000    0x92dbe Output/Debug/Obj/dw3000_api/timer_example.o
+ .debug_str     0x0000000000000000    0x92dc1 Output/Debug/Obj/dw3000_api/timer_example.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/timer_example.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/timer_example.o
@@ -9912,7 +9912,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
  .debug_line    0x0000000000000000      0x7d5 Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
- .debug_str     0x0000000000000000    0x935be Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
+ .debug_str     0x0000000000000000    0x935c1 Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/tx_power_adjustment_example.o
@@ -10039,7 +10039,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/simple_aes.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/simple_aes.o
  .debug_line    0x0000000000000000      0x7a7 Output/Debug/Obj/dw3000_api/simple_aes.o
- .debug_str     0x0000000000000000    0x92fec Output/Debug/Obj/dw3000_api/simple_aes.o
+ .debug_str     0x0000000000000000    0x92fef Output/Debug/Obj/dw3000_api/simple_aes.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/simple_aes.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/simple_aes.o
@@ -10168,7 +10168,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
  .debug_line    0x0000000000000000      0x7cd Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
- .debug_str     0x0000000000000000    0x935b6 Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
+ .debug_str     0x0000000000000000    0x935b9 Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/linear_tx_power_example.o
@@ -10295,7 +10295,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
  .debug_line    0x0000000000000000      0x7b8 Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
- .debug_str     0x0000000000000000    0x92ffd Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
+ .debug_str     0x0000000000000000    0x93000 Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/frame_filtering_tx.o
@@ -10422,7 +10422,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
  .debug_macro   0x0000000000000000       0x40 Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
  .debug_line    0x0000000000000000      0x7b8 Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
- .debug_str     0x0000000000000000    0x92ffd Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
+ .debug_str     0x0000000000000000    0x93000 Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
  .comment       0x0000000000000000       0x25 Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/Debug/Obj/dw3000_api/frame_filtering_rx.o
@@ -13454,7 +13454,7 @@ FLASH            0x0000000000000000 0x0000000000100000 xw
 Linker script and memory map
 
                 0x0000000000000000                __do_debug_operation = __do_debug_operation_mempoll
-                0x000000000002b8d8                __vfprintf = __vfprintf_float_long
+                0x000000000002b8c0                __vfprintf = __vfprintf_float_long
                 0x0000000000000000                __vfscanf = __vfscanf_long
                 0x0000000020000000                __RAM1_segment_start__ = 0x20000000
                 0x0000000020040000                __RAM1_segment_end__ = 0x20040000
@@ -13600,7 +13600,7 @@ Linker script and memory map
                 0x0000000000000001                . = ASSERT (((__init_rodata_start__ == __init_rodata_end__) || ((__init_rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .init_rodata is too large to fit in FLASH memory segment)
                 0x00000000000121d0                __text_load_start__ = ALIGN (__init_rodata_end__, 0x4)
 
-.text           0x00000000000121d0    0x1b2e4
+.text           0x00000000000121d0    0x1b2cc
                 0x00000000000121d0                __text_start__ = .
  *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
  .glue_7        0x00000000000121d0        0x0 linker stubs
@@ -15003,261 +15003,261 @@ Linker script and memory map
                 0x000000000002a412                rsl_calculate_first_path_power
  *fill*         0x000000000002a472        0x2 
  .text.prepare_test_frame
-                0x000000000002a474       0xa8 Output/Debug/Obj/dw3000_api/simple_tx.o
+                0x000000000002a474       0x88 Output/Debug/Obj/dw3000_api/simple_tx.o
  .text.simple_tx
-                0x000000000002a51c      0x32c Output/Debug/Obj/dw3000_api/simple_tx.o
-                0x000000000002a51c                simple_tx
+                0x000000000002a4fc      0x330 Output/Debug/Obj/dw3000_api/simple_tx.o
+                0x000000000002a4fc                simple_tx
  .text.build_examples
-                0x000000000002a848       0x48 Output/Debug/Obj/dw3000_api/example_info.o
-                0x000000000002a848                build_examples
+                0x000000000002a82c       0x48 Output/Debug/Obj/dw3000_api/example_info.o
+                0x000000000002a82c                build_examples
  .text.waitforsysstatus
-                0x000000000002a890       0x80 Output/Debug/Obj/dw3000_api/shared_functions.o
-                0x000000000002a890                waitforsysstatus
+                0x000000000002a874       0x80 Output/Debug/Obj/dw3000_api/shared_functions.o
+                0x000000000002a874                waitforsysstatus
  .text.decamutexon
-                0x000000000002a910       0x30 Output/Debug/Obj/dw3000_api/deca_mutex.o
-                0x000000000002a910                decamutexon
+                0x000000000002a8f4       0x30 Output/Debug/Obj/dw3000_api/deca_mutex.o
+                0x000000000002a8f4                decamutexon
  .text.decamutexoff
-                0x000000000002a940       0x24 Output/Debug/Obj/dw3000_api/deca_mutex.o
-                0x000000000002a940                decamutexoff
+                0x000000000002a924       0x24 Output/Debug/Obj/dw3000_api/deca_mutex.o
+                0x000000000002a924                decamutexoff
  .text.nrfx_coredep_delay_us
-                0x000000000002a964       0x30 Output/Debug/Obj/dw3000_api/deca_sleep.o
+                0x000000000002a948       0x30 Output/Debug/Obj/dw3000_api/deca_sleep.o
  .text.deca_sleep
-                0x000000000002a994       0x14 Output/Debug/Obj/dw3000_api/deca_sleep.o
-                0x000000000002a994                deca_sleep
+                0x000000000002a978       0x14 Output/Debug/Obj/dw3000_api/deca_sleep.o
+                0x000000000002a978                deca_sleep
  .text.deca_usleep
-                0x000000000002a9a8       0x14 Output/Debug/Obj/dw3000_api/deca_sleep.o
-                0x000000000002a9a8                deca_usleep
+                0x000000000002a98c       0x14 Output/Debug/Obj/dw3000_api/deca_sleep.o
+                0x000000000002a98c                deca_usleep
  .text.nrfx_coredep_delay_us
-                0x000000000002a9bc       0x30 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002a9a0       0x30 Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_gpio_pin_port_decode
-                0x000000000002a9ec       0x2c Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002a9d0       0x2c Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_gpio_cfg
-                0x000000000002aa18       0x62 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002a9fc       0x62 Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_spim_enable
-                0x000000000002aa7a       0x12 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002aa5e       0x12 Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_spim_disable
-                0x000000000002aa8c       0x12 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002aa70       0x12 Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_drv_spi_uninit
-                0x000000000002aa9e       0x18 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002aa82       0x18 Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_drv_spi_transfer
-                0x000000000002aab6       0x42 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002aa9a       0x42 Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.nrf_delay_ms
-                0x000000000002aaf8       0x2a Output/Debug/Obj/dw3000_api/deca_spi.o
- *fill*         0x000000000002ab22        0x2 
+                0x000000000002aadc       0x2a Output/Debug/Obj/dw3000_api/deca_spi.o
+ *fill*         0x000000000002ab06        0x2 
  .text.change_SPI
-                0x000000000002ab24       0x50 Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002ab24                change_SPI
+                0x000000000002ab08       0x50 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ab08                change_SPI
  .text.nrf52840_dk_spi_init
-                0x000000000002ab74       0xb0 Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002ab74                nrf52840_dk_spi_init
+                0x000000000002ab58       0xb0 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ab58                nrf52840_dk_spi_init
  .text.spi2_init
-                0x000000000002ac24       0xf4 Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002ac24                spi2_init
- .text.openspi  0x000000000002ad18       0x1c Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ac08       0xf4 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ac08                spi2_init
+ .text.openspi  0x000000000002acfc       0x1c Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.closespi
-                0x000000000002ad34       0x1c Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ad18       0x1c Output/Debug/Obj/dw3000_api/deca_spi.o
  .text.port_set_dw_ic_spi_slowrate
-                0x000000000002ad50       0x58 Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002ad50                port_set_dw_ic_spi_slowrate
+                0x000000000002ad34       0x58 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ad34                port_set_dw_ic_spi_slowrate
  .text.port_set_dw_ic_spi_fastrate
-                0x000000000002ada8       0x8c Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002ada8                port_set_dw_ic_spi_fastrate
+                0x000000000002ad8c       0x8c Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ad8c                port_set_dw_ic_spi_fastrate
  .text.writetospiwithcrc
-                0x000000000002ae34      0x100 Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002ae34                writetospiwithcrc
+                0x000000000002ae18      0x100 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002ae18                writetospiwithcrc
  .text.writetospi
-                0x000000000002af34       0xec Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002af34                writetospi
+                0x000000000002af18       0xec Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002af18                writetospi
  .text.readfromspi
-                0x000000000002b020      0x110 Output/Debug/Obj/dw3000_api/deca_spi.o
-                0x000000000002b020                readfromspi
+                0x000000000002b004      0x110 Output/Debug/Obj/dw3000_api/deca_spi.o
+                0x000000000002b004                readfromspi
  .text.nrfx_coredep_delay_us
-                0x000000000002b130       0x30 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b114       0x30 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_pin_port_decode
-                0x000000000002b160       0x2c Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b144       0x2c Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_cfg
-                0x000000000002b18c       0x62 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b170       0x62 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_cfg_output
-                0x000000000002b1ee       0x22 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b1d2       0x22 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_cfg_input
-                0x000000000002b210       0x2a Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b1f4       0x2a Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_pin_set
-                0x000000000002b23a       0x28 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b21e       0x28 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_pin_clear
-                0x000000000002b262       0x28 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b246       0x28 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_pin_read
-                0x000000000002b28a       0x2a Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b26e       0x2a Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_port_in_read
-                0x000000000002b2b4       0x10 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b298       0x10 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_port_out_set
-                0x000000000002b2c4       0x14 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b2a8       0x14 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_gpio_port_out_clear
-                0x000000000002b2d8       0x14 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b2bc       0x14 Output/Debug/Obj/dw3000_api/port.o
  .text.nrf_delay_ms
-                0x000000000002b2ec       0x2a Output/Debug/Obj/dw3000_api/port.o
- .text.Sleep    0x000000000002b316       0x14 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b316                Sleep
- *fill*         0x000000000002b32a        0x2 
+                0x000000000002b2d0       0x2a Output/Debug/Obj/dw3000_api/port.o
+ .text.Sleep    0x000000000002b2fa       0x14 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b2fa                Sleep
+ *fill*         0x000000000002b30e        0x2 
  .text.gpio_init
-                0x000000000002b32c       0x2c Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b32c                gpio_init
+                0x000000000002b310       0x2c Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b310                gpio_init
  .text.deca_irq_handler
-                0x000000000002b358       0x18 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b358                deca_irq_handler
+                0x000000000002b33c       0x18 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b33c                deca_irq_handler
  .text.dw_irq_init
-                0x000000000002b370       0x88 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b370                dw_irq_init
+                0x000000000002b354       0x88 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b354                dw_irq_init
  .text.reset_DWIC
-                0x000000000002b3f8       0x26 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b3f8                reset_DWIC
+                0x000000000002b3dc       0x26 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b3dc                reset_DWIC
  .text.wakeup_device_with_io
-                0x000000000002b41e       0x18 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b41e                wakeup_device_with_io
- *fill*         0x000000000002b436        0x2 
+                0x000000000002b402       0x18 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b402                wakeup_device_with_io
+ *fill*         0x000000000002b41a        0x2 
  .text.process_deca_irq
-                0x000000000002b438       0x28 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b438                process_deca_irq
+                0x000000000002b41c       0x28 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b41c                process_deca_irq
  .text.port_CheckEXT_IRQ
-                0x000000000002b460       0x18 Output/Debug/Obj/dw3000_api/port.o
-                0x000000000002b460                port_CheckEXT_IRQ
+                0x000000000002b444       0x18 Output/Debug/Obj/dw3000_api/port.o
+                0x000000000002b444                port_CheckEXT_IRQ
  .text.nrfx_coredep_delay_us
-                0x000000000002b478       0x30 Output/Debug/Obj/dw3000_api/main.o
+                0x000000000002b45c       0x30 Output/Debug/Obj/dw3000_api/main.o
  .text.nrf_delay_ms
-                0x000000000002b4a8       0x2a Output/Debug/Obj/dw3000_api/main.o
- *fill*         0x000000000002b4d2        0x2 
+                0x000000000002b48c       0x2a Output/Debug/Obj/dw3000_api/main.o
+ *fill*         0x000000000002b4b6        0x2 
  .text.test_run_info
-                0x000000000002b4d4       0x24 Output/Debug/Obj/dw3000_api/main.o
-                0x000000000002b4d4                test_run_info
- .text.main     0x000000000002b4f8       0x2c Output/Debug/Obj/dw3000_api/main.o
-                0x000000000002b4f8                main
+                0x000000000002b4b8       0x24 Output/Debug/Obj/dw3000_api/main.o
+                0x000000000002b4b8                test_run_info
+ .text.main     0x000000000002b4dc       0x2c Output/Debug/Obj/dw3000_api/main.o
+                0x000000000002b4dc                main
  .text.__aeabi_read_tp
-                0x000000000002b524        0x8 Output/Debug/Obj/dw3000_api/thumb_crt0.o
-                0x000000000002b524                __aeabi_read_tp
+                0x000000000002b508        0x8 Output/Debug/Obj/dw3000_api/thumb_crt0.o
+                0x000000000002b508                __aeabi_read_tp
  .text.__assert
-                0x000000000002b52c        0x2 Output/Debug/Obj/dw3000_api/thumb_crt0.o
-                0x000000000002b52c                __assert
+                0x000000000002b510        0x2 Output/Debug/Obj/dw3000_api/thumb_crt0.o
+                0x000000000002b510                __assert
  .text.libc.__int64_udivmod
-                0x000000000002b52e       0xce C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc_asm.o)
-                0x000000000002b52e                __aeabi_uldivmod
-                0x000000000002b52e                __int64_udiv
-                0x000000000002b52e                __udivdi3
-                0x000000000002b52e                __int64_udivmod
+                0x000000000002b512       0xce C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc_asm.o)
+                0x000000000002b512                __aeabi_uldivmod
+                0x000000000002b512                __int64_udiv
+                0x000000000002b512                __udivdi3
+                0x000000000002b512                __int64_udivmod
  .text.libc.__aeabi_ldivmod
-                0x000000000002b5fc       0x58 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc_asm.o)
-                0x000000000002b5fc                __aeabi_ldivmod
+                0x000000000002b5e0       0x58 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc_asm.o)
+                0x000000000002b5e0                __aeabi_ldivmod
  .text.libc.__RAL_pow10
-                0x000000000002b654       0x54 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b654                __RAL_pow10
+                0x000000000002b638       0x54 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b638                __RAL_pow10
  .text.libc.__putc
-                0x000000000002b6a8       0x34 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b6a8                __putc
+                0x000000000002b68c       0x34 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b68c                __putc
  .text.libc.__RAL_print_padding
-                0x000000000002b6dc       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b6dc                __RAL_print_padding
+                0x000000000002b6c0       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b6c0                __RAL_print_padding
  .text.libc.__RAL_pre_padding
-                0x000000000002b6f8       0x1a C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b6f8                __RAL_pre_padding
+                0x000000000002b6dc       0x1a C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b6dc                __RAL_pre_padding
  .text.libc.abs
-                0x000000000002b712        0x8 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b712                abs
- *fill*         0x000000000002b71a        0x2 
+                0x000000000002b6f6        0x8 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b6f6                abs
+ *fill*         0x000000000002b6fe        0x2 
  .text.libc.__aeabi_errno_addr
-                0x000000000002b71c       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b71c                __aeabi_errno_addr
+                0x000000000002b700       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b700                __aeabi_errno_addr
  .text.libc.snprintf
-                0x000000000002b730       0x28 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b730                snprintf
+                0x000000000002b714       0x28 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b714                snprintf
  .text.libc.strnlen
-                0x000000000002b758       0x22 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002b758                strnlen
+                0x000000000002b73c       0x22 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002b73c                strnlen
  .text.libc.memcpy
-                0x000000000002b77a       0x52 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000002b77a                __aeabi_memcpy
-                0x000000000002b77a                memcpy
-                0x000000000002b786                __aeabi_memcpy8
-                0x000000000002b786                __aeabi_memcpy4
+                0x000000000002b75e       0x52 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x000000000002b75e                __aeabi_memcpy
+                0x000000000002b75e                memcpy
+                0x000000000002b76a                __aeabi_memcpy8
+                0x000000000002b76a                __aeabi_memcpy4
  .text.libc.memset
-                0x000000000002b7cc       0x66 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000002b7cc                memset
+                0x000000000002b7b0       0x66 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x000000000002b7b0                memset
  .text.libc.strcpy
-                0x000000000002b832       0x44 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000002b832                strcpy
+                0x000000000002b816       0x44 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x000000000002b816                strcpy
  .text.libc.strlen
-                0x000000000002b876       0x60 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000002b876                strlen
- *fill*         0x000000000002b8d6        0x2 
+                0x000000000002b85a       0x60 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x000000000002b85a                strlen
+ *fill*         0x000000000002b8ba        0x6 
  .text.libc.__vfprintf_float_long
-                0x000000000002b8d8     0x10dc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
-                0x000000000002b8d8                __vfprintf_float_long
+                0x000000000002b8c0     0x10dc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x000000000002b8c0                __vfprintf_float_long
  .text.__aeabi_dadd
-                0x000000000002c9b4      0x244 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002c9b4                __aeabi_dadd
+                0x000000000002c99c      0x244 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002c99c                __aeabi_dadd
  .text.__aeabi_dsub
-                0x000000000002cbf8        0x8 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cbf8                __aeabi_dsub
+                0x000000000002cbe0        0x8 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cbe0                __aeabi_dsub
  .text.__aeabi_dmul
-                0x000000000002cc00      0x138 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cc00                __aeabi_dmul
+                0x000000000002cbe8      0x138 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cbe8                __aeabi_dmul
  .text.__aeabi_ddiv
-                0x000000000002cd38      0x1cc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cd38                __aeabi_ddiv
+                0x000000000002cd20      0x1cc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cd20                __aeabi_ddiv
  .text.__aeabi_dcmple
-                0x000000000002cf04       0x3c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cf04                __aeabi_dcmple
+                0x000000000002ceec       0x3c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002ceec                __aeabi_dcmple
  .text.__aeabi_dcmpeq
-                0x000000000002cf40       0x34 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cf40                __aeabi_dcmpeq
+                0x000000000002cf28       0x34 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cf28                __aeabi_dcmpeq
  .text.__aeabi_dcmpge
-                0x000000000002cf74       0x3c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cf74                __aeabi_dcmpge
+                0x000000000002cf5c       0x3c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cf5c                __aeabi_dcmpge
  .text.__aeabi_dcmpgt
-                0x000000000002cfb0       0x38 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cfb0                __aeabi_dcmpgt
+                0x000000000002cf98       0x38 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cf98                __aeabi_dcmpgt
  .text.__aeabi_dcmplt
-                0x000000000002cfe8       0x38 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002cfe8                __aeabi_dcmplt
+                0x000000000002cfd0       0x38 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002cfd0                __aeabi_dcmplt
  .text.__aeabi_d2ulz
-                0x000000000002d020       0x40 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002d020                __aeabi_d2ulz
+                0x000000000002d008       0x40 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002d008                __aeabi_d2ulz
  .text.__aeabi_ul2d
-                0x000000000002d060       0x5c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002d060                __aeabi_ul2d
+                0x000000000002d048       0x5c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002d048                __aeabi_ul2d
  .text.__float64_isinf
-                0x000000000002d0bc       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002d0bc                __float64_isinf
+                0x000000000002d0a4       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002d0a4                __float64_isinf
  .text.__float64_isnan
-                0x000000000002d0d0       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002d0d0                __float64_isnan
+                0x000000000002d0b8       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002d0b8                __float64_isnan
  .text.__float64_signbit
-                0x000000000002d0e4        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002d0e4                __float64_signbit
- .text.fabs     0x000000000002d0f0       0x10 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
-                0x000000000002d0f0                fabs(double)
-                0x000000000002d0f0                fabs
+                0x000000000002d0cc        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002d0cc                __float64_signbit
+ .text.fabs     0x000000000002d0d8       0x10 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm_asm.o)
+                0x000000000002d0d8                fabs(double)
+                0x000000000002d0d8                fabs
  .text.libc.frexp
-                0x000000000002d100       0x44 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x000000000002d100                frexp
-                0x000000000002d100                frexp(double, int*)
- *fill*         0x000000000002d144        0x4 
+                0x000000000002d0e8       0x44 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x000000000002d0e8                frexp
+                0x000000000002d0e8                frexp(double, int*)
+ *fill*         0x000000000002d12c        0x4 
  .text.libc.ldexp
-                0x000000000002d148       0x7c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x000000000002d148                ldexp
-                0x000000000002d148                ldexp(double, int)
+                0x000000000002d130       0x7c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x000000000002d130                ldexp
+                0x000000000002d130                ldexp(double, int)
  .text.libc.modf
-                0x000000000002d1c4       0x94 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x000000000002d1c4                modf(double, double*)
-                0x000000000002d1c4                modf
+                0x000000000002d1ac       0x94 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x000000000002d1ac                modf(double, double*)
+                0x000000000002d1ac                modf
  .text.libc.floor
-                0x000000000002d258       0xb0 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x000000000002d258                floor(double)
-                0x000000000002d258                floor
+                0x000000000002d240       0xb0 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x000000000002d240                floor(double)
+                0x000000000002d240                floor
  .text.libc.fmod
-                0x000000000002d308      0x1ac C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
-                0x000000000002d308                fmod
-                0x000000000002d308                fmod(double, double)
-                0x000000000002d4b4                __text_end__ = (__text_start__ + SIZEOF (.text))
-                0x000000000001b2e4                __text_size__ = SIZEOF (.text)
-                0x000000000002d4b4                __text_load_end__ = __text_end__
+                0x000000000002d2f0      0x1ac C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libm2.o)
+                0x000000000002d2f0                fmod
+                0x000000000002d2f0                fmod(double, double)
+                0x000000000002d49c                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x000000000001b2cc                __text_size__ = SIZEOF (.text)
+                0x000000000002d49c                __text_load_end__ = __text_end__
 
 .vfp11_veneer   0x0000000100000000        0x0
  .vfp11_veneer  0x0000000100000000        0x0 linker stubs
@@ -15268,55 +15268,55 @@ Linker script and memory map
 .iplt           0x0000000100000000        0x0
  .iplt          0x0000000100000000        0x0 Output/Debug/Obj/dw3000_api/SEGGER_RTT.o
                 0x0000000000000001                . = ASSERT (((__text_start__ == __text_end__) || ((__text_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .text is too large to fit in FLASH memory segment)
-                0x000000000002d4b4                __log_const_data_load_start__ = ALIGN (__text_end__, 0x4)
+                0x000000000002d49c                __log_const_data_load_start__ = ALIGN (__text_end__, 0x4)
 
 .log_const_data
-                0x000000000002d4b4       0x30
-                0x000000000002d4b4                __log_const_data_start__ = .
-                0x000000000002d4b4                __start_log_const_data = __log_const_data_start__
+                0x000000000002d49c       0x30
+                0x000000000002d49c                __log_const_data_start__ = .
+                0x000000000002d49c                __start_log_const_data = __log_const_data_start__
  *(SORT_BY_NAME(.log_const_data*))
  .log_const_data_CLOCK
-                0x000000000002d4b4        0x8 Output/Debug/Obj/dw3000_api/nrfx_clock.o
-                0x000000000002d4b4                m_nrf_log_CLOCK_logs_data_const
+                0x000000000002d49c        0x8 Output/Debug/Obj/dw3000_api/nrfx_clock.o
+                0x000000000002d49c                m_nrf_log_CLOCK_logs_data_const
  .log_const_data_GPIOTE
-                0x000000000002d4bc        0x8 Output/Debug/Obj/dw3000_api/nrfx_gpiote.o
-                0x000000000002d4bc                m_nrf_log_GPIOTE_logs_data_const
+                0x000000000002d4a4        0x8 Output/Debug/Obj/dw3000_api/nrfx_gpiote.o
+                0x000000000002d4a4                m_nrf_log_GPIOTE_logs_data_const
  .log_const_data_PRS
-                0x000000000002d4c4        0x8 Output/Debug/Obj/dw3000_api/nrfx_prs.o
-                0x000000000002d4c4                m_nrf_log_PRS_logs_data_const
+                0x000000000002d4ac        0x8 Output/Debug/Obj/dw3000_api/nrfx_prs.o
+                0x000000000002d4ac                m_nrf_log_PRS_logs_data_const
  .log_const_data_SPIM
-                0x000000000002d4cc        0x8 Output/Debug/Obj/dw3000_api/nrfx_spim.o
-                0x000000000002d4cc                m_nrf_log_SPIM_logs_data_const
+                0x000000000002d4b4        0x8 Output/Debug/Obj/dw3000_api/nrfx_spim.o
+                0x000000000002d4b4                m_nrf_log_SPIM_logs_data_const
  .log_const_data_app
-                0x000000000002d4d4        0x8 Output/Debug/Obj/dw3000_api/nrf_log_frontend.o
-                0x000000000002d4d4                m_nrf_log_app_logs_data_const
+                0x000000000002d4bc        0x8 Output/Debug/Obj/dw3000_api/nrf_log_frontend.o
+                0x000000000002d4bc                m_nrf_log_app_logs_data_const
  .log_const_data_clock
-                0x000000000002d4dc        0x8 Output/Debug/Obj/dw3000_api/nrf_drv_clock.o
-                0x000000000002d4dc                m_nrf_log_clock_logs_data_const
-                0x000000000002d4e4                __log_const_data_end__ = (__log_const_data_start__ + SIZEOF (.log_const_data))
+                0x000000000002d4c4        0x8 Output/Debug/Obj/dw3000_api/nrf_drv_clock.o
+                0x000000000002d4c4                m_nrf_log_clock_logs_data_const
+                0x000000000002d4cc                __log_const_data_end__ = (__log_const_data_start__ + SIZEOF (.log_const_data))
                 0x0000000000000030                __log_const_data_size__ = SIZEOF (.log_const_data)
-                0x000000000002d4e4                __stop_log_const_data = __log_const_data_end__
-                0x000000000002d4e4                __log_const_data_load_end__ = __log_const_data_end__
+                0x000000000002d4cc                __stop_log_const_data = __log_const_data_end__
+                0x000000000002d4cc                __log_const_data_load_end__ = __log_const_data_end__
                 0x0000000000000001                . = ASSERT (((__log_const_data_start__ == __log_const_data_end__) || ((__log_const_data_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_const_data is too large to fit in FLASH memory segment)
-                0x000000000002d4e4                __nrf_sections_load_start__ = ALIGN (__log_const_data_end__, 0x4)
+                0x000000000002d4cc                __nrf_sections_load_start__ = ALIGN (__log_const_data_end__, 0x4)
 
-.nrf_sections   0x000000000002d4e4        0x0
-                0x000000000002d4e4                __nrf_sections_start__ = .
-                0x000000000002d4e4                __start_nrf_sections = __nrf_sections_start__
+.nrf_sections   0x000000000002d4cc        0x0
+                0x000000000002d4cc                __nrf_sections_start__ = .
+                0x000000000002d4cc                __start_nrf_sections = __nrf_sections_start__
  *(.nrf_sections .nrf_sections.*)
-                0x000000000002d4e4                __nrf_sections_end__ = (__nrf_sections_start__ + SIZEOF (.nrf_sections))
+                0x000000000002d4cc                __nrf_sections_end__ = (__nrf_sections_start__ + SIZEOF (.nrf_sections))
                 0x0000000000000000                __nrf_sections_size__ = SIZEOF (.nrf_sections)
-                0x000000000002d4e4                __nrf_sections_load_end__ = __nrf_sections_end__
+                0x000000000002d4cc                __nrf_sections_load_end__ = __nrf_sections_end__
                 0x0000000000000001                . = ASSERT (((__nrf_sections_start__ == __nrf_sections_end__) || ((__nrf_sections_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .nrf_sections is too large to fit in FLASH memory segment)
-                0x000000000002d4e4                __log_dynamic_data_load_start__ = ALIGN (__nrf_sections_end__, 0x4)
+                0x000000000002d4cc                __log_dynamic_data_load_start__ = ALIGN (__nrf_sections_end__, 0x4)
 
 .log_dynamic_data
-                0x0000000020000000        0x0 load address 0x000000000002d4e4
+                0x0000000020000000        0x0 load address 0x000000000002d4cc
                 0x0000000020000000                __log_dynamic_data_start__ = .
  *(SORT_BY_NAME(.log_dynamic_data*))
                 0x0000000020000000                __log_dynamic_data_end__ = (__log_dynamic_data_start__ + SIZEOF (.log_dynamic_data))
                 0x0000000000000000                __log_dynamic_data_size__ = SIZEOF (.log_dynamic_data)
-                0x000000000002d4e4                __log_dynamic_data_load_end__ = (__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data))
+                0x000000000002d4cc                __log_dynamic_data_load_end__ = (__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data))
                 0x0000000000000001                . = ASSERT (((__log_dynamic_data_load_start__ == __log_dynamic_data_load_end__) || ((__log_dynamic_data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_dynamic_data is too large to fit in FLASH memory segment)
 
 .log_dynamic_data_run
@@ -15340,218 +15340,218 @@ Linker script and memory map
                 0x0000000000000000                __nrf_sections_run_end_size__ = SIZEOF (.nrf_sections_run_end)
                 0x0000000020000000                __nrf_sections_run_end_load_end__ = __nrf_sections_run_end_end__
                 0x0000000000000001                . = ASSERT (((__nrf_sections_run_end_start__ == __nrf_sections_run_end_end__) || ((__nrf_sections_run_end_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .nrf_sections_run_end is too large to fit in RAM1 memory segment)
-                0x000000000002d4e4                __dtors_load_start__ = ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4)
+                0x000000000002d4cc                __dtors_load_start__ = ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4)
 
-.dtors          0x000000000002d4e4        0x0
-                0x000000000002d4e4                __dtors_start__ = .
+.dtors          0x000000000002d4cc        0x0
+                0x000000000002d4cc                __dtors_start__ = .
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x000000000002d4e4                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x000000000002d4cc                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
                 0x0000000000000000                __dtors_size__ = SIZEOF (.dtors)
-                0x000000000002d4e4                __dtors_load_end__ = __dtors_end__
+                0x000000000002d4cc                __dtors_load_end__ = __dtors_end__
                 0x0000000000000001                . = ASSERT (((__dtors_start__ == __dtors_end__) || ((__dtors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .dtors is too large to fit in FLASH memory segment)
-                0x000000000002d4e4                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
+                0x000000000002d4cc                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
 
-.ctors          0x000000000002d4e4        0x0
-                0x000000000002d4e4                __ctors_start__ = .
+.ctors          0x000000000002d4cc        0x0
+                0x000000000002d4cc                __ctors_start__ = .
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
  *(.init_array)
  *(SORT_BY_NAME(.init_array.*))
-                0x000000000002d4e4                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x000000000002d4cc                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
                 0x0000000000000000                __ctors_size__ = SIZEOF (.ctors)
-                0x000000000002d4e4                __ctors_load_end__ = __ctors_end__
+                0x000000000002d4cc                __ctors_load_end__ = __ctors_end__
                 0x0000000000000001                . = ASSERT (((__ctors_start__ == __ctors_end__) || ((__ctors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ctors is too large to fit in FLASH memory segment)
-                0x000000000002d4e4                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
+                0x000000000002d4cc                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
 
-.rodata         0x000000000002d4e4     0x1264
-                0x000000000002d4e4                __rodata_start__ = .
+.rodata         0x000000000002d4cc     0x125c
+                0x000000000002d4cc                __rodata_start__ = .
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000000000002d4e4       0x17 Output/Debug/Obj/dw3000_api/SEGGER_RTT.o
- *fill*         0x000000000002d4fb        0x1 
+ .rodata        0x000000000002d4cc       0x17 Output/Debug/Obj/dw3000_api/SEGGER_RTT.o
+ *fill*         0x000000000002d4e3        0x1 
  .rodata.m_board_led_list
-                0x000000000002d4fc        0x4 Output/Debug/Obj/dw3000_api/boards.o
+                0x000000000002d4e4        0x4 Output/Debug/Obj/dw3000_api/boards.o
  .rodata.m_board_btn_list
-                0x000000000002d500        0x4 Output/Debug/Obj/dw3000_api/boards.o
- .rodata        0x000000000002d504        0x6 Output/Debug/Obj/dw3000_api/nrf_drv_clock.o
+                0x000000000002d4e8        0x4 Output/Debug/Obj/dw3000_api/boards.o
+ .rodata        0x000000000002d4ec        0x6 Output/Debug/Obj/dw3000_api/nrf_drv_clock.o
+ *fill*         0x000000000002d4f2        0x2 
+ .rodata        0x000000000002d4f4       0x10 Output/Debug/Obj/dw3000_api/nrf_drv_spi.o
+ .rodata        0x000000000002d504        0x6 Output/Debug/Obj/dw3000_api/nrfx_clock.o
  *fill*         0x000000000002d50a        0x2 
- .rodata        0x000000000002d50c       0x10 Output/Debug/Obj/dw3000_api/nrf_drv_spi.o
- .rodata        0x000000000002d51c        0x6 Output/Debug/Obj/dw3000_api/nrfx_clock.o
- *fill*         0x000000000002d522        0x2 
- .rodata        0x000000000002d524        0xf Output/Debug/Obj/dw3000_api/nrfx_gpiote.o
- *fill*         0x000000000002d533        0x1 
- .rodata        0x000000000002d534        0x4 Output/Debug/Obj/dw3000_api/nrfx_prs.o
- .rodata        0x000000000002d538        0x5 Output/Debug/Obj/dw3000_api/nrfx_spim.o
- *fill*         0x000000000002d53d        0x3 
+ .rodata        0x000000000002d50c        0xf Output/Debug/Obj/dw3000_api/nrfx_gpiote.o
+ *fill*         0x000000000002d51b        0x1 
+ .rodata        0x000000000002d51c        0x4 Output/Debug/Obj/dw3000_api/nrfx_prs.o
+ .rodata        0x000000000002d520        0x5 Output/Debug/Obj/dw3000_api/nrfx_spim.o
+ *fill*         0x000000000002d525        0x3 
  .rodata.irq_handlers.8958
-                0x000000000002d540        0xc Output/Debug/Obj/dw3000_api/nrfx_spim.o
- .rodata        0x000000000002d54c       0x70 Output/Debug/Obj/dw3000_api/app_error_weak.o
- .rodata        0x000000000002d5bc       0x15 Output/Debug/Obj/dw3000_api/nrf_log_frontend.o
- *fill*         0x000000000002d5d1        0x3 
+                0x000000000002d528        0xc Output/Debug/Obj/dw3000_api/nrfx_spim.o
+ .rodata        0x000000000002d534       0x70 Output/Debug/Obj/dw3000_api/app_error_weak.o
+ .rodata        0x000000000002d5a4       0x15 Output/Debug/Obj/dw3000_api/nrf_log_frontend.o
+ *fill*         0x000000000002d5b9        0x3 
  .rodata.m_unknown_str
-                0x000000000002d5d4       0x13 Output/Debug/Obj/dw3000_api/nrf_strerror.o
- *fill*         0x000000000002d5e7        0x1 
- .rodata        0x000000000002d5e8      0x3bd Output/Debug/Obj/dw3000_api/nrf_strerror.o
- *fill*         0x000000000002d9a5        0x3 
+                0x000000000002d5bc       0x13 Output/Debug/Obj/dw3000_api/nrf_strerror.o
+ *fill*         0x000000000002d5cf        0x1 
+ .rodata        0x000000000002d5d0      0x3bd Output/Debug/Obj/dw3000_api/nrf_strerror.o
+ *fill*         0x000000000002d98d        0x3 
  .rodata.nrf_strerror_array
-                0x000000000002d9a8      0x118 Output/Debug/Obj/dw3000_api/nrf_strerror.o
+                0x000000000002d990      0x118 Output/Debug/Obj/dw3000_api/nrf_strerror.o
  .rodata.sts_length_factors
-                0x000000000002dac0       0x10 Output/Debug/Obj/dw3000_api/dw3000_device.o
+                0x000000000002daa8       0x10 Output/Debug/Obj/dw3000_api/dw3000_device.o
  .rodata.lut_coarse_gain
-                0x000000000002dad0        0x3 Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002dad3        0x1 
+                0x000000000002dab8        0x3 Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002dabb        0x1 
  .rodata.fine_gain_lut_chan5
-                0x000000000002dad4       0x40 Output/Debug/Obj/dw3000_api/dw3000_device.o
+                0x000000000002dabc       0x40 Output/Debug/Obj/dw3000_api/dw3000_device.o
  .rodata.fine_gain_lut_chan9
-                0x000000000002db14       0x40 Output/Debug/Obj/dw3000_api/dw3000_device.o
+                0x000000000002dafc       0x40 Output/Debug/Obj/dw3000_api/dw3000_device.o
  .rodata.dwt_txp_lut_p0_b1_c5
-                0x000000000002db54       0x43 Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002db97        0x1 
+                0x000000000002db3c       0x43 Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002db7f        0x1 
  .rodata.dwt_txp_lut_p0_b7_c5
-                0x000000000002db98       0x46 Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002dbde        0x2 
+                0x000000000002db80       0x46 Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002dbc6        0x2 
  .rodata.dwt_txp_lut_p0_b1_c9
-                0x000000000002dbe0       0x4e Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002dc2e        0x2 
+                0x000000000002dbc8       0x4e Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002dc16        0x2 
  .rodata.dwt_txp_lut_p0_b7_c9
-                0x000000000002dc30       0x4b Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002dc7b        0x1 
+                0x000000000002dc18       0x4b Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002dc63        0x1 
  .rodata.dwt_cir_acc_offset
-                0x000000000002dc7c        0x6 Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002dc82        0x2 
+                0x000000000002dc64        0x6 Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002dc6a        0x2 
  .rodata.dwt_xfer3xxx.str1.4
-                0x000000000002dc84      0x15e Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002dde2        0x2 
+                0x000000000002dc6c      0x15e Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002ddca        0x2 
  .rodata.ull_readaccdata.str1.4
-                0x000000000002dde4        0x7 Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002ddeb        0x1 
+                0x000000000002ddcc        0x7 Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002ddd3        0x1 
  .rodata.dw3000_ops
-                0x000000000002ddec       0x3c Output/Debug/Obj/dw3000_api/dw3000_device.o
+                0x000000000002ddd4       0x3c Output/Debug/Obj/dw3000_api/dw3000_device.o
  .rodata.dw3000_mcps_ops
-                0x000000000002de28       0x44 Output/Debug/Obj/dw3000_api/dw3000_device.o
+                0x000000000002de10       0x44 Output/Debug/Obj/dw3000_api/dw3000_device.o
  .rodata.str1.4
-                0x000000000002de6c       0x2e Output/Debug/Obj/dw3000_api/dw3000_device.o
- *fill*         0x000000000002de9a        0x2 
+                0x000000000002de54       0x2e Output/Debug/Obj/dw3000_api/dw3000_device.o
+ *fill*         0x000000000002de82        0x2 
  .rodata.dw3000_driver
-                0x000000000002de9c       0x1c Output/Debug/Obj/dw3000_api/dw3000_device.o
-                0x000000000002de9c                dw3000_driver
+                0x000000000002de84       0x1c Output/Debug/Obj/dw3000_api/dw3000_device.o
+                0x000000000002de84                dw3000_driver
  .rodata.sts_length_factors
-                0x000000000002deb8       0x10 Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002dea0       0x10 Output/Debug/Obj/dw3000_api/dw3720_device.o
  .rodata.lut_coarse_gain
-                0x000000000002dec8        0x3 Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002decb        0x1 
+                0x000000000002deb0        0x3 Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002deb3        0x1 
  .rodata.fine_gain_lut_chan5
-                0x000000000002decc       0x40 Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002deb4       0x40 Output/Debug/Obj/dw3000_api/dw3720_device.o
  .rodata.fine_gain_lut_chan9
-                0x000000000002df0c       0x40 Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002def4       0x40 Output/Debug/Obj/dw3000_api/dw3720_device.o
  .rodata.dwt_txp_lut_p0_b1_c5
-                0x000000000002df4c       0x43 Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002df8f        0x1 
+                0x000000000002df34       0x43 Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002df77        0x1 
  .rodata.dwt_txp_lut_p0_b7_c5
-                0x000000000002df90       0x46 Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002dfd6        0x2 
+                0x000000000002df78       0x46 Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002dfbe        0x2 
  .rodata.dwt_txp_lut_p0_b1_c9
-                0x000000000002dfd8       0x4e Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002e026        0x2 
+                0x000000000002dfc0       0x4e Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002e00e        0x2 
  .rodata.dwt_txp_lut_p0_b7_c9
-                0x000000000002e028       0x4b Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002e073        0x1 
+                0x000000000002e010       0x4b Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002e05b        0x1 
  .rodata.dwt_cir_acc_offset
-                0x000000000002e074        0x6 Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002e07a        0x2 
+                0x000000000002e05c        0x6 Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002e062        0x2 
  .rodata.dwt_xfer3xxx.str1.4
-                0x000000000002e07c       0x70 Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002e064       0x70 Output/Debug/Obj/dw3000_api/dw3720_device.o
                                          0x83 (size before relaxing)
  .rodata.ull_readaccdata.str1.4
-                0x000000000002e0ec        0x7 Output/Debug/Obj/dw3000_api/dw3720_device.o
- *fill*         0x000000000002e0f3        0x1 
+                0x000000000002e0d4        0x7 Output/Debug/Obj/dw3000_api/dw3720_device.o
+ *fill*         0x000000000002e0db        0x1 
  .rodata.dw3720_ops
-                0x000000000002e0f4       0x3c Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002e0dc       0x3c Output/Debug/Obj/dw3000_api/dw3720_device.o
  .rodata.dw3720_mcps_ops
-                0x000000000002e130       0x44 Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002e118       0x44 Output/Debug/Obj/dw3000_api/dw3720_device.o
  .rodata.str1.4
-                0x000000000002e174       0x2e Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002e15c       0x2e Output/Debug/Obj/dw3000_api/dw3720_device.o
  .rodata.dw3720_driver
-                0x000000000002e174       0x1c Output/Debug/Obj/dw3000_api/dw3720_device.o
-                0x000000000002e174                dw3720_driver
+                0x000000000002e15c       0x1c Output/Debug/Obj/dw3000_api/dw3720_device.o
+                0x000000000002e15c                dw3720_driver
  .rodata.lut_log2
-                0x000000000002e190       0x42 Output/Debug/Obj/dw3000_api/qmath.o
- *fill*         0x000000000002e1d2        0x2 
+                0x000000000002e178       0x42 Output/Debug/Obj/dw3000_api/qmath.o
+ *fill*         0x000000000002e1ba        0x2 
  .rodata.crcTable
-                0x000000000002e1d4      0x100 Output/Debug/Obj/dw3000_api/deca_compat.o
- .rodata        0x000000000002e2d4      0x148 Output/Debug/Obj/dw3000_api/simple_tx.o
- .rodata        0x000000000002e41c       0x7e Output/Debug/Obj/dw3000_api/example_info.o
- *fill*         0x000000000002e49a        0x2 
+                0x000000000002e1bc      0x100 Output/Debug/Obj/dw3000_api/deca_compat.o
+ .rodata        0x000000000002e2bc      0x148 Output/Debug/Obj/dw3000_api/simple_tx.o
+ .rodata        0x000000000002e404       0x7e Output/Debug/Obj/dw3000_api/example_info.o
+ *fill*         0x000000000002e482        0x2 
  .rodata.dw3000_spi_fct
-                0x000000000002e49c       0x14 Output/Debug/Obj/dw3000_api/deca_probe_interface.o
+                0x000000000002e484       0x14 Output/Debug/Obj/dw3000_api/deca_probe_interface.o
  .rodata.dw3000_probe_interf
-                0x000000000002e4b0       0x14 Output/Debug/Obj/dw3000_api/deca_probe_interface.o
-                0x000000000002e4b0                dw3000_probe_interf
- *fill*         0x000000000002e4c4        0xc 
+                0x000000000002e498       0x14 Output/Debug/Obj/dw3000_api/deca_probe_interface.o
+                0x000000000002e498                dw3000_probe_interf
+ *fill*         0x000000000002e4ac        0x4 
  .rodata.delay_machine_code.7957
-                0x000000000002e4d0        0x6 Output/Debug/Obj/dw3000_api/deca_sleep.o
- *fill*         0x000000000002e4d6        0x2 
- .rodata        0x000000000002e4d8       0x87 Output/Debug/Obj/dw3000_api/deca_spi.o
- *fill*         0x000000000002e55f        0x1 
+                0x000000000002e4b0        0x6 Output/Debug/Obj/dw3000_api/deca_sleep.o
+ *fill*         0x000000000002e4b6        0x2 
+ .rodata        0x000000000002e4b8       0x87 Output/Debug/Obj/dw3000_api/deca_spi.o
+ *fill*         0x000000000002e53f        0x1 
  .rodata.delay_machine_code.7957
-                0x000000000002e560        0x6 Output/Debug/Obj/dw3000_api/deca_spi.o
- *fill*         0x000000000002e566        0x2 
- .rodata        0x000000000002e568       0x7b Output/Debug/Obj/dw3000_api/port.o
- *fill*         0x000000000002e5e3        0xd 
+                0x000000000002e540        0x6 Output/Debug/Obj/dw3000_api/deca_spi.o
+ *fill*         0x000000000002e546        0x2 
+ .rodata        0x000000000002e548       0x7b Output/Debug/Obj/dw3000_api/port.o
+ *fill*         0x000000000002e5c3        0xd 
  .rodata.delay_machine_code.7957
-                0x000000000002e5f0        0x6 Output/Debug/Obj/dw3000_api/port.o
- *fill*         0x000000000002e5f6        0x2 
- .rodata        0x000000000002e5f8        0x3 Output/Debug/Obj/dw3000_api/main.o
- *fill*         0x000000000002e5fb        0x5 
+                0x000000000002e5d0        0x6 Output/Debug/Obj/dw3000_api/port.o
+ *fill*         0x000000000002e5d6        0x2 
+ .rodata        0x000000000002e5d8        0x3 Output/Debug/Obj/dw3000_api/main.o
+ *fill*         0x000000000002e5db        0x5 
  .rodata.delay_machine_code.7957
-                0x000000000002e600        0x6 Output/Debug/Obj/dw3000_api/main.o
- *fill*         0x000000000002e606        0x2 
+                0x000000000002e5e0        0x6 Output/Debug/Obj/dw3000_api/main.o
+ *fill*         0x000000000002e5e6        0x2 
  .rodata.libc.__RAL_hex_lc
-                0x000000000002e608       0x10 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002e608                __RAL_hex_lc
+                0x000000000002e5e8       0x10 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002e5e8                __RAL_hex_lc
  .rodata.libc.__RAL_hex_uc
-                0x000000000002e618       0x10 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002e618                __RAL_hex_uc
+                0x000000000002e5f8       0x10 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002e5f8                __RAL_hex_uc
  .rodata.libc.__aeabi_EDOM
-                0x000000000002e628        0x4 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002e628                __aeabi_EDOM
+                0x000000000002e608        0x4 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002e608                __aeabi_EDOM
  .rodata.libc.__aeabi_ERANGE
-                0x000000000002e62c        0x4 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
-                0x000000000002e62c                __aeabi_ERANGE
+                0x000000000002e60c        0x4 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002e60c                __aeabi_ERANGE
  .rodata.libc.power
-                0x000000000002e630       0x48 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
+                0x000000000002e610       0x48 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
  .rodata.libc.__vfprintf_int.str1.4
-                0x000000000002e678        0x7 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
- *fill*         0x000000000002e67f        0x1 
+                0x000000000002e658        0x7 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+ *fill*         0x000000000002e65f        0x1 
  .rodata.libc.__vfprintf_float_long.str1.4
-                0x000000000002e680       0x28 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x000000000002e660       0x28 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
  .rodata.libc.ipow10
-                0x000000000002e6a8       0xa0 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
-                0x000000000002e748                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
-                0x0000000000001264                __rodata_size__ = SIZEOF (.rodata)
-                0x000000000002e748                __rodata_load_end__ = __rodata_end__
+                0x000000000002e688       0xa0 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.10a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libvfprintf.o)
+                0x000000000002e728                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
+                0x000000000000125c                __rodata_size__ = SIZEOF (.rodata)
+                0x000000000002e728                __rodata_load_end__ = __rodata_end__
                 0x0000000000000001                . = ASSERT (((__rodata_start__ == __rodata_end__) || ((__rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .rodata is too large to fit in FLASH memory segment)
-                0x000000000002e748                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
+                0x000000000002e728                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
 
-.ARM.exidx      0x000000000002e748        0x0
-                0x000000000002e748                __ARM.exidx_start__ = .
-                0x000000000002e748                __exidx_start = __ARM.exidx_start__
+.ARM.exidx      0x000000000002e728        0x0
+                0x000000000002e728                __ARM.exidx_start__ = .
+                0x000000000002e728                __exidx_start = __ARM.exidx_start__
  *(.ARM.exidx .ARM.exidx.*)
-                0x000000000002e748                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
+                0x000000000002e728                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
                 0x0000000000000000                __ARM.exidx_size__ = SIZEOF (.ARM.exidx)
-                0x000000000002e748                __exidx_end = __ARM.exidx_end__
-                0x000000000002e748                __ARM.exidx_load_end__ = __ARM.exidx_end__
+                0x000000000002e728                __exidx_end = __ARM.exidx_end__
+                0x000000000002e728                __ARM.exidx_load_end__ = __ARM.exidx_end__
                 0x0000000000000001                . = ASSERT (((__ARM.exidx_start__ == __ARM.exidx_end__) || ((__ARM.exidx_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ARM.exidx is too large to fit in FLASH memory segment)
-                0x000000000002e748                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
+                0x000000000002e728                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
 
-.fast           0x0000000020000000        0x0 load address 0x000000000002e748
+.fast           0x0000000020000000        0x0 load address 0x000000000002e728
                 0x0000000020000000                __fast_start__ = .
  *(.fast .fast.*)
                 0x0000000020000000                __fast_end__ = (__fast_start__ + SIZEOF (.fast))
                 0x0000000000000000                __fast_size__ = SIZEOF (.fast)
-                0x000000000002e748                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
+                0x000000000002e728                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
                 0x0000000000000001                . = ASSERT (((__fast_load_start__ == __fast_load_end__) || ((__fast_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .fast is too large to fit in FLASH memory segment)
 
 .fast_run       0x0000000020000000        0x0
@@ -15561,9 +15561,9 @@ Linker script and memory map
                 0x0000000000000000                __fast_run_size__ = SIZEOF (.fast_run)
                 0x0000000020000000                __fast_run_load_end__ = __fast_run_end__
                 0x0000000000000001                . = ASSERT (((__fast_run_start__ == __fast_run_end__) || ((__fast_run_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .fast_run is too large to fit in RAM1 memory segment)
-                0x000000000002e748                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
+                0x000000000002e728                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
 
-.data           0x0000000020000000       0x50 load address 0x000000000002e748
+.data           0x0000000020000000       0x50 load address 0x000000000002e728
                 0x0000000020000000                __data_start__ = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data.SystemCoreClock
@@ -15599,13 +15599,13 @@ Linker script and memory map
                 0x000000002000004c                SPI2
                 0x0000000020000050                __data_end__ = (__data_start__ + SIZEOF (.data))
                 0x0000000000000050                __data_size__ = SIZEOF (.data)
-                0x000000000002e798                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+                0x000000000002e778                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
 
 .igot.plt       0x0000000100000000        0x0
  .igot.plt      0x0000000100000000        0x0 Output/Debug/Obj/dw3000_api/SEGGER_RTT.o
                 0x0000000000000001                . = ASSERT (((__data_load_start__ == __data_load_end__) || ((__data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .data is too large to fit in FLASH memory segment)
 
-.data_run       0x0000000020000000       0x50 load address 0x000000000002e748
+.data_run       0x0000000020000000       0x50 load address 0x000000000002e728
                 0x0000000020000000                __data_run_start__ = .
                 0x0000000020000050                . = MAX ((__data_run_start__ + SIZEOF (.data)), .)
  *fill*         0x0000000020000000       0x50 
@@ -15613,16 +15613,16 @@ Linker script and memory map
                 0x0000000000000050                __data_run_size__ = SIZEOF (.data_run)
                 0x0000000020000050                __data_run_load_end__ = __data_run_end__
                 0x0000000000000001                . = ASSERT (((__data_run_start__ == __data_run_end__) || ((__data_run_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .data_run is too large to fit in RAM1 memory segment)
-                0x000000000002e798                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
+                0x000000000002e778                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
 
-.tdata          0x0000000020000050        0x0 load address 0x000000000002e798
+.tdata          0x0000000020000050        0x0 load address 0x000000000002e778
                 0x0000000020000050                __tdata_start__ = .
  *(.tdata .tdata.*)
                 0x0000000020000050                __tdata_end__ = (__tdata_start__ + SIZEOF (.tdata))
                 0x0000000000000000                __tdata_size__ = SIZEOF (.tdata)
-                0x000000000002e798                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
-                0x000000000002e798                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
-                0x000000000002e798                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
+                0x000000000002e778                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
+                0x000000000002e778                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
+                0x000000000002e778                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
                 0x0000000000000001                . = ASSERT (((__tdata_load_start__ == __tdata_load_end__) || ((__tdata_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .tdata is too large to fit in FLASH memory segment)
 
 .tdata_run      0x0000000020000050        0x0
@@ -16375,7 +16375,7 @@ LOAD linker stubs
  .debug_macro   0x0000000000026593      0x2db Output/Debug/Obj/dw3000_api/port.o
  .debug_macro   0x000000000002686e      0x313 Output/Debug/Obj/dw3000_api/main.o
 
-.debug_line     0x0000000000000000    0x1daef
+.debug_line     0x0000000000000000    0x1dae5
  .debug_line    0x0000000000000000      0x932 Output/Debug/Obj/dw3000_api/SEGGER_RTT.o
  .debug_line    0x0000000000000932      0x94b Output/Debug/Obj/dw3000_api/boards.o
  .debug_line    0x000000000000127d     0x362b Output/Debug/Obj/dw3000_api/system_nrf52840.o
@@ -16400,21 +16400,21 @@ LOAD linker stubs
  .debug_line    0x0000000000016767      0x21b Output/Debug/Obj/dw3000_api/qmath.o
  .debug_line    0x0000000000016982     0x1fb6 Output/Debug/Obj/dw3000_api/deca_compat.o
  .debug_line    0x0000000000018938      0x22f Output/Debug/Obj/dw3000_api/deca_rsl.o
- .debug_line    0x0000000000018b67      0x994 Output/Debug/Obj/dw3000_api/simple_tx.o
- .debug_line    0x00000000000194fb      0x141 Output/Debug/Obj/dw3000_api/example_info.o
- .debug_line    0x000000000001963c      0xc3a Output/Debug/Obj/dw3000_api/shared_functions.o
- .debug_line    0x000000000001a276      0x160 Output/Debug/Obj/dw3000_api/config_options.o
- .debug_line    0x000000000001a3d6      0x700 Output/Debug/Obj/dw3000_api/deca_mutex.o
- .debug_line    0x000000000001aad6      0x6fa Output/Debug/Obj/dw3000_api/deca_probe_interface.o
- .debug_line    0x000000000001b1d0      0x724 Output/Debug/Obj/dw3000_api/deca_sleep.o
- .debug_line    0x000000000001b8f4      0xbef Output/Debug/Obj/dw3000_api/deca_spi.o
- .debug_line    0x000000000001c4e3      0xa39 Output/Debug/Obj/dw3000_api/port.o
- .debug_line    0x000000000001cf1c      0x826 Output/Debug/Obj/dw3000_api/main.o
- .debug_line    0x000000000001d742       0xc8 Output/Debug/Obj/dw3000_api/ses_startup_nrf52840.o
- .debug_line    0x000000000001d80a       0xe7 Output/Debug/Obj/dw3000_api/ses_startup_nrf_common.o
- .debug_line    0x000000000001d8f1      0x1fe Output/Debug/Obj/dw3000_api/thumb_crt0.o
+ .debug_line    0x0000000000018b67      0x98a Output/Debug/Obj/dw3000_api/simple_tx.o
+ .debug_line    0x00000000000194f1      0x141 Output/Debug/Obj/dw3000_api/example_info.o
+ .debug_line    0x0000000000019632      0xc3a Output/Debug/Obj/dw3000_api/shared_functions.o
+ .debug_line    0x000000000001a26c      0x160 Output/Debug/Obj/dw3000_api/config_options.o
+ .debug_line    0x000000000001a3cc      0x700 Output/Debug/Obj/dw3000_api/deca_mutex.o
+ .debug_line    0x000000000001aacc      0x6fa Output/Debug/Obj/dw3000_api/deca_probe_interface.o
+ .debug_line    0x000000000001b1c6      0x724 Output/Debug/Obj/dw3000_api/deca_sleep.o
+ .debug_line    0x000000000001b8ea      0xbef Output/Debug/Obj/dw3000_api/deca_spi.o
+ .debug_line    0x000000000001c4d9      0xa39 Output/Debug/Obj/dw3000_api/port.o
+ .debug_line    0x000000000001cf12      0x826 Output/Debug/Obj/dw3000_api/main.o
+ .debug_line    0x000000000001d738       0xc8 Output/Debug/Obj/dw3000_api/ses_startup_nrf52840.o
+ .debug_line    0x000000000001d800       0xe7 Output/Debug/Obj/dw3000_api/ses_startup_nrf_common.o
+ .debug_line    0x000000000001d8e7      0x1fe Output/Debug/Obj/dw3000_api/thumb_crt0.o
 
-.debug_str      0x0000000000000000    0xbf89e
+.debug_str      0x0000000000000000    0xbf89f
  .debug_str     0x0000000000000000     0x42b0 Output/Debug/Obj/dw3000_api/SEGGER_RTT.o
                                        0x43f9 (size before relaxing)
  .debug_str     0x00000000000042b0    0x8a2c0 Output/Debug/Obj/dw3000_api/boards.o
@@ -16463,31 +16463,31 @@ LOAD linker stubs
                                        0x8e12 (size before relaxing)
  .debug_str     0x00000000000bd2b1      0x332 Output/Debug/Obj/dw3000_api/deca_rsl.o
                                        0x5271 (size before relaxing)
- .debug_str     0x00000000000bd5e3     0x1645 Output/Debug/Obj/dw3000_api/simple_tx.o
-                                      0x94184 (size before relaxing)
- .debug_str     0x00000000000bec28       0xb1 Output/Debug/Obj/dw3000_api/example_info.o
-                                       0x2e7b (size before relaxing)
- .debug_str     0x00000000000becd9      0x25f Output/Debug/Obj/dw3000_api/shared_functions.o
-                                      0x93f5a (size before relaxing)
- .debug_str     0x00000000000bef38       0x6d Output/Debug/Obj/dw3000_api/config_options.o
-                                       0x590e (size before relaxing)
- .debug_str     0x00000000000befa5       0xa5 Output/Debug/Obj/dw3000_api/deca_mutex.o
+ .debug_str     0x00000000000bd5e3     0x1646 Output/Debug/Obj/dw3000_api/simple_tx.o
+                                      0x94185 (size before relaxing)
+ .debug_str     0x00000000000bec29       0xb1 Output/Debug/Obj/dw3000_api/example_info.o
+                                       0x2e7e (size before relaxing)
+ .debug_str     0x00000000000becda      0x25f Output/Debug/Obj/dw3000_api/shared_functions.o
+                                      0x93f5d (size before relaxing)
+ .debug_str     0x00000000000bef39       0x6d Output/Debug/Obj/dw3000_api/config_options.o
+                                       0x5911 (size before relaxing)
+ .debug_str     0x00000000000befa6       0xa5 Output/Debug/Obj/dw3000_api/deca_mutex.o
                                       0x92d48 (size before relaxing)
- .debug_str     0x00000000000bf04a       0x9d Output/Debug/Obj/dw3000_api/deca_probe_interface.o
+ .debug_str     0x00000000000bf04b       0x9d Output/Debug/Obj/dw3000_api/deca_probe_interface.o
                                       0x949d4 (size before relaxing)
- .debug_str     0x00000000000bf0e7       0xe6 Output/Debug/Obj/dw3000_api/deca_sleep.o
+ .debug_str     0x00000000000bf0e8       0xe6 Output/Debug/Obj/dw3000_api/deca_sleep.o
                                       0x92d92 (size before relaxing)
- .debug_str     0x00000000000bf1cd      0x351 Output/Debug/Obj/dw3000_api/deca_spi.o
+ .debug_str     0x00000000000bf1ce      0x351 Output/Debug/Obj/dw3000_api/deca_spi.o
                                       0x93cc9 (size before relaxing)
- .debug_str     0x00000000000bf51e      0x189 Output/Debug/Obj/dw3000_api/port.o
+ .debug_str     0x00000000000bf51f      0x189 Output/Debug/Obj/dw3000_api/port.o
                                       0x9206a (size before relaxing)
- .debug_str     0x00000000000bf6a7       0x80 Output/Debug/Obj/dw3000_api/main.o
+ .debug_str     0x00000000000bf6a8       0x80 Output/Debug/Obj/dw3000_api/main.o
                                       0x9238e (size before relaxing)
- .debug_str     0x00000000000bf727       0x99 Output/Debug/Obj/dw3000_api/ses_startup_nrf52840.o
+ .debug_str     0x00000000000bf728       0x99 Output/Debug/Obj/dw3000_api/ses_startup_nrf52840.o
                                          0xf8 (size before relaxing)
- .debug_str     0x00000000000bf7c0       0x8d Output/Debug/Obj/dw3000_api/ses_startup_nrf_common.o
+ .debug_str     0x00000000000bf7c1       0x8d Output/Debug/Obj/dw3000_api/ses_startup_nrf_common.o
                                          0xfa (size before relaxing)
- .debug_str     0x00000000000bf84d       0x51 Output/Debug/Obj/dw3000_api/thumb_crt0.o
+ .debug_str     0x00000000000bf84e       0x51 Output/Debug/Obj/dw3000_api/thumb_crt0.o
                                          0xbe (size before relaxing)
 
 .comment        0x0000000000000000       0x24

@@ -1,0 +1,8 @@
+r
+h
+erase
+loadfile C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\nrf52840_dwm3000_5nines_TX_10000_20261006_162219.hex
+r
+g
+sleep 2000
+exit

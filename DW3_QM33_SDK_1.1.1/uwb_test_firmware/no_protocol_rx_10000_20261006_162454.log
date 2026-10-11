@@ -1,0 +1,12 @@
+P2P 5NINES RX v1.0
+TEST START target=10000 channel=5
+RX_PROGRESS total=1010 valid=1000 lost=10 dup=0 ooo=0 invalid=0 phy_err=9 crc_err=0 loss_ppm=9900
+RX_PROGRESS total=2022 valid=2000 lost=22 dup=0 ooo=0 invalid=0 phy_err=20 crc_err=0 loss_ppm=10880
+RX_PROGRESS total=3033 valid=3000 lost=33 dup=0 ooo=0 invalid=0 phy_err=29 crc_err=0 loss_ppm=10880
+RX_PROGRESS total=4043 valid=4000 lost=43 dup=0 ooo=0 invalid=0 phy_err=38 crc_err=0 loss_ppm=10635
+RX_PROGRESS total=5055 valid=5000 lost=55 dup=0 ooo=0 invalid=0 phy_err=49 crc_err=0 loss_ppm=10880
+RX_PROGRESS total=6064 valid=6000 lost=64 dup=0 ooo=0 invalid=0 phy_err=57 crc_err=0 loss_ppm=10554
+RX_PROGRESS total=7073 valid=7000 lost=73 dup=0 ooo=0 invalid=0 phy_err=65 crc_err=0 loss_ppm=10320
+RX_PROGRESS total=8085 valid=8000 lost=85 dup=0 ooo=0 invalid=0 phy_err=76 crc_err=0 loss_ppm=10513
+RX_PROGRESS total=9094 valid=9000 lost=94 dup=0 ooo=0 invalid=0 phy_err=84 crc_err=0 loss_ppm=10336
+RX_COMPLETE RESULT=FAIL target=10000 end_seq=10000 success=9898 failed=102 lost=102 invalid_failed=0 success_ppm=989800 dup=0 ooo=0 invalid=0 phy_err=91 crc_err=0 tx_elapsed_us=4731414 payload_bytes=21 goodput_bps=351452 tx_event_avg_us=257 start_gap_min_us=472 start_gap_max_us=572

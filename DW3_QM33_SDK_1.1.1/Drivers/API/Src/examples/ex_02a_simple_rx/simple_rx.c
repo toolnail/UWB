@@ -27,10 +27,11 @@ extern void test_run_info(unsigned char *data);
 /* Example application name */
 #define APP_NAME "P2P 5NINES RX v1.0"
 
+/* Keep these byte offsets aligned with ex_01a_simple_tx/simple_tx.c. */
 #define TEST_FRAME_BYTES 32U
-#define TEST_SEQUENCE_IDX 6U
-#define TEST_TYPE_IDX 10U
-#define TEST_PAYLOAD_IDX 11U
+#define TEST_SEQUENCE_IDX 1U
+#define TEST_TYPE_IDX 5U
+#define TEST_PAYLOAD_IDX 6U
 #define TEST_APP_PAYLOAD_BYTES (TEST_FRAME_BYTES - TEST_PAYLOAD_IDX)
 #define TEST_TIMING_IDX 24U
 #define TEST_TIMING_BYTES 8U
@@ -63,9 +64,7 @@ static int validate_test_frame(const uint8_t *frame, uint32_t sequence, uint8_t 
 {
     uint32_t i;
 
-    if ((frame[0] != 0xC5) || (frame[1] != (uint8_t)sequence)
-        || (frame[2] != '5') || (frame[3] != 'N') || (frame[4] != 'I') || (frame[5] != 'N')
-        || (frame_type > TEST_TYPE_END))
+    if ((frame[0] != 0xC5) || (frame_type > TEST_TYPE_END))
     {
         return 0;
     }
@@ -273,11 +272,8 @@ int simple_rx(void)
                 {
                     invalid_count++;
                     if ((rx_buffer[0] == 0xC5U) &&
-                        (rx_buffer[2] == '5') && (rx_buffer[3] == 'N') &&
-                        (rx_buffer[4] == 'I') && (rx_buffer[5] == 'N') &&
                         (frame_type == TEST_TYPE_DATA) &&
-                        (sequence < TEST_PACKET_TARGET) &&
-                        (rx_buffer[1] == (uint8_t)sequence))
+                        (sequence < TEST_PACKET_TARGET))
                     {
                         mark_sequence_invalid(sequence);
                     }

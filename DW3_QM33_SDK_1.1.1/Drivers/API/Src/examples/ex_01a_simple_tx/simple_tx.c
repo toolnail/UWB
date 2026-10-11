@@ -31,16 +31,15 @@ extern void test_run_info(unsigned char *data);
 
 /* Five-nines packet-delivery experiment frame (FCS is appended by the DW IC):
  * byte 0       : 802.15.4e blink frame type.
- * byte 1       : low 8 bits of the sequence number.
- * bytes 2..5  : experiment magic "5NIN".
- * bytes 6..9  : 32-bit little-endian sequence number.
- * byte 10      : 0 for data, 1 for end-of-test marker.
- * bytes 11..31: deterministic payload checked by the receiver.
+ * bytes 1..4  : 32-bit little-endian sequence number.
+ * byte 5       : 0 for data, 1 for end-of-test marker.
+ * bytes 6..31 : 26-byte deterministic payload checked by the receiver.
+ * The end marker uses bytes 24..31 to carry the TX duration instead.
  */
 #define TEST_FRAME_BYTES 32U
-#define TEST_SEQUENCE_IDX 6U
-#define TEST_TYPE_IDX 10U
-#define TEST_PAYLOAD_IDX 11U
+#define TEST_SEQUENCE_IDX 1U
+#define TEST_TYPE_IDX 5U
+#define TEST_PAYLOAD_IDX 6U
 #define TEST_TIMING_IDX 24U
 #define TEST_TIMING_BYTES 8U
 #define TEST_TYPE_DATA 0U
@@ -53,9 +52,9 @@ static uint8_t tx_msg[TEST_FRAME_BYTES] = { 0 };
 
 #define FRAME_LENGTH (sizeof(tx_msg) + FCS_LEN) // The real length that is going to be transmitted
 
-/* Inter-frame delay period, in milliseconds. */
-#ifndef TX_DELAY_MS
-#define TX_DELAY_MS 10U
+/* Inter-frame delay period, in microseconds. */
+#ifndef TX_DELAY_US
+#define TX_DELAY_US 500U
 #endif
 
 /* Values for the PG_DELAY and TX_POWER registers reflect the bandwidth and power of the spectrum at the current
@@ -68,11 +67,6 @@ static void prepare_test_frame(uint32_t sequence, uint8_t frame_type)
     uint32_t i;
 
     tx_msg[0] = 0xC5;
-    tx_msg[1] = (uint8_t)sequence;
-    tx_msg[2] = '5';
-    tx_msg[3] = 'N';
-    tx_msg[4] = 'I';
-    tx_msg[5] = 'N';
     tx_msg[TEST_SEQUENCE_IDX + 0U] = (uint8_t)(sequence >> 0U);
     tx_msg[TEST_SEQUENCE_IDX + 1U] = (uint8_t)(sequence >> 8U);
     tx_msg[TEST_SEQUENCE_IDX + 2U] = (uint8_t)(sequence >> 16U);
@@ -175,8 +169,8 @@ int simple_tx(void)
     /* Configure the TX spectrum parameters (power PG delay and PG Count) */
     dwt_configuretxrf(&txconfig_options);
 
-    snprintf(report, sizeof(report), "TEST START target=%lu interval_ms=%u channel=%u",
-             (unsigned long)TEST_PACKET_TARGET, (unsigned int)TX_DELAY_MS, (unsigned int)config_options.chan);
+    snprintf(report, sizeof(report), "TEST START target=%lu interval_us=%u channel=%u",
+             (unsigned long)TEST_PACKET_TARGET, (unsigned int)TX_DELAY_US, (unsigned int)config_options.chan);
     test_run_info((unsigned char *)report);
 
     /* Send the numbered test frames, then repeat an end marker so the receiver
@@ -239,7 +233,7 @@ int simple_tx(void)
         }
 
         /* Execute a delay between transmissions. */
-        Sleep(TX_DELAY_MS);
+        deca_usleep(TX_DELAY_US);
     }
 
     prepare_test_frame(TEST_PACKET_TARGET, TEST_TYPE_END);
@@ -263,7 +257,7 @@ int simple_tx(void)
         waitforsysstatus(NULL, NULL, DWT_INT_TXFRS_BIT_MASK, 0);
         dwt_writesysstatuslo(DWT_INT_TXFRS_BIT_MASK);
         end_marker_count++;
-        Sleep(TX_DELAY_MS);
+        deca_usleep(TX_DELAY_US);
     }
 
     snprintf(report, sizeof(report), "TX_COMPLETE sent=%lu end_markers=%u",

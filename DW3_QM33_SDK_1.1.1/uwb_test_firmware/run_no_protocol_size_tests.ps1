@@ -1,6 +1,6 @@
 param(
     [int[]] $Targets = @(100000, 200000, 300000, 400000),
-    [int] $IntervalMs = 1
+    [int] $IntervalUs = 500
 )
 
 $ErrorActionPreference = 'Stop'
@@ -18,7 +18,7 @@ $buildMap = Join-Path $workspace 'Drivers\API\Build_Platforms\nRF52840-DK\Output
 $session = Get-Date -Format 'yyyyMMdd_HHmmss'
 $resultCsv = Join-Path $PSScriptRoot "no_protocol_sizes_${session}.csv"
 $selectionOriginal = [System.IO.File]::ReadAllText($selectionPath)
-$selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS)[^\r\n]*\r?\n', '')
+$selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US)[^\r\n]*\r?\n', '')
 $selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*(?=\r?$)', '//#define TEST_SIMPLE_$1')
 $selectionOriginal = [regex]::new('(?m)^//#define TEST_SIMPLE_RX(?=\r?$)').Replace($selectionOriginal, '#define TEST_SIMPLE_RX', 1)
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
@@ -36,8 +36,8 @@ function Set-ExampleSelection {
     param([ValidateSet('TX', 'RX')] [string] $Role, [int] $Target)
 
     $content = [regex]::Replace($selectionOriginal, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*(?=\r?$)', '//#define TEST_SIMPLE_$1')
-    $content = [regex]::Replace($content, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS)[^\r\n]*\r?\n', '')
-    $macros = "#define TEST_SIMPLE_$Role`r`n#define TEST_PACKET_TARGET ${Target}UL`r`n#define TX_DELAY_MS ${IntervalMs}U`r`n"
+    $content = [regex]::Replace($content, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US)[^\r\n]*\r?\n', '')
+    $macros = "#define TEST_SIMPLE_$Role`r`n#define TEST_PACKET_TARGET ${Target}UL`r`n#define TX_DELAY_US ${IntervalUs}U`r`n"
     $content = [regex]::new('#ifdef __cplusplus').Replace($content, "$macros`r`n#ifdef __cplusplus", 1)
     $activeRoles = [regex]::Matches($content, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*\r?$')
     if ($activeRoles.Count -ne 1 -or $activeRoles[0].Groups[1].Value -ne $Role) {
@@ -169,7 +169,7 @@ try {
     foreach ($target in $Targets) {
         if ($target -le 0) { throw "Target must be positive: $target" }
         $runTag = "${target}_${session}"
-        Write-Output "[$(Get-Date -Format s)] START no-protocol target=$target interval_ms=$IntervalMs"
+        Write-Output "[$(Get-Date -Format s)] START no-protocol target=$target interval_us=$IntervalUs"
         Stop-PreviousTx -Target $target
 
         Set-ExampleSelection -Role RX -Target $target
@@ -192,7 +192,7 @@ try {
         if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern 'RX_PROGRESS' -TimeoutSeconds 180)) {
             throw "No received packets after TX flash for target=$target. See $($activeRxLogger.Data)"
         }
-        # Radio transmission and firmware polling add time beyond Sleep(IntervalMs).
+        # Radio transmission and firmware polling add time beyond deca_usleep(IntervalUs).
         $timeout = [int][math]::Ceiling($target * 0.02) + 300
         if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern 'RX_COMPLETE' -TimeoutSeconds $timeout)) {
             throw "Timed out waiting for RX_COMPLETE target=$target. See $($activeRxLogger.Data)"
@@ -215,7 +215,7 @@ try {
         $txElapsedUs = [int64]$rx['tx_elapsed_us']
         $payloadBytes = [int64]$rx['payload_bytes']
         $goodputBps = [int64]$rx['goodput_bps']
-        if ($txElapsedUs -le 0 -or $payloadBytes -ne 21) {
+        if ($txElapsedUs -le 0 -or $payloadBytes -ne 26) {
             throw "Missing on-device TX elapsed time for target=$target. RX=$rxLine"
         }
         $expectedGoodputBps = [math]::Round($success * $payloadBytes * 8.0 * 1000000.0 / $txElapsedUs)
@@ -225,7 +225,7 @@ try {
 
         $row = [pscustomobject]@{
             protocol = 'none'
-            interval_ms = $IntervalMs
+            interval_us = $IntervalUs
             target_packets = $target
             tx_packets_confirmed = [int64]$rx['end_seq']
             successful_unique_packets = $success
