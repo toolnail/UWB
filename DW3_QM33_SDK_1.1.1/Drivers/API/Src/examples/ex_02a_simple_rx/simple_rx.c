@@ -23,9 +23,10 @@
 #if defined(TEST_SIMPLE_RX)
 
 extern void test_run_info(unsigned char *data);
+#include "rx_signal_metrics.h"
 
 /* Example application name */
-#define APP_NAME "P2P 5NINES RX v1.0"
+#define APP_NAME "P2P 5NINES RX SIGNAL v1.1"
 
 /* Keep these byte offsets aligned with ex_01a_simple_tx/simple_tx.c. */
 #define TEST_FRAME_BYTES 32U
@@ -139,6 +140,7 @@ static void print_rx_complete_report(char *report, size_t report_size,
                                      uint32_t phy_errors, uint32_t crc_errors,
                                      uint32_t end_sequence, uint64_t tx_elapsed_us)
 {
+    rx_signal_report("RX_SIGNAL_COMPLETE", report, report_size);
     uint32_t failed = TEST_PACKET_TARGET - valid;
     uint32_t invalid_failed = count_invalid_failed();
     /* PHY and invalid-frame events have no one-to-one packet identity.
@@ -180,7 +182,7 @@ int simple_rx(void)
     uint32_t crc_error_count = 0;
     uint32_t last_report_bucket = 0;
     int final_report_printed = 0;
-    char report[320];
+    char report[384];
 
     /* Print application name on the console. */
     test_run_info((unsigned char *)APP_NAME);
@@ -218,6 +220,12 @@ int simple_rx(void)
         test_run_info((unsigned char *)"CONFIG FAILED     ");
         while (1) { };
     }
+
+    rx_signal_init();
+    snprintf(report, sizeof(report), "RX_SIGNAL_CONFIG enabled=%u log_every=%lu history_size=%u source=IPATOV",
+             (unsigned int)TEST_SIGNAL_ENABLE, (unsigned long)TEST_SIGNAL_LOG_EVERY,
+             (unsigned int)TEST_SIGNAL_HISTORY_SIZE);
+    test_run_info((unsigned char *)report);
 
     snprintf(report, sizeof(report), "TEST START target=%lu channel=%u",
              (unsigned long)TEST_PACKET_TARGET, (unsigned int)config_options.chan);
@@ -308,6 +316,10 @@ int simple_rx(void)
                     if (mark_sequence_received(sequence))
                     {
                         valid_count++;
+                        if (!final_report_printed)
+                        {
+                            rx_signal_measure(sequence, valid_count, report, sizeof(report));
+                        }
                         if (sequence < high_water) { out_of_order_count++; }
                         if (sequence >= high_water) { high_water = sequence + 1U; }
                     }
@@ -325,6 +337,7 @@ int simple_rx(void)
                                     duplicate_count, out_of_order_count,
                                     invalid_count, phy_error_count,
                                     crc_error_count);
+                    rx_signal_report("RX_SIGNAL_STATS", report, sizeof(report));
                 }
             }
             else

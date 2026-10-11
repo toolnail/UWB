@@ -1,0 +1,18 @@
+# Generated embedded build files.
+/Drivers/API/Build_Platforms/nRF52840-DK/Output/
+
+# Experiment outputs; implementation scripts and documentation remain visible.
+/uwb_test_firmware/*.log
+/uwb_test_firmware/*.err
+/uwb_test_firmware/*.csv
+/uwb_test_firmware/*.jlink
+/uwb_test_firmware/*.hex
+/uwb_test_firmware/*.elf
+/uwb_test_firmware/*.map
+/uwb_test_firmware/*.pid
+/uwb_test_firmware/rssi_repeat_*.json
+/uwb_test_firmware/repeat_*/
+
+# Temporary reports and previews.
+/.tmp_uwb_interval_summary/
+/outputs/

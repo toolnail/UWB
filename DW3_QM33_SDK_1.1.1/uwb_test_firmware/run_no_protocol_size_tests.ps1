@@ -1,6 +1,8 @@
 param(
     [int[]] $Targets = @(100000, 200000, 300000, 400000),
-    [int] $IntervalUs = 500
+    [int] $IntervalUs = 500,
+    [ValidateRange(0, 4294967295)] [long] $SignalLogEvery = 1000,
+    [switch] $DisableSignal
 )
 
 $ErrorActionPreference = 'Stop'
@@ -18,11 +20,12 @@ $buildMap = Join-Path $workspace 'Drivers\API\Build_Platforms\nRF52840-DK\Output
 $session = Get-Date -Format 'yyyyMMdd_HHmmss'
 $resultCsv = Join-Path $PSScriptRoot "no_protocol_sizes_${session}.csv"
 $selectionOriginal = [System.IO.File]::ReadAllText($selectionPath)
-$selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US)[^\r\n]*\r?\n', '')
+$selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US|TEST_SIGNAL_ENABLE|TEST_SIGNAL_LOG_EVERY)[^\r\n]*\r?\n', '')
 $selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*(?=\r?$)', '//#define TEST_SIMPLE_$1')
 $selectionOriginal = [regex]::new('(?m)^//#define TEST_SIMPLE_RX(?=\r?$)').Replace($selectionOriginal, '#define TEST_SIMPLE_RX', 1)
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 $results = [System.Collections.Generic.List[object]]::new()
+$signalEnabled = if ($DisableSignal) { 0 } else { 1 }
 
 function Stop-RunLogger {
     param([System.Diagnostics.Process] $Process)
@@ -36,8 +39,8 @@ function Set-ExampleSelection {
     param([ValidateSet('TX', 'RX')] [string] $Role, [int] $Target)
 
     $content = [regex]::Replace($selectionOriginal, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*(?=\r?$)', '//#define TEST_SIMPLE_$1')
-    $content = [regex]::Replace($content, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US)[^\r\n]*\r?\n', '')
-    $macros = "#define TEST_SIMPLE_$Role`r`n#define TEST_PACKET_TARGET ${Target}UL`r`n#define TX_DELAY_US ${IntervalUs}U`r`n"
+    $content = [regex]::Replace($content, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US|TEST_SIGNAL_ENABLE|TEST_SIGNAL_LOG_EVERY)[^\r\n]*\r?\n', '')
+    $macros = "#define TEST_SIMPLE_$Role`r`n#define TEST_PACKET_TARGET ${Target}UL`r`n#define TX_DELAY_US ${IntervalUs}U`r`n#define TEST_SIGNAL_ENABLE ${signalEnabled}`r`n#define TEST_SIGNAL_LOG_EVERY ${SignalLogEvery}UL`r`n"
     $content = [regex]::new('#ifdef __cplusplus').Replace($content, "$macros`r`n#ifdef __cplusplus", 1)
     $activeRoles = [regex]::Matches($content, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*\r?$')
     if ($activeRoles.Count -ne 1 -or $activeRoles[0].Groups[1].Value -ne $Role) {
@@ -223,8 +226,34 @@ try {
             throw "Firmware goodput disagrees with packet counts for target=$target. RX=$rxLine"
         }
 
+        $signal = @{}
+        $signalCsv = $null
+        if (-not $DisableSignal) {
+            $signalLine = Select-String -LiteralPath $activeRxLogger.Data -Pattern '\bRX_SIGNAL_COMPLETE\s' |
+                Select-Object -Last 1 -ExpandProperty Line
+            if (-not $signalLine) { throw "Missing RX_SIGNAL_COMPLETE in $($activeRxLogger.Data)" }
+            $signal = Parse-KeyValues -Line $signalLine
+            if (([int64]$signal['samples'] + [int64]$signal['invalid']) -ne $success) {
+                throw "Signal sample count disagrees with unique packets: $signalLine"
+            }
+            $signalCsv = [IO.Path]::ChangeExtension($activeRxLogger.Data, 'signal.csv')
+            & (Join-Path $PSScriptRoot 'export_rx_signal.ps1') -InputLog $activeRxLogger.Data -OutputCsv $signalCsv
+        }
+
         $row = [pscustomobject]@{
             protocol = 'none'
+            signal_enabled = $signalEnabled
+            signal_log_every = $SignalLogEvery
+            signal_samples = $signal['samples']
+            signal_invalid = $signal['invalid']
+            rssi_avg_dbm = $signal['rssi_avg_dbm']
+            rssi_min_dbm = $signal['rssi_min_dbm']
+            rssi_max_dbm = $signal['rssi_max_dbm']
+            fp_avg_dbm = $signal['fp_avg_dbm']
+            fp_min_dbm = $signal['fp_min_dbm']
+            fp_max_dbm = $signal['fp_max_dbm']
+            gap_avg_db = $signal['gap_avg_db']
+            signal_csv = $signalCsv
             interval_us = $IntervalUs
             target_packets = $target
             tx_packets_confirmed = [int64]$rx['end_seq']

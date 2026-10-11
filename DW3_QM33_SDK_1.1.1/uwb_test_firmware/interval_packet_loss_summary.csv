@@ -1,7 +1,0 @@
-interval_ms,sent,valid,lost,invalid,duplicate,out_of_order,phy_errors,loss_rate_percent,delivery_success_percent,result,source_log
-10,300000,299822,178,0,0,0,311,0.059333,99.940667,FAIL,5nines_rx_live_20260929_152132.log
-5,300000,299905,95,0,0,0,96,0.031667,99.968333,FAIL,interval_5ms_20260929_215004_rx_live.log
-4,300000,299888,112,0,0,0,113,0.037333,99.962667,FAIL,interval_4ms_20260929_215004_rx_live.log
-3,300000,299914,86,0,0,0,89,0.028667,99.971333,FAIL,interval_3ms_20260929_215004_rx_live.log
-2,300000,299866,134,0,0,0,135,0.044667,99.955333,FAIL,interval_2ms_20260929_215004_rx_live.log
-1,300000,299896,104,0,0,0,106,0.034667,99.965333,FAIL,interval_1ms_20260929_233218_rx_live.log

@@ -1,2 +1,0 @@
-﻿"interval_ms","target","total","valid","lost","duplicate","out_of_order","invalid","phy_errors","loss_ppm","loss_rate_percent","invalid_rate_percent","observed_failure_rate_percent","result","elapsed_seconds","rx_log","tx_log"
-"1","300000","300000","299896","104","0","0","0","106","346","0.034667","0","0.034667","FAIL","449.172","C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\interval_1ms_20260929_233218_rx_live.log","C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\interval_1ms_20260929_233218_tx_live.log"

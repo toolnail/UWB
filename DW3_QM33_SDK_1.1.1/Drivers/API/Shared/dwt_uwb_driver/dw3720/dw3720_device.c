@@ -3898,7 +3898,7 @@ static int ull_calculate_rssi(struct dwchip_s *dw, const dwt_cirdiags_t *diag, d
     {
         uint8_t dgc_decision = ull_get_dgcdecision(dw);
         bool is_sts = acc_idx !=  DWT_ACC_IDX_IP_M;
-        uint32_t rx_pcode_u32 = dwt_read32bitoffsetreg(dw, CHAN_CTRL_ID, 0U) & CHAN_CTRL_RX_PCODE_BIT_MASK >> CHAN_CTRL_RX_PCODE_BIT_OFFSET;
+        uint32_t rx_pcode_u32 = (dwt_read32bitoffsetreg(dw, CHAN_CTRL_ID, 0U) & CHAN_CTRL_RX_PCODE_BIT_MASK) >> CHAN_CTRL_RX_PCODE_BIT_OFFSET;
         uint8_t rx_pcode = (uint8_t)rx_pcode_u32;
         *signal_strength = rsl_calculate_signal_power(
             (int32_t)diag->power, RSL_QUANTIZATION_FACTOR, diag->accumCount, dgc_decision, rx_pcode, is_sts

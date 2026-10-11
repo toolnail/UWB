@@ -1,30 +1,0 @@
-SEGGER J-Link RTT Logger
-Compiled Sep 23 2026 13:21:48
-(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
-         Solutions for real time microcontroller applications
-
-Default logfile path: C:\Users\wangrx\AppData\Roaming\SEGGER
-
------------------------------------------------------------- 
-
-
------------------------------------------------------------- 
-Connected to:
-  SEGGER J-Link (unknown)
-  S/N: 1050238642
-
-Searching for RTT Control Block...OK.
-2 up-channels found:
-0: Terminal
-1: 
-Selected RTT Channel description: 
-  Index: 0
-  Name:  Terminal
-  Size:  1024 bytes.
-
-Output file: C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\no_protocol_rx_10000_20261006_160312.log
-
-Getting RTT data from target. Press any key to quit.
------------------------------------------------------------- 
-
-Transfer rate: 110 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 0 Bytes/s Data written: 55 Bytes Transfer rate: 185 Bytes/s Data written: 150 Bytes Transfer rate: 0 Bytes/s Data written: 150 Bytes Transfer rate: 185 Bytes/s Data written: 245 Bytes Transfer rate: 0 Bytes/s Data written: 245 Bytes Transfer rate: 0 Bytes/s Data written: 245 Bytes Transfer rate: 193 Bytes/s Data written: 342 Bytes Transfer rate: 0 Bytes/s Data written: 342 Bytes Transfer rate: 0 Bytes/s Data written: 342 Bytes Transfer rate: 189 Bytes/s Data written: 439 Bytes Transfer rate: 0 Bytes/s Data written: 439 Bytes Transfer rate: 193 Bytes/s Data written: 536 Bytes Transfer rate: 0 Bytes/s Data written: 536 Bytes Transfer rate: 0 Bytes/s Data written: 536 Bytes Transfer rate: 188 Bytes/s Data written: 633 Bytes Transfer rate: 0 Bytes/s Data written: 633 Bytes Transfer rate: 0 Bytes/s Data written: 633 Bytes Transfer rate: 192 Bytes/s Data written: 730 Bytes Transfer rate: 0 Bytes/s Data written: 730 Bytes Transfer rate: 188 Bytes/s Data written: 827 Bytes Transfer rate: 0 Bytes/s Data written: 827 Bytes Transfer rate: 0 Bytes/s Data written: 827 Bytes Transfer rate: 193 Bytes/s Data written: 924 Bytes Transfer rate: 0 Bytes/s Data written: 924 Bytes Transfer rate: 0 Bytes/s Data written: 924 Bytes 
