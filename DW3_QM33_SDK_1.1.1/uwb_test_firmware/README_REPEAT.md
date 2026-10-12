@@ -1,4 +1,4 @@
-# 从命令行重复运行 300,000 包测试
+# 从命令行重复运行点对点测试
 
 两块板子保留当前已烧录的 TX/RX 固件，通过 J-Link 的 SWD 接口重启即可重新测试。脚本不编译、不擦除、不烧录 Flash；每一轮自动清零接收统计，采集 RTT 日志并导出成功率、RSSI 和首径功率。
 
@@ -42,15 +42,40 @@
 | `round_1.rx.signal.csv` | 抽样功率明细 |
 | `round_1.tx_control_*.log`、`round_1.rx_reset_*.log` | 自动重启操作日志 |
 
-功率汇总覆盖每个成功接收的唯一 DATA 包。当前固件的明细打印间隔为 1,000 个成功包，因此明细 CSV 不包含 300,000 行。对异常计时字段，脚本保留原值并将 `timing_valid` 标为 false，`goodput_bps` 留空。
+功率汇总覆盖每个成功接收的唯一 DATA 包。当前固件的明细打印间隔为 1,000 个成功包，因此明细 CSV 不是逐包记录。对异常计时字段，脚本保留原值并将 `timing_valid` 标为 false，`goodput_bps` 留空。
+
+收包侧已取消 `invalid` 和 `invalid_failed` 统计。帧长度、内容、序号校验仍保留，不符合要求的帧不计入成功包。最终 `failed` 和 `lost` 均表示“目标包数减去成功接收的唯一 DATA 包数”，不再划分失败原因；PHY/CRC 错误事件不叠加到丢包数。功率日志中的 `invalid`（CSV 中为 `signal_invalid`）仍表示功率诊断测量失败次数。历史日志和 CSV 保留原始字段，不回写修改。
 
 部分连接状态下 TX 可以正常发送，但其 RTT 内存不可读。最终包数以 RX 收到的带 CRC 保护的 END 标记及 RX 的唯一包统计为依据；TX 明细日志是辅助证据，缺少该文件不会阻止导出完整接收结果。`tx_log_complete` 表示是否额外读到了 TX 的完成日志。
 
 ## 固件参数
 
-当前两块板子的目标数为 300,000，TX 延迟为 500 微秒，RX 开启 RSSI/首径功率统计。重复执行同一配置无需重新烧录。
+发包数量只有一个配置来源：`Drivers/API/Src/p2p_test_config.h` 中的 `TEST_PACKET_TARGET`。TX、RX 直接包含该头文件；电脑侧构建、重测和结果校验脚本通过 `get_packet_target.ps1` 读取同一行。数量使用正十进制整数，不使用表达式或带前导零的数字。
 
-`-Target` 只校验已安装 RX 固件的目标数，不改变发包数。要改发包数、无线配置或逐包打印间隔，需要重新编译并烧录一次，然后后续继续用本脚本重复测试。现有 `run_no_protocol_size_tests.ps1` 仍用于这种配置变更，会编译并烧录；重复测试请使用 `repeat_300k.cmd`。
+修改数量的步骤：
+
+1. 只修改共享头文件中的 `#define TEST_PACKET_TARGET ...UL`。
+2. 重新编译并烧录两块板子一次，可在项目根目录运行下面的构建测试命令（会烧录并运行一轮）：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\uwb_test_firmware\run_no_protocol_size_tests.ps1
+```
+
+3. 后续重复同一数量的测试，继续运行 `.\repeat_300k.cmd`，无需指定数量，也无需再次烧录。文件名中的 `300k` 是保留的入口名称，实际数量始终读取共享配置。
+
+不操作硬件、只编译 TX/RX 时使用：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\uwb_test_firmware\run_no_protocol_size_tests.ps1 -BuildOnly
+```
+
+原来的 `-Target` 和 `-Targets` 参数已移除，防止产生第二个配置来源。重测时，如果已烧录 RX 的数量与共享配置不同，脚本会报错要求先更新两块板子的固件。修改无线参数或逐包打印间隔同样需要重新编译烧录。TX 延迟和功率日志间隔仍由构建脚本的 `-IntervalUs`、`-SignalLogEvery` 配置。
+
+不操作硬件的配置校验测试：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\uwb_test_firmware\signal_validation\test_packet_config.ps1
+```
 
 默认 RX RTT 地址为 `0x20000048`，TX 为 `0x20000050`，对应当前固件。更换固件导致 RTT 地址改变时，使用各自构建产物 `.map` 中 `_SEGGER_RTT` 的地址：
 

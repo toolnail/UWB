@@ -1,11 +1,13 @@
+[CmdletBinding()]
 param(
-    [int[]] $Targets = @(100000, 200000, 300000, 400000),
     [int] $IntervalUs = 500,
     [ValidateRange(0, 4294967295)] [long] $SignalLogEvery = 1000,
-    [switch] $DisableSignal
+    [switch] $DisableSignal,
+    [switch] $BuildOnly
 )
 
 $ErrorActionPreference = 'Stop'
+$target = & (Join-Path $PSScriptRoot 'get_packet_target.ps1')
 
 $workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $emBuild = 'C:\Program Files\SEGGER\SEGGER Embedded Studio for ARM 5.10a\bin\emBuild.exe'
@@ -20,9 +22,6 @@ $buildMap = Join-Path $workspace 'Drivers\API\Build_Platforms\nRF52840-DK\Output
 $session = Get-Date -Format 'yyyyMMdd_HHmmss'
 $resultCsv = Join-Path $PSScriptRoot "no_protocol_sizes_${session}.csv"
 $selectionOriginal = [System.IO.File]::ReadAllText($selectionPath)
-$selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US|TEST_SIGNAL_ENABLE|TEST_SIGNAL_LOG_EVERY)[^\r\n]*\r?\n', '')
-$selectionOriginal = [regex]::Replace($selectionOriginal, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*(?=\r?$)', '//#define TEST_SIMPLE_$1')
-$selectionOriginal = [regex]::new('(?m)^//#define TEST_SIMPLE_RX(?=\r?$)').Replace($selectionOriginal, '#define TEST_SIMPLE_RX', 1)
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 $results = [System.Collections.Generic.List[object]]::new()
 $signalEnabled = if ($DisableSignal) { 0 } else { 1 }
@@ -36,11 +35,11 @@ function Stop-RunLogger {
 }
 
 function Set-ExampleSelection {
-    param([ValidateSet('TX', 'RX')] [string] $Role, [int] $Target)
+    param([ValidateSet('TX', 'RX')] [string] $Role)
 
     $content = [regex]::Replace($selectionOriginal, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*(?=\r?$)', '//#define TEST_SIMPLE_$1')
-    $content = [regex]::Replace($content, '(?m)^#define (TEST_PACKET_TARGET|TX_DELAY_MS|TX_DELAY_US|TEST_SIGNAL_ENABLE|TEST_SIGNAL_LOG_EVERY)[^\r\n]*\r?\n', '')
-    $macros = "#define TEST_SIMPLE_$Role`r`n#define TEST_PACKET_TARGET ${Target}UL`r`n#define TX_DELAY_US ${IntervalUs}U`r`n#define TEST_SIGNAL_ENABLE ${signalEnabled}`r`n#define TEST_SIGNAL_LOG_EVERY ${SignalLogEvery}UL`r`n"
+    $content = [regex]::Replace($content, '(?m)^#define (TX_DELAY_MS|TX_DELAY_US|TEST_SIGNAL_ENABLE|TEST_SIGNAL_LOG_EVERY)[^\r\n]*\r?\n', '')
+    $macros = "#define TEST_SIMPLE_$Role`r`n#define TX_DELAY_US ${IntervalUs}U`r`n#define TEST_SIGNAL_ENABLE ${signalEnabled}`r`n#define TEST_SIGNAL_LOG_EVERY ${SignalLogEvery}UL`r`n"
     $content = [regex]::new('#ifdef __cplusplus').Replace($content, "$macros`r`n#ifdef __cplusplus", 1)
     $activeRoles = [regex]::Matches($content, '(?m)^#define TEST_SIMPLE_(RX|TX)[ \t]*\r?$')
     if ($activeRoles.Count -ne 1 -or $activeRoles[0].Groups[1].Value -ne $Role) {
@@ -59,6 +58,10 @@ function Get-RttAddress {
 function Invoke-Build {
     param([string] $Role, [int] $Target)
 
+    if ((& (Join-Path $PSScriptRoot 'get_packet_target.ps1')) -ne $Target) {
+        throw 'Shared packet configuration changed during the build. Run again with a stable configuration.'
+    }
+
     $log = Join-Path $PSScriptRoot "build_no_protocol_${Role}_${Target}_${session}.log"
     $stderr = Join-Path $PSScriptRoot "build_no_protocol_${Role}_${Target}_${session}.err.log"
     $process = Start-Process -FilePath $emBuild `
@@ -72,6 +75,7 @@ function Invoke-Build {
 
     $image = Join-Path $PSScriptRoot "nrf52840_dwm3000_5nines_${Role}_${Target}_${session}.hex"
     Copy-Item -LiteralPath $buildHex -Destination $image -Force
+    Copy-Item -LiteralPath $buildMap -Destination ([IO.Path]::ChangeExtension($image, 'map')) -Force
     return $image
 }
 
@@ -161,7 +165,9 @@ function Parse-KeyValues {
     return $values
 }
 
-foreach ($required in @($emBuild, $jlink, $logger, $selectionPath, $projectPath)) {
+$requiredFiles = @($emBuild, $selectionPath, $projectPath)
+if (-not $BuildOnly) { $requiredFiles += @($jlink, $logger) }
+foreach ($required in $requiredFiles) {
     if (-not (Test-Path -LiteralPath $required)) { throw "Required file not found: $required" }
 }
 
@@ -169,126 +175,129 @@ $activeRxLogger = $null
 $activeTxLogger = $null
 $activeTxRunner = $null
 try {
-    foreach ($target in $Targets) {
-        if ($target -le 0) { throw "Target must be positive: $target" }
-        $runTag = "${target}_${session}"
-        Write-Output "[$(Get-Date -Format s)] START no-protocol target=$target interval_us=$IntervalUs"
-        Stop-PreviousTx -Target $target
+    Write-Output "[$(Get-Date -Format s)] START no-protocol target=$target interval_us=$IntervalUs"
 
-        Set-ExampleSelection -Role RX -Target $target
-        $rxHex = Invoke-Build -Role RX -Target $target
-        $rxRttAddress = Get-RttAddress
-        Invoke-Flash -Serial $rxSerial -Image $rxHex -Label "rx_$target"
-        $activeRxLogger = Start-RttLogger -Serial $rxSerial -Address $rxRttAddress -Label "rx_$target"
-        if (-not (Wait-ForPattern -Path $activeRxLogger.Data `
-                                -Pattern "TEST START target=$target" -TimeoutSeconds 45)) {
-            throw "RX did not become ready for target=$target. See $($activeRxLogger.Data) and $($activeRxLogger.Status)"
-        }
-
-        Set-ExampleSelection -Role TX -Target $target
-        $txHex = Invoke-Build -Role TX -Target $target
-        $runStart = Get-Date
-        Invoke-Flash -Serial $txSerial -Image $txHex -Label "tx_$target"
-        # Keep a debugger connection on TX while it starts. On these boards the
-        # flash command's final disconnect can leave TX waiting to run.
-        $activeTxLogger = Start-RttLogger -Serial $txSerial -Address (Get-RttAddress) -Label "tx_$target"
-        if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern 'RX_PROGRESS' -TimeoutSeconds 180)) {
-            throw "No received packets after TX flash for target=$target. See $($activeRxLogger.Data)"
-        }
-        # Radio transmission and firmware polling add time beyond deca_usleep(IntervalUs).
-        $timeout = [int][math]::Ceiling($target * 0.02) + 300
-        if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern 'RX_COMPLETE' -TimeoutSeconds $timeout)) {
-            throw "Timed out waiting for RX_COMPLETE target=$target. See $($activeRxLogger.Data)"
-        }
-
-        $elapsed = [math]::Round(((Get-Date) - $runStart).TotalSeconds, 3)
-        $rxLine = Select-String -LiteralPath $activeRxLogger.Data -Pattern 'RX_COMPLETE' |
-            Select-Object -Last 1 -ExpandProperty Line
-        $rx = Parse-KeyValues -Line $rxLine
-        $success = [int64]$rx['success']
-        $failed = [int64]$rx['failed']
-        # 'lost' is the residual failure bucket; PHY errors without a readable
-        # sequence cannot be separated from absent frames or added again.
-        if ([int64]$rx['target'] -ne $target -or [int64]$rx['end_seq'] -ne $target -or
-            ($success + $failed) -ne $target -or
-            ([int64]$rx['lost'] + [int64]$rx['invalid_failed']) -ne $failed -or
-            [int64]$rx['crc_err'] -gt [int64]$rx['phy_err']) {
-            throw "Count mismatch or missing completion marker for target=$target. RX=$rxLine"
-        }
-        $txElapsedUs = [int64]$rx['tx_elapsed_us']
-        $payloadBytes = [int64]$rx['payload_bytes']
-        $goodputBps = [int64]$rx['goodput_bps']
-        if ($txElapsedUs -le 0 -or $payloadBytes -ne 26) {
-            throw "Missing on-device TX elapsed time for target=$target. RX=$rxLine"
-        }
-        $expectedGoodputBps = [math]::Round($success * $payloadBytes * 8.0 * 1000000.0 / $txElapsedUs)
-        if ([math]::Abs($goodputBps - $expectedGoodputBps) -gt 1) {
-            throw "Firmware goodput disagrees with packet counts for target=$target. RX=$rxLine"
-        }
-
-        $signal = @{}
-        $signalCsv = $null
-        if (-not $DisableSignal) {
-            $signalLine = Select-String -LiteralPath $activeRxLogger.Data -Pattern '\bRX_SIGNAL_COMPLETE\s' |
-                Select-Object -Last 1 -ExpandProperty Line
-            if (-not $signalLine) { throw "Missing RX_SIGNAL_COMPLETE in $($activeRxLogger.Data)" }
-            $signal = Parse-KeyValues -Line $signalLine
-            if (([int64]$signal['samples'] + [int64]$signal['invalid']) -ne $success) {
-                throw "Signal sample count disagrees with unique packets: $signalLine"
-            }
-            $signalCsv = [IO.Path]::ChangeExtension($activeRxLogger.Data, 'signal.csv')
-            & (Join-Path $PSScriptRoot 'export_rx_signal.ps1') -InputLog $activeRxLogger.Data -OutputCsv $signalCsv
-        }
-
-        $row = [pscustomobject]@{
-            protocol = 'none'
-            signal_enabled = $signalEnabled
-            signal_log_every = $SignalLogEvery
-            signal_samples = $signal['samples']
-            signal_invalid = $signal['invalid']
-            rssi_avg_dbm = $signal['rssi_avg_dbm']
-            rssi_min_dbm = $signal['rssi_min_dbm']
-            rssi_max_dbm = $signal['rssi_max_dbm']
-            fp_avg_dbm = $signal['fp_avg_dbm']
-            fp_min_dbm = $signal['fp_min_dbm']
-            fp_max_dbm = $signal['fp_max_dbm']
-            gap_avg_db = $signal['gap_avg_db']
-            signal_csv = $signalCsv
-            interval_us = $IntervalUs
-            target_packets = $target
-            tx_packets_confirmed = [int64]$rx['end_seq']
-            successful_unique_packets = $success
-            failed_packets = $failed
-            lost_packets = [int64]$rx['lost']
-            invalid_failed_packets = [int64]$rx['invalid_failed']
-            success_rate_percent = [math]::Round($success * 100.0 / $target, 6)
-            packet_failure_rate_percent = [math]::Round($failed * 100.0 / $target, 6)
-            success_ppm = [int64]$rx['success_ppm']
-            duplicate_frames = [int64]$rx['dup']
-            out_of_order_frames = [int64]$rx['ooo']
-            invalid_frames = [int64]$rx['invalid']
-            phy_error_events = [int64]$rx['phy_err']
-            crc_error_events = [int64]$rx['crc_err']
-            result = $rx['RESULT']
-            elapsed_seconds = $elapsed
-            tx_elapsed_us = $txElapsedUs
-            payload_bytes = $payloadBytes
-            payload_goodput_bps = $goodputBps
-            payload_goodput_kbps = [math]::Round($goodputBps / 1000.0, 3)
-            tx_log = $activeTxLogger.Data
-            rx_log = $activeRxLogger.Data
-        }
-        $results.Add($row)
-        $results | Export-Csv -LiteralPath $resultCsv -NoTypeInformation -Encoding UTF8
-        Write-Output "[$(Get-Date -Format s)] COMPLETE $rxLine elapsed_seconds=$elapsed"
-
-        Stop-RunLogger -Process $activeTxLogger.Process
-        Stop-RunLogger -Process $activeTxRunner.Process
-        Stop-RunLogger -Process $activeRxLogger.Process
-        $activeTxLogger = $null
-        $activeTxRunner = $null
-        $activeRxLogger = $null
+    Set-ExampleSelection -Role RX
+    $rxHex = Invoke-Build -Role RX -Target $target
+    $rxRttAddress = Get-RttAddress
+    Set-ExampleSelection -Role TX
+    $txHex = Invoke-Build -Role TX -Target $target
+    $txRttAddress = Get-RttAddress
+    if ((& (Join-Path $PSScriptRoot 'get_packet_target.ps1')) -ne $target) {
+        throw 'Shared packet configuration changed during the build. Run again with a stable configuration.'
     }
+    if ($BuildOnly) {
+        Write-Output "BUILD_ONLY target=$target RX_HEX=$rxHex RX_RTT=$rxRttAddress TX_HEX=$txHex TX_RTT=$txRttAddress"
+        return
+    }
+
+    Stop-PreviousTx -Target $target
+    Invoke-Flash -Serial $rxSerial -Image $rxHex -Label "rx_$target"
+    $activeRxLogger = Start-RttLogger -Serial $rxSerial -Address $rxRttAddress -Label "rx_$target"
+    if (-not (Wait-ForPattern -Path $activeRxLogger.Data `
+                            -Pattern "TEST START target=$target" -TimeoutSeconds 45)) {
+        throw "RX did not become ready for target=$target. See $($activeRxLogger.Data) and $($activeRxLogger.Status)"
+    }
+
+    $runStart = Get-Date
+    Invoke-Flash -Serial $txSerial -Image $txHex -Label "tx_$target"
+    # Keep a debugger connection on TX while it starts. On these boards the
+    # flash command's final disconnect can leave TX waiting to run.
+    $activeTxLogger = Start-RttLogger -Serial $txSerial -Address $txRttAddress -Label "tx_$target"
+    if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern '^RX_(PROGRESS|COMPLETE) ' -TimeoutSeconds 180)) {
+        throw "No received packets after TX flash for target=$target. See $($activeRxLogger.Data)"
+    }
+    # Radio transmission and firmware polling add time beyond deca_usleep(IntervalUs).
+    $timeout = [int][math]::Ceiling($target * 0.02) + 300
+    if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern 'RX_COMPLETE' -TimeoutSeconds $timeout)) {
+        throw "Timed out waiting for RX_COMPLETE target=$target. See $($activeRxLogger.Data)"
+    }
+
+    $elapsed = [math]::Round(((Get-Date) - $runStart).TotalSeconds, 3)
+    $rxLine = Select-String -LiteralPath $activeRxLogger.Data -Pattern 'RX_COMPLETE' |
+        Select-Object -Last 1 -ExpandProperty Line
+    $rx = Parse-KeyValues -Line $rxLine
+    $success = [int64]$rx['success']
+    $failed = [int64]$rx['failed']
+    # All target sequences not successfully received are failed/lost.
+    # PHY/CRC error events are diagnostics and must not be added to that count.
+    if ([int64]$rx['target'] -ne $target -or [int64]$rx['end_seq'] -ne $target -or
+        ($success + $failed) -ne $target -or
+        [int64]$rx['lost'] -ne $failed -or
+        [int64]$rx['crc_err'] -gt [int64]$rx['phy_err']) {
+        throw "Count mismatch or missing completion marker for target=$target. RX=$rxLine"
+    }
+    $txElapsedUs = [int64]$rx['tx_elapsed_us']
+    $payloadBytes = [int64]$rx['payload_bytes']
+    $goodputBps = [int64]$rx['goodput_bps']
+    if ($txElapsedUs -le 0 -or $payloadBytes -ne 26) {
+        throw "Missing on-device TX elapsed time for target=$target. RX=$rxLine"
+    }
+    $expectedGoodputBps = [math]::Round($success * $payloadBytes * 8.0 * 1000000.0 / $txElapsedUs)
+    if ([math]::Abs($goodputBps - $expectedGoodputBps) -gt 1) {
+        throw "Firmware goodput disagrees with packet counts for target=$target. RX=$rxLine"
+    }
+
+    $signal = @{}
+    $signalCsv = $null
+    if (-not $DisableSignal) {
+        $signalLine = Select-String -LiteralPath $activeRxLogger.Data -Pattern '\bRX_SIGNAL_COMPLETE\s' |
+            Select-Object -Last 1 -ExpandProperty Line
+        if (-not $signalLine) { throw "Missing RX_SIGNAL_COMPLETE in $($activeRxLogger.Data)" }
+        $signal = Parse-KeyValues -Line $signalLine
+        if (([int64]$signal['samples'] + [int64]$signal['invalid']) -ne $success) {
+            throw "Signal sample count disagrees with unique packets: $signalLine"
+        }
+        $signalCsv = [IO.Path]::ChangeExtension($activeRxLogger.Data, 'signal.csv')
+        & (Join-Path $PSScriptRoot 'export_rx_signal.ps1') -InputLog $activeRxLogger.Data -OutputCsv $signalCsv
+    }
+
+    $row = [pscustomobject]@{
+        protocol = 'none'
+        signal_enabled = $signalEnabled
+        signal_log_every = $SignalLogEvery
+        signal_samples = $signal['samples']
+        signal_invalid = $signal['invalid']
+        rssi_avg_dbm = $signal['rssi_avg_dbm']
+        rssi_min_dbm = $signal['rssi_min_dbm']
+        rssi_max_dbm = $signal['rssi_max_dbm']
+        fp_avg_dbm = $signal['fp_avg_dbm']
+        fp_min_dbm = $signal['fp_min_dbm']
+        fp_max_dbm = $signal['fp_max_dbm']
+        gap_avg_db = $signal['gap_avg_db']
+        signal_csv = $signalCsv
+        interval_us = $IntervalUs
+        target_packets = $target
+        tx_packets_confirmed = [int64]$rx['end_seq']
+        successful_unique_packets = $success
+        failed_packets = $failed
+        lost_packets = [int64]$rx['lost']
+        success_rate_percent = [math]::Round($success * 100.0 / $target, 6)
+        packet_failure_rate_percent = [math]::Round($failed * 100.0 / $target, 6)
+        success_ppm = [int64]$rx['success_ppm']
+        duplicate_frames = [int64]$rx['dup']
+        out_of_order_frames = [int64]$rx['ooo']
+        phy_error_events = [int64]$rx['phy_err']
+        crc_error_events = [int64]$rx['crc_err']
+        result = $rx['RESULT']
+        elapsed_seconds = $elapsed
+        tx_elapsed_us = $txElapsedUs
+        payload_bytes = $payloadBytes
+        payload_goodput_bps = $goodputBps
+        payload_goodput_kbps = [math]::Round($goodputBps / 1000.0, 3)
+        tx_log = $activeTxLogger.Data
+        rx_log = $activeRxLogger.Data
+    }
+    $results.Add($row)
+    $results | Export-Csv -LiteralPath $resultCsv -NoTypeInformation -Encoding UTF8
+    Write-Output "[$(Get-Date -Format s)] COMPLETE $rxLine elapsed_seconds=$elapsed"
+
+    Stop-RunLogger -Process $activeTxLogger.Process
+    Stop-RunLogger -Process $activeTxRunner.Process
+    Stop-RunLogger -Process $activeRxLogger.Process
+    $activeTxLogger = $null
+    $activeTxRunner = $null
+    $activeRxLogger = $null
     Write-Output "RESULT_CSV=$resultCsv"
 }
 finally {

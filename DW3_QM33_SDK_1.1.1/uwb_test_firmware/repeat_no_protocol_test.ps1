@@ -1,6 +1,6 @@
+[CmdletBinding()]
 param(
     [ValidateRange(1, 1000)] [int] $Rounds = 1,
-    [ValidateRange(1, 2147483647)] [int] $Target = 300000,
     [ValidateRange(1, 86400)] [int] $TimeoutSeconds = 900,
     [ValidatePattern('^\d+$')] [string] $TxSerial = '1050244938',
     [ValidatePattern('^\d+$')] [string] $RxSerial = '1050238642',
@@ -11,6 +11,7 @@ param(
 
 # Reuse the firmware already installed on the two boards. No build/erase/loadfile.
 $ErrorActionPreference = 'Stop'
+$Target = & (Join-Path $PSScriptRoot 'get_packet_target.ps1')
 $jlink = Join-Path $JLinkDirectory 'JLink.exe'
 $logger = Join-Path $JLinkDirectory 'JLinkRTTLogger.exe'
 foreach ($file in @($jlink, $logger)) {
@@ -118,7 +119,7 @@ try {
             if (Test-Path -LiteralPath $data) {
                 $content = Get-Content -LiteralPath $data -Raw
                 if ($content -match 'TEST START target=(\d+)') {
-                    if ([int]$Matches[1] -ne $Target) { throw 'Target differs from installed RX firmware. -Target checks the count; it does not change firmware.' }
+                    if ([int]$Matches[1] -ne $Target) { throw "Shared config target=$Target differs from installed RX target=$($Matches[1]). Rebuild and flash both boards for the new configuration before repeating." }
                     if ($content -match '(?m)^RX_(SIGNAL seq=|PROGRESS |COMPLETE )') { throw 'RX received data before TX was released. Close other test programs and retry.' }
                     $ready = $true
                     break
@@ -167,7 +168,7 @@ try {
         # The CRC-protected END marker received by RX is sufficient confirmation
         # of the sender's target. TX RTT may remain inaccessible on these boards
         # even while TX is sending; it is optional evidence, not a result gate.
-        $row = & (Join-Path $PSScriptRoot 'read_no_protocol_result.ps1') -InputLog $data -Target $Target `
+        $row = & (Join-Path $PSScriptRoot 'read_no_protocol_result.ps1') -InputLog $data `
             -Round $round -ObservedSeconds $elapsedSeconds -TxLog $txData -OutputCsv "$prefix.result.csv"
         $results.Add($row)
         $results | Export-Csv -LiteralPath (Join-Path $directory 'results.csv') -NoTypeInformation -Encoding UTF8

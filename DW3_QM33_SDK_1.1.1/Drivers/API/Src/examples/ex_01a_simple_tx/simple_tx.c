@@ -14,6 +14,7 @@
 #include <deca_device_api.h>
 #include <deca_spi.h>
 #include <example_selection.h>
+#include <p2p_test_config.h>
 #include <port.h>
 #include <shared_defines.h>
 #include <shared_functions.h>
@@ -44,9 +45,6 @@ extern void test_run_info(unsigned char *data);
 #define TEST_TIMING_BYTES 8U
 #define TEST_TYPE_DATA 0U
 #define TEST_TYPE_END 1U
-#ifndef TEST_PACKET_TARGET
-#define TEST_PACKET_TARGET 300000UL
-#endif
 #define TEST_END_MARKER_REPEATS 100U
 static uint8_t tx_msg[TEST_FRAME_BYTES] = { 0 };
 

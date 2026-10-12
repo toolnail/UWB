@@ -53,18 +53,20 @@
 
 原有 `run_no_protocol_size_tests.ps1` 已加入参数并自动导出信号 CSV：
 
+发包数量统一读取 `Drivers/API/Src/p2p_test_config.h` 中的 `TEST_PACKET_TARGET`，不再通过 `-Targets` 指定。修改这一个定义后，TX、RX 和电脑脚本都会使用相同数量。
+
 ```powershell
 # 注意：该实验脚本沿用原有行为，会重新构建并烧录 TX/RX，然后运行测试。
-.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -Targets 10000 -IntervalUs 500 -SignalLogEvery 1000
+.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -IntervalUs 500 -SignalLogEvery 1000
 
 # 逐包详细日志（建议先放慢发包间隔）
-.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -Targets 1000 -IntervalUs 10000 -SignalLogEvery 1
+.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -IntervalUs 10000 -SignalLogEvery 1
 
 # 仅累计功率统计
-.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -Targets 10000 -IntervalUs 500 -SignalLogEvery 0
+.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -IntervalUs 500 -SignalLogEvery 0
 
 # 关闭功率测量，对照原来的接收性能
-.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -Targets 10000 -IntervalUs 500 -DisableSignal
+.\uwb_test_firmware\run_no_protocol_size_tests.ps1 -IntervalUs 500 -DisableSignal
 ```
 
 输出的原有实验汇总 CSV 增加了功率统计字段。另外生成：
@@ -90,4 +92,5 @@ CSV 中 `NA` 导出为空值。没有结束统计的日志只导出已有的详�
 已验证默认 RX、仅累计统计、关闭测量以及 TX 兼容配置均可编译。
 `signal_validation/test_rx_signal.c` 用真实 SDK 定点算法对照参考公式，覆盖 16/64 MHz PRF、DW3000/DW3720 量化系数、负数格式、无效诊断、最大/最小值、300000 包累计和历史回卷。
 在当前安装了 Visual Studio 2022 Community 的电脑上执行 `signal_validation/run_host_tests.cmd`，可复现日志间隔为 0、1、1000 的主机测试。
+该主机测试中的 300000 是固定压力测试样本数，用于验证累加溢出和历史回卷，不是固件发包数量的配置来源。
 CSV 导出已用模拟日志验证负数、`NA`、F1/F2/F3 字段和累计计数；模拟值不代表本次实板测量。

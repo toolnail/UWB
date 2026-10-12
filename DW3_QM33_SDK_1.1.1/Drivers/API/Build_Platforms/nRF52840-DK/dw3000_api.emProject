@@ -78,6 +78,7 @@
       </file>
     </folder>
     <folder Name="Source">
+      <file file_name="$(DW3000APIDir)/Src/p2p_test_config.h" />
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <configuration
         Name="Debug"

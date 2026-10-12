@@ -1,6 +1,6 @@
+[CmdletBinding()]
 param(
     [Parameter(Mandatory)] [string] $InputLog,
-    [ValidateRange(1, 2147483647)] [int] $Target = 300000,
     [int] $Round = 1,
     [double] $ObservedSeconds = 0,
     [string] $TxLog,
@@ -8,6 +8,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+$Target = & (Join-Path $PSScriptRoot 'get_packet_target.ps1')
 $lines = @(Get-Content -LiteralPath $InputLog)
 if (@($lines | Where-Object { $_ -match '^P2P 5NINES RX' }).Count -ne 1 -or
     @($lines | Where-Object { $_ -match '^TEST START ' }).Count -ne 1 -or
@@ -24,13 +25,13 @@ function Read-Fields([string] $Line) {
 }
 $c = Read-Fields ($lines | Where-Object { $_ -match '^RX_COMPLETE ' })
 $s = Read-Fields ($lines | Where-Object { $_ -match '^RX_SIGNAL_COMPLETE ' })
-foreach ($key in @('target', 'end_seq', 'success', 'failed', 'lost', 'invalid_failed', 'success_ppm',
-                  'dup', 'ooo', 'invalid', 'phy_err', 'crc_err', 'tx_elapsed_us', 'payload_bytes', 'goodput_bps')) {
+foreach ($key in @('target', 'end_seq', 'success', 'failed', 'lost', 'success_ppm',
+                  'dup', 'ooo', 'phy_err', 'crc_err', 'tx_elapsed_us', 'payload_bytes', 'goodput_bps')) {
     if (-not $c.ContainsKey($key) -or $c[$key] -notmatch '^\d+$') { throw "Missing/invalid packet field: $key" }
 }
 if ([long]$c.target -ne $Target -or [long]$c.end_seq -ne $Target -or
     [long]$c.success + [long]$c.failed -ne $Target -or
-    [long]$c.lost + [long]$c.invalid_failed -ne [long]$c.failed -or
+    [long]$c.lost -ne [long]$c.failed -or
     [long]$c.success_ppm -ne [math]::Floor([long]$c.success * 1000000.0 / $Target)) {
     throw 'Final packet counts are inconsistent or target differs from installed firmware.'
 }
@@ -55,7 +56,7 @@ $result = [ordered]@{
     round = $Round; target_packets = $Target; received_unique = [long]$c.success
     failed_packets = [long]$c.failed; success_percent = 100.0 * [long]$c.success / $Target
     loss_percent = 100.0 * [long]$c.failed / $Target
-    lost_packets = [long]$c.lost; invalid_failed = [long]$c.invalid_failed
+    lost_packets = [long]$c.lost
     duplicate_packets = [long]$c.dup; out_of_order_packets = [long]$c.ooo
     phy_errors = [long]$c.phy_err; crc_errors = [long]$c.crc_err
     signal_samples = [long]$s.samples; signal_invalid = [long]$s.invalid
