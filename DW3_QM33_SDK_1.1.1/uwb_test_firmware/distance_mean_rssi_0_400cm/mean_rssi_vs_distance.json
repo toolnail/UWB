@@ -1,0 +1,403 @@
+{
+  "run_manifest": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_success_rate_0_200cm\\success_rate_vs_distance.csv",
+  "points": 30,
+  "averaging": "Arithmetic mean of per-packet RSSI in dBm; sum(rssi_q8)/(256*N)",
+  "population": "Unique successfully received DATA packets with valid finite RSSI",
+  "total_received_unique": 8998327,
+  "total_valid_rssi_samples": 8998327,
+  "total_invalid_rssi_samples": 0,
+  "distance_unit": "cm",
+  "y_unit": "dBm",
+  "y_scale": "linear",
+  "x_range": [
+    -10,
+    410
+  ],
+  "y_range": [
+    -87.0,
+    -38.0
+  ],
+  "source_files_unchanged": true,
+  "sampling": "none",
+  "smoothing": "none",
+  "canvas_pt": [
+    789.3235890909,
+    600.0
+  ],
+  "vector_pdf": true,
+  "font": "Times New Roman",
+  "tick_fontsize_pt": 16,
+  "labels_bbox_pt": [
+    {
+      "text": "Distance (cm)",
+      "bbox_pt": [
+        379.3033695454501,
+        1.1906,
+        470.2933695454501,
+        14.8706
+      ]
+    },
+    {
+      "text": "Mean RSSI (dBm)",
+      "bbox_pt": [
+        26.900000000000006,
+        246.45512,
+        40.58000000000001,
+        368.76512
+      ]
+    },
+    {
+      "text": "0",
+      "bbox_pt": [
+        82.89016045454524,
+        16.8706,
+        90.90016045454524,
+        30.5506
+      ]
+    },
+    {
+      "text": "50",
+      "bbox_pt": [
+        163.36096272727147,
+        16.8706,
+        179.38096272727148,
+        30.5506
+      ]
+    },
+    {
+      "text": "100",
+      "bbox_pt": [
+        243.78676499999764,
+        16.8706,
+        267.9067649999977,
+        30.5506
+      ]
+    },
+    {
+      "text": "150",
+      "bbox_pt": [
+        328.26256727272386,
+        16.8706,
+        352.38256727272386,
+        30.5506
+      ]
+    },
+    {
+      "text": "200",
+      "bbox_pt": [
+        412.73836954545015,
+        16.8706,
+        436.8583695454501,
+        30.5506
+      ]
+    },
+    {
+      "text": "250",
+      "bbox_pt": [
+        497.2141718181763,
+        16.8706,
+        521.3341718181763,
+        30.5506
+      ]
+    },
+    {
+      "text": "300",
+      "bbox_pt": [
+        581.7799740909024,
+        16.8706,
+        605.7199740909025,
+        30.5506
+      ]
+    },
+    {
+      "text": "350",
+      "bbox_pt": [
+        666.2557763636287,
+        16.8706,
+        690.1957763636286,
+        30.5506
+      ]
+    },
+    {
+      "text": "400",
+      "bbox_pt": [
+        750.7315786363548,
+        16.8706,
+        774.6715786363549,
+        30.5506
+      ]
+    },
+    {
+      "text": "-85",
+      "bbox_pt": [
+        42.76000000000001,
+        51.41545877551003,
+        64.00000000000001,
+        65.09545877551004
+      ]
+    },
+    {
+      "text": "-80",
+      "bbox_pt": [
+        42.76000000000001,
+        106.42760571428563,
+        64.00000000000001,
+        120.10760571428564
+      ]
+    },
+    {
+      "text": "-75",
+      "bbox_pt": [
+        42.67000000000001,
+        161.43975265306108,
+        64.00000000000001,
+        175.11975265306108
+      ]
+    },
+    {
+      "text": "-70",
+      "bbox_pt": [
+        42.67000000000001,
+        216.4518995918365,
+        64.00000000000001,
+        230.13189959183654
+      ]
+    },
+    {
+      "text": "-65",
+      "bbox_pt": [
+        42.580000000000005,
+        271.46404653061205,
+        64.00000000000001,
+        285.14404653061206
+      ]
+    },
+    {
+      "text": "-60",
+      "bbox_pt": [
+        42.580000000000005,
+        326.47619346938757,
+        64.00000000000001,
+        340.1561934693876
+      ]
+    },
+    {
+      "text": "-55",
+      "bbox_pt": [
+        42.67000000000001,
+        381.48834040816314,
+        64.00000000000001,
+        395.1683404081631
+      ]
+    },
+    {
+      "text": "-50",
+      "bbox_pt": [
+        42.67000000000001,
+        436.5004873469386,
+        64.00000000000001,
+        450.18048734693866
+      ]
+    },
+    {
+      "text": "-45",
+      "bbox_pt": [
+        42.76000000000001,
+        491.51263428571417,
+        64.00000000000001,
+        505.1926342857141
+      ]
+    },
+    {
+      "text": "-40",
+      "bbox_pt": [
+        42.76000000000001,
+        546.5247812244896,
+        64.00000000000001,
+        560.2047812244897
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis0_20261013_220654_694\\round_1.rx.rssi.csv",
+      "sha256": "81082380d75c8af36228f72e1a60eea5ffc49a82f55f71fa0ef69feec6fa9df0",
+      "csv_rows": 299408,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis5_20261013_221313_383\\round_1.rx.rssi.csv",
+      "sha256": "3a4d7786b622a14f1d773d66d141f353ed6fda49f6a7c95578feb4f1db67cadf",
+      "csv_rows": 299768,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis10_20261013_221948_639\\round_1.rx.rssi.csv",
+      "sha256": "5c5d32cfc906d903ee342eb0ec152c637e0c42acf71c578769745a77e30e56fb",
+      "csv_rows": 299782,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis15_20261013_222539_450\\round_1.rx.rssi.csv",
+      "sha256": "e9e04f9d05270cdd414853f303b75d7beaf9a6a657ab54dbe5f8e7b76a3d38b4",
+      "csv_rows": 299905,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis20_20261013_223144_980\\round_1.rx.rssi.csv",
+      "sha256": "e66d0da4df78a1728dbfccead53c1407ed4d6cd4eadb82690f47e58470f3d63a",
+      "csv_rows": 299967,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis25_20261013_223758_572\\round_1.rx.rssi.csv",
+      "sha256": "6604df79e2c728fb14f84d51fbdb91ab23fd14fd7eb4538aaabd039aea943483",
+      "csv_rows": 299924,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis30_20261013_224840_112\\round_1.rx.rssi.csv",
+      "sha256": "7c9c7de07ade321ad058b605756a5b915e1168c391099464ada6fa85fb9d8675",
+      "csv_rows": 299972,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis35_20261013_225518_469\\round_1.rx.rssi.csv",
+      "sha256": "e81db8d43828d2c5839c3031af61b79b2513fa9e1ef3d1dc5bee61d8b5929e90",
+      "csv_rows": 299984,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis40_20261013_230103_441\\round_1.rx.rssi.csv",
+      "sha256": "bcb72d1611439bff52f720a1862fde6716ac9c95df3a0a1972e812938eb44eb8",
+      "csv_rows": 299979,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis45_20261013_230658_544\\round_1.rx.rssi.csv",
+      "sha256": "c4a3986bc074ab2a1f0b3ccc63cd6644e744ededbc9dd53b74e0703783820947",
+      "csv_rows": 299988,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis50_20261013_232119_052\\round_1.rx.rssi.csv",
+      "sha256": "3da66c1f3626e4772581adb624fcc17bb2a8126d394a7de042476fb5f066bef1",
+      "csv_rows": 299977,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis55_20261013_232651_231\\round_1.rx.rssi.csv",
+      "sha256": "45cba4522a83131f6f976450b800765219937703b7757603c04ff529c5a5d20b",
+      "csv_rows": 299971,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis60_20261013_233207_248\\round_1.rx.rssi.csv",
+      "sha256": "04fe9f856a822c293e912841b5343772bf23310b435f1adee24eaa51834dbfdc",
+      "csv_rows": 299987,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis70_20261013_233805_426\\round_1.rx.rssi.csv",
+      "sha256": "0a77144e77e81a7454e38b9267bb0d235c477238b0e13c9459b0af2581cf32e5",
+      "csv_rows": 299986,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis80_20261013_234303_457\\round_1.rx.rssi.csv",
+      "sha256": "4582a52737aac7b015aaa0fe661796d5d1b372fef7e21a18e926ecd8d18e2b4e",
+      "csv_rows": 299976,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis90_20261013_234800_746\\round_1.rx.rssi.csv",
+      "sha256": "33b274e8241adaeaa4cfbec2b8e2d4a31e6cecc15fe3ded34de9e82a7a0d1aad",
+      "csv_rows": 299985,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis100_20261013_235250_866\\round_1.rx.rssi.csv",
+      "sha256": "1ec3821a6140a36e61edbd9654822a0393249bb80ac25516303cea9e95fbf058",
+      "csv_rows": 299982,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis110_20261014_103023_939\\round_1.rx.rssi.csv",
+      "sha256": "861f0486fedf61092a29b5ae0638aca2de2e68b34a1f7238489515d1b26cfeb7",
+      "csv_rows": 299986,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis120_20261014_104036_181\\round_1.rx.rssi.csv",
+      "sha256": "ce5ced445aec82ce967ef1f7b1d73c4e01fbd260f6b59fd15ee26947ebef9a29",
+      "csv_rows": 299985,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis130_20261014_104717_068\\round_1.rx.rssi.csv",
+      "sha256": "7110019eaacf08090c9b03e12d416f011fd3882aa83c1cc713413b61563105f2",
+      "csv_rows": 299978,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis140_20261014_105215_652\\round_1.rx.rssi.csv",
+      "sha256": "7d557b95a0af0f898c38e078a0d1cdc685d6d42e07abf80db968f877a0bced43",
+      "csv_rows": 299995,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis150_20261014_105722_538\\round_1.rx.rssi.csv",
+      "sha256": "56f9502fbddeb93c3d345ab04fbcd59c946397e974144303b68f8e401724bebe",
+      "csv_rows": 299977,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis160_20261014_110222_501\\round_1.rx.rssi.csv",
+      "sha256": "028d0ec29109958453ff099e6f3b6823f409eafff951a9a08a983542a792eec4",
+      "csv_rows": 299978,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis170_20261014_110754_635\\round_1.rx.rssi.csv",
+      "sha256": "a386a4838f9938a6574b6c01eed2bd87158214dc563a9e2c65aed6968cfe4d80",
+      "csv_rows": 299964,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis180_20261014_111254_090\\round_1.rx.rssi.csv",
+      "sha256": "16bf86cbaff014c3943ca7ce987f43e9344c10b9c4db2cd5befca2898b06feba",
+      "csv_rows": 299983,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis190_20261014_111825_111\\round_1.rx.rssi.csv",
+      "sha256": "085cd32a4c1b7fed7d73cb35d3b9b5743cd91cce56ba40e6582cb6601b5e2fb7",
+      "csv_rows": 299985,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis200_20261014_112329_153\\round_1.rx.rssi.csv",
+      "sha256": "ac276f3a523c2cfd8f96051b47b6f320783f055f5ce2bead3ef16dea7baa2a1e",
+      "csv_rows": 299995,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis250_20261014_132143_675\\round_1.rx.rssi.csv",
+      "sha256": "ae644f264330996ce1899675eb424903eb20ca8cfdfe1ea078572c956631d701",
+      "csv_rows": 299984,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis300_20261014_133105_209\\round_1.rx.rssi.csv",
+      "sha256": "f574866aa852671679efacdcf797555150c062212a5a2ea941a61d74fa69a41a",
+      "csv_rows": 299981,
+      "capture_complete": true
+    },
+    {
+      "file": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis400_20261014_133732_356\\round_1.rx.rssi.csv",
+      "sha256": "3d0113829ff69e5ed8265cbf8c35253069dc84c3b45224979058a04dbce514b3",
+      "csv_rows": 299995,
+      "capture_complete": true
+    }
+  ]
+}

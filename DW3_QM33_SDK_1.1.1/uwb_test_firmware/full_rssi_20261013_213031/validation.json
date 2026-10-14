@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "csv_rows": 299966,
+  "unique": 299966,
+  "duplicates": 0,
+  "valid_rssi_fp": 299966,
+  "sampled_text_rows_matched": 300,
+  "aggregate_statistics_match": true,
+  "stream_dropped": 0
+}

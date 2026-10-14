@@ -1,0 +1,8 @@
+{
+  "definition": "1 if the DGC index occurs in saved valid diagnostic records; 0 otherwise",
+  "source_counts_csv": "dgc_counts_by_distance.csv",
+  "scope": "Saved diagnostic samples; full per-packet DGC was not exported",
+  "measurements_with_records": 30,
+  "folders_without_records": 4,
+  "missing_value": "NA means no DGC records; it is not absence of a DGC index"
+}

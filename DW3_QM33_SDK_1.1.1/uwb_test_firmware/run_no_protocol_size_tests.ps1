@@ -13,6 +13,9 @@ $workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $emBuild = 'C:\Program Files\SEGGER\SEGGER Embedded Studio for ARM 5.10a\bin\emBuild.exe'
 $jlink = 'C:\Program Files\SEGGER\JLink_V980\JLink.exe'
 $logger = 'C:\Program Files\SEGGER\JLink_V980\JLinkRTTLogger.exe'
+$collector = Join-Path $PSScriptRoot 'capture_rx_rssi.py'
+$rxCaptureProcessId = $null
+$rxCaptureStop = $null
 $txSerial = '1050244938'
 $rxSerial = '1050238642'
 $selectionPath = Join-Path $workspace 'Drivers\API\Src\example_selection.h'
@@ -29,6 +32,10 @@ $signalEnabled = if ($DisableSignal) { 0 } else { 1 }
 function Stop-RunLogger {
     param([System.Diagnostics.Process] $Process)
     if ($Process -and -not $Process.HasExited) {
+        if ($Process.Id -eq $rxCaptureProcessId) {
+            [IO.File]::WriteAllText($rxCaptureStop, 'stop')
+            if ($Process.WaitForExit(10000)) { return }
+        }
         Stop-Process -Id $Process.Id -Force -ErrorAction SilentlyContinue
         $Process.WaitForExit()
     }
@@ -134,6 +141,20 @@ function Start-RttLogger {
     $data = Join-Path $PSScriptRoot "no_protocol_${Label}_${session}.log"
     $status = Join-Path $PSScriptRoot "no_protocol_${Label}_${session}.status.log"
     $error = Join-Path $PSScriptRoot "no_protocol_${Label}_${session}.error.log"
+    if ($Serial -eq $rxSerial) {
+        $prefix = Join-Path $PSScriptRoot "no_protocol_${Label}_${session}"
+        $script:rxCaptureStop = "$prefix.capture.stop"
+        $python = (Get-Command python.exe -ErrorAction Stop).Source
+        $process = Start-Process -FilePath $python -ArgumentList @(
+            ('"' + $collector + '"'), '--prefix', ('"' + $prefix + '"'), '--text-log', ('"' + $data + '"'),
+            '--serial', $Serial, '--address', $Address, '--jlink-directory', '"C:\Program Files\SEGGER\JLink_V980"',
+            '--signal-enabled', $signalEnabled
+        ) -RedirectStandardOutput "$prefix.rx_collector.log" -RedirectStandardError $error -WindowStyle Hidden -PassThru
+        $null = $process.Handle
+        $script:rxCaptureProcessId = $process.Id
+        return [pscustomobject]@{ Process = $process; Data = $data; Status = $status; Error = $error;
+                                 CaptureJson = "$prefix.rx.rssi.capture.json"; RssiCsv = "$prefix.rx.rssi.csv" }
+    }
     $process = Start-Process -FilePath $logger `
         -ArgumentList @('-Device', 'nRF52840_xxAA', '-If', 'SWD', '-Speed', '1000',
                         '-USB', $Serial, '-RTTAddress', $Address, '-RTTChannel', '0', $data) `
@@ -212,6 +233,11 @@ try {
     if (-not (Wait-ForPattern -Path $activeRxLogger.Data -Pattern 'RX_COMPLETE' -TimeoutSeconds $timeout)) {
         throw "Timed out waiting for RX_COMPLETE target=$target. See $($activeRxLogger.Data)"
     }
+    Start-Sleep -Milliseconds 1000
+    Stop-RunLogger -Process $activeRxLogger.Process
+    $activeRxLogger.Process = $null
+    $capture = Get-Content -LiteralPath $activeRxLogger.CaptureJson -Raw | ConvertFrom-Json
+    if (-not $capture.complete) { throw "Full RSSI capture failed: $($capture.error)" }
 
     $elapsed = [math]::Round(((Get-Date) - $runStart).TotalSeconds, 3)
     $rxLine = Select-String -LiteralPath $activeRxLogger.Data -Pattern 'RX_COMPLETE' |
@@ -254,6 +280,9 @@ try {
 
     $row = [pscustomobject]@{
         protocol = 'none'
+        rssi_records = $capture.rows
+        rssi_capture_complete = $capture.complete
+        rssi_file = $activeRxLogger.RssiCsv
         signal_enabled = $signalEnabled
         signal_log_every = $SignalLogEvery
         signal_samples = $signal['samples']

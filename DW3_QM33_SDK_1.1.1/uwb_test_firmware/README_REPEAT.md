@@ -40,9 +40,14 @@
 | `round_1.tx.log` | 原始发送端日志（TX RTT 可读时生成） |
 | `round_1.rx.signal_summary.csv` | 全部成功接收包的功率统计 |
 | `round_1.rx.signal.csv` | 抽样功率明细 |
+| `round_1.rx.rssi.csv` | 完整逐次成功 DATA 接收的 RSSI/首径功率，含 sequence、reception_id、有效标记及重复包标记 |
+| `round_1.rx.rssi.bin` | 完整采集的二进制原始记录 |
+| `round_1.rx.rssi.capture.json` | 文件完整性检查结果、记录数、重复数及传输丢弃数 |
 | `round_1.tx_control_*.log`、`round_1.rx_reset_*.log` | 自动重启操作日志 |
 
-功率汇总覆盖每个成功接收的唯一 DATA 包。当前固件的明细打印间隔为 1,000 个成功包，因此明细 CSV 不是逐包记录。对异常计时字段，脚本保留原值并将 `timing_valid` 标为 false，`goodput_bps` 留空。
+功率汇总覆盖每个成功接收的唯一 DATA 包。原有 `rx.signal.csv` 仍每 1,000 个成功包抽样，不增加终端打印；新增 `rx.rssi.csv` 是逐包完整文件，重复接收也保留独立 reception_id，CRC 错误帧及 END 标记不作为数据行。无效诊断保留记录，功率写为 `NA`。对异常计时字段，脚本保留原值并将 `timing_valid` 标为 false，`goodput_bps` 留空。
+
+逐包采集需要新版 RX 固件以及已安装的 Python。电脑使用 `capture_rx_rssi.py` 在同一个 RX 探针会话读取 RTT 通道 0（原有文本）和通道 1（16 字节二进制记录），文件生成不增加终端输出。连接握手使用 100 kHz，数据采集使用 1 MHz SWD。完整文件只有在 START/END、记录数、序号去重、接收编号、无效诊断数和固件汇总全部一致且传输丢弃为零时才命名为 `rx.rssi.csv`。采集失败保留 `.rx.rssi.partial.csv` 和二进制原始文件，脚本报错，不将不完整文件当作完整结果。
 
 收包侧已取消 `invalid` 和 `invalid_failed` 统计。帧长度、内容、序号校验仍保留，不符合要求的帧不计入成功包。最终 `failed` 和 `lost` 均表示“目标包数减去成功接收的唯一 DATA 包数”，不再划分失败原因；PHY/CRC 错误事件不叠加到丢包数。功率日志中的 `invalid`（CSV 中为 `signal_invalid`）仍表示功率诊断测量失败次数。历史日志和 CSV 保留原始字段，不回写修改。
 

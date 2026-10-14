@@ -1,0 +1,245 @@
+{
+  "charts": 30,
+  "total_plotted_rows": 8998327,
+  "x_field": "sequence: transmitted DATA packet number",
+  "y_field": "rssi_dbm: per-reception RSSI, not an averaged value",
+  "sampling": "none",
+  "smoothing": "none",
+  "missing_packets": "not filled",
+  "y_limits": "Each chart includes its full valid RSSI range; axes are independently scaled",
+  "original_source_files_unchanged": true,
+  "sources": [
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis0_20261013_220654_694\\round_1.rx.rssi.csv",
+      "source_sha256": "81082380d75c8af36228f72e1a60eea5ffc49a82f55f71fa0ef69feec6fa9df0",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis0cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299408
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis5_20261013_221313_383\\round_1.rx.rssi.csv",
+      "source_sha256": "3a4d7786b622a14f1d773d66d141f353ed6fda49f6a7c95578feb4f1db67cadf",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis5cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299768
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis10_20261013_221948_639\\round_1.rx.rssi.csv",
+      "source_sha256": "5c5d32cfc906d903ee342eb0ec152c637e0c42acf71c578769745a77e30e56fb",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis10cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299782
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis15_20261013_222539_450\\round_1.rx.rssi.csv",
+      "source_sha256": "e9e04f9d05270cdd414853f303b75d7beaf9a6a657ab54dbe5f8e7b76a3d38b4",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis15cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299905
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis20_20261013_223144_980\\round_1.rx.rssi.csv",
+      "source_sha256": "e66d0da4df78a1728dbfccead53c1407ed4d6cd4eadb82690f47e58470f3d63a",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis20cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299967
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis25_20261013_223758_572\\round_1.rx.rssi.csv",
+      "source_sha256": "6604df79e2c728fb14f84d51fbdb91ab23fd14fd7eb4538aaabd039aea943483",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis25cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299924
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis30_20261013_224840_112\\round_1.rx.rssi.csv",
+      "source_sha256": "7c9c7de07ade321ad058b605756a5b915e1168c391099464ada6fa85fb9d8675",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis30cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299972
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis35_20261013_225518_469\\round_1.rx.rssi.csv",
+      "source_sha256": "e81db8d43828d2c5839c3031af61b79b2513fa9e1ef3d1dc5bee61d8b5929e90",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis35cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299984
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis40_20261013_230103_441\\round_1.rx.rssi.csv",
+      "source_sha256": "bcb72d1611439bff52f720a1862fde6716ac9c95df3a0a1972e812938eb44eb8",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis40cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299979
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis45_20261013_230658_544\\round_1.rx.rssi.csv",
+      "source_sha256": "c4a3986bc074ab2a1f0b3ccc63cd6644e744ededbc9dd53b74e0703783820947",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis45cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299988
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis50_20261013_232119_052\\round_1.rx.rssi.csv",
+      "source_sha256": "3da66c1f3626e4772581adb624fcc17bb2a8126d394a7de042476fb5f066bef1",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis50cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299977
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis55_20261013_232651_231\\round_1.rx.rssi.csv",
+      "source_sha256": "45cba4522a83131f6f976450b800765219937703b7757603c04ff529c5a5d20b",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis55cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299971
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis60_20261013_233207_248\\round_1.rx.rssi.csv",
+      "source_sha256": "04fe9f856a822c293e912841b5343772bf23310b435f1adee24eaa51834dbfdc",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis60cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299987
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis70_20261013_233805_426\\round_1.rx.rssi.csv",
+      "source_sha256": "0a77144e77e81a7454e38b9267bb0d235c477238b0e13c9459b0af2581cf32e5",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis70cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299986
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis80_20261013_234303_457\\round_1.rx.rssi.csv",
+      "source_sha256": "4582a52737aac7b015aaa0fe661796d5d1b372fef7e21a18e926ecd8d18e2b4e",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis80cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299976
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis90_20261013_234800_746\\round_1.rx.rssi.csv",
+      "source_sha256": "33b274e8241adaeaa4cfbec2b8e2d4a31e6cecc15fe3ded34de9e82a7a0d1aad",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis90cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299985
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis100_20261013_235250_866\\round_1.rx.rssi.csv",
+      "source_sha256": "1ec3821a6140a36e61edbd9654822a0393249bb80ac25516303cea9e95fbf058",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis100cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299982
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis110_20261014_103023_939\\round_1.rx.rssi.csv",
+      "source_sha256": "861f0486fedf61092a29b5ae0638aca2de2e68b34a1f7238489515d1b26cfeb7",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis110cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299986
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis120_20261014_104036_181\\round_1.rx.rssi.csv",
+      "source_sha256": "ce5ced445aec82ce967ef1f7b1d73c4e01fbd260f6b59fd15ee26947ebef9a29",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis120cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299985
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis130_20261014_104717_068\\round_1.rx.rssi.csv",
+      "source_sha256": "7110019eaacf08090c9b03e12d416f011fd3882aa83c1cc713413b61563105f2",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis130cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299978
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis140_20261014_105215_652\\round_1.rx.rssi.csv",
+      "source_sha256": "7d557b95a0af0f898c38e078a0d1cdc685d6d42e07abf80db968f877a0bced43",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis140cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299995
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis150_20261014_105722_538\\round_1.rx.rssi.csv",
+      "source_sha256": "56f9502fbddeb93c3d345ab04fbcd59c946397e974144303b68f8e401724bebe",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis150cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299977
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis160_20261014_110222_501\\round_1.rx.rssi.csv",
+      "source_sha256": "028d0ec29109958453ff099e6f3b6823f409eafff951a9a08a983542a792eec4",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis160cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299978
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis170_20261014_110754_635\\round_1.rx.rssi.csv",
+      "source_sha256": "a386a4838f9938a6574b6c01eed2bd87158214dc563a9e2c65aed6968cfe4d80",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis170cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299964
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis180_20261014_111254_090\\round_1.rx.rssi.csv",
+      "source_sha256": "16bf86cbaff014c3943ca7ce987f43e9344c10b9c4db2cd5befca2898b06feba",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis180cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299983
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis190_20261014_111825_111\\round_1.rx.rssi.csv",
+      "source_sha256": "085cd32a4c1b7fed7d73cb35d3b9b5743cd91cce56ba40e6582cb6601b5e2fb7",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis190cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299985
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis200_20261014_112329_153\\round_1.rx.rssi.csv",
+      "source_sha256": "ac276f3a523c2cfd8f96051b47b6f320783f055f5ce2bead3ef16dea7baa2a1e",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis200cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299995
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis250_20261014_132143_675\\round_1.rx.rssi.csv",
+      "source_sha256": "ae644f264330996ce1899675eb424903eb20ca8cfdfe1ea078572c956631d701",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis250cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299984
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis300_20261014_133105_209\\round_1.rx.rssi.csv",
+      "source_sha256": "f574866aa852671679efacdcf797555150c062212a5a2ea941a61d74fa69a41a",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis300cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299981
+    },
+    {
+      "source": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis400_20261014_133732_356\\round_1.rx.rssi.csv",
+      "source_sha256": "3d0113829ff69e5ed8265cbf8c35253069dc84c3b45224979058a04dbce514b3",
+      "output": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\distance_packet_rssi_plots\\rssi_dis400cm.pdf",
+      "vector_pdf": true,
+      "plotted_rows": 299995
+    }
+  ],
+  "skipped_folders": [
+    {
+      "folder": "repeat_dis400_20261014_133608_924",
+      "distance_cm": 400,
+      "reason": "No per-packet RSSI CSV exists"
+    },
+    {
+      "folder": "repeat_dis400_20261014_133619_681",
+      "distance_cm": 400,
+      "reason": "No per-packet RSSI CSV exists"
+    },
+    {
+      "folder": "repeat_dis400_20261014_133623_729",
+      "distance_cm": 400,
+      "reason": "No per-packet RSSI CSV exists"
+    },
+    {
+      "folder": "repeat_dis400_20261014_133637_293",
+      "distance_cm": 400,
+      "reason": "No per-packet RSSI CSV exists"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+﻿{
+    "flash_verified":  true,
+    "rx_probe":  "1050238642",
+    "tx_probe":  "1050244938",
+    "rx_hex_sha256":  "DBF0DC064D13C30E83903E367911DAE04417139D692D0FC6ED4CC5C374FDAE6F",
+    "tx_delay_us":  500,
+    "sources":  [
+                    {
+                        "sha256":  "32F4B1DC6CD27F881E5B74BACA049044BADA761049653B1B7374B7F81F8F830A",
+                        "path":  "Drivers/API/Src/examples/ex_02a_simple_rx/simple_rx.c"
+                    },
+                    {
+                        "sha256":  "F63B1D799F590B5DFA9106D8E131995F71E4A710753B141742EE724462796248",
+                        "path":  "Drivers/API/Src/examples/ex_02a_simple_rx/rx_signal_metrics.h"
+                    },
+                    {
+                        "sha256":  "FEF17D7E5DF9B14991C969BF1DF1010243EC2BD7E2ECA764A29EC3EA0D7318B5",
+                        "path":  "Drivers/API/Src/examples/ex_02a_simple_rx/rx_rssi_stream.h"
+                    },
+                    {
+                        "sha256":  "481B43DA67BA47C767A95BF0CAE05CA56601A0DD04B4D578C057BDBBA1550646",
+                        "path":  "Drivers/API/Src/examples/ex_02a_simple_rx/rx_frame_queue.h"
+                    },
+                    {
+                        "sha256":  "65AD94FC797CB4191036EF48A6548293EF014819D954089C7CD97693D3E2FB28",
+                        "path":  "Drivers/API/Src/examples/ex_01a_simple_tx/simple_tx.c"
+                    },
+                    {
+                        "sha256":  "170CBF1B33AC0FCF2E6171223DFABB277F40A771D77BB47C6C7C25DAC837747D",
+                        "path":  "Drivers/API/Src/p2p_test_config.h"
+                    }
+                ],
+    "full_rssi_test":  "../repeat_20261013_213324_051/round_1.rx.rssi.csv",
+    "target_packets":  300000,
+    "terminal_output":  "unchanged",
+    "tx_hex_sha256":  "0918B50BC7044E2C6889270FB271A943D6CA53D7C1E00291EA241F025A8F8119"
+}

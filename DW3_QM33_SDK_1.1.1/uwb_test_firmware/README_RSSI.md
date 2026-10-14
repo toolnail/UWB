@@ -7,16 +7,20 @@
 
 - 每个首次通过 CRC、应用负载校验且序号在范围内的 DATA 包都测量一次；重复包、结束标记、无效包和 PHY 错误事件不进入功率统计。
 - 接收端启用 `dwt_configciadiag(DW_CIA_DIAG_LOG_ALL)`，使用 Ipatov 前导码诊断。没有开启 STS 时仍可使用。
-- 单缓冲接收机在本包接收后、下次 `dwt_rxenable()` 前读取并计算，确保诊断数据和 DGC 对应当前包。
+- 接收端使用手动双缓冲和中断。回调在重新开启接收前保存当前帧的 Ipatov 诊断和 DGC；随后重新开启接收，将上一帧复制到独立队列槽位。SDK 在回调返回后释放硬件缓冲区，主循环完成计算、校验、统计和打印。
+- `rx_frame_queue.h` 是默认 64 槽的单生产者/单消费者队列，使用内存屏障发布完整记录；主循环处理完才释放槽位，队列满时丢弃新帧而不覆盖旧记录。它与下文允许覆盖已处理历史的 `rx_signal_history` 不同。
+- 诊断只读取所需的六个 Ipatov 寄存器（24 字节）和 DGC；后台使用保存的 DGC、前导码和芯片量化系数调用 SDK 纯数学函数，不再读取实时硬件状态。CIA 未完成或出错时标记该帧诊断无效。
 - `RX_SIGNAL`：详细采样日志，含序号和诊断原始值。默认打印第一个有效包，之后每 1000 个有效包打印一次。
 - `RX_SIGNAL_STATS`：每次原有 `RX_PROGRESS` 后输出累计功率统计。
 - `RX_SIGNAL_COMPLETE`：结束时输出整轮功率统计，在原有 `RX_COMPLETE` 前输出。
 - `RX_SIGNAL_CONFIG`：启动时报告当前开关、详细日志间隔和历史容量。
+- 逐包完整记录通过 RTT 通道 1 单独输出，不改变上述文本日志。`repeat_300k.cmd` 会生成 `round_1.rx.rssi.csv`（全部成功 DATA 接收，重复包单独标记）及完整性 JSON。原有 `rx.signal.csv` 仍是抽样日志，二者不能混淆。详见 `README_REPEAT.md`。
+- `RX_MODE`：芯片 ID、双缓冲模式及队列大小；`RX_PIPELINE`：队列峰值、队列满丢弃、硬件溢出、采集丢弃、恢复后旧记录丢弃、接收重启失败和恢复 epoch。
 
 | 字段 | 含义 / 单位 |
 | --- | --- |
-| `rssi_dbm` | 总接收信号功率估计，dBm，调用 `dwt_calculate_rssi()` |
-| `fp_power_dbm` | 首路径信号功率估计，dBm，调用 `dwt_calculate_first_path_power()` |
+| `rssi_dbm` | 总接收信号功率估计，dBm，以逐帧快照调用 `rsl_calculate_signal_power()` |
+| `fp_power_dbm` | 首路径信号功率估计，dBm，以逐帧快照调用 `rsl_calculate_first_path_power()` |
 | `gap_db` | `RSSI - 首路径功率`，dB |
 | `fp_index` | 首路径在 CIR 内的采样位置，不是距离或绝对到达时间 |
 | `fp_index_q6` | 首路径位置原始 Q10.6 值，除以 64 得到采样位置 |
@@ -25,9 +29,10 @@
 | `accum_count` | 累积的前导码符号数 |
 | `dgc` | 当前接收包的 DGC 决策值 |
 | `diag_valid` | 1 表示两项功率估计有效；0 时功率字段输出 `NA` |
+| `reception_id` | 每次硬件成功收帧的本地编号；相同 sequence 的重复接收具有不同编号 |
 
 累计字段包括 `samples / invalid`、`rssi_avg_dbm / min / max`、`fp_avg_dbm / min / max`、`gap_avg_db`。
-`samples + invalid` 等于结束时的成功唯一 DATA 包数量。零功率、零累积符号、API 错误和 SDK 的 `SHRT_MIN` 无效哨兵不进入均值；没有有效测量时输出 `NA`。
+`samples + invalid` 等于结束时的成功唯一 DATA 包数量。CIA 未完成/出错、零功率、零累积符号和 SDK 的 `SHRT_MIN` 无效哨兵不进入均值；没有有效测量时输出 `NA`。
 均值是 dB 数值的算术平均，并非先对线性功率平均再换算 dBm。内部使用 Q8.8 和 64 位累加，打印两位小数用于读取与导出，不代表硬件具有 0.01 dB 精度。
 
 `gap_db` 可用于观察首路径与总功率之间的差异；不能单独据此判定 LOS/NLOS。RSSI 和首路径功率是芯片诊断估计值，实际精度受接收强度、天线、摆放和校准影响。

@@ -8,4 +8,10 @@ for %%I in (0 1 1000) do (
   test_rx_signal.exe
   if errorlevel 1 exit /b 1
 )
+cl /nologo /std:c11 /D_CRT_SECURE_NO_WARNINGS /I"..\..\Drivers\API\Build_Platforms\nRF52840-DK" test_rssi_stream.c /Fe:test_rssi_stream.exe
+if errorlevel 1 exit /b 1
+test_rssi_stream.exe
+if errorlevel 1 exit /b 1
+python test_rssi_capture.py
+if errorlevel 1 exit /b 1
 popd

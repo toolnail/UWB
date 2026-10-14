@@ -1,0 +1,162 @@
+{
+  "scope": "Actual saved DGC samples only; not an estimated full-packet distribution",
+  "measurements_with_dgc": 30,
+  "folders_without_saved_dgc": 4,
+  "saved_dgc_records": 9000,
+  "received_unique": 8998327,
+  "unrecorded_dgc_packets": 8989327,
+  "source_log_cross_check": "Every CSV diagnostic row matched the original RX_SIGNAL log by sequence, reception_id, dgc and diag_valid",
+  "inferred_dgc_from_rssi": false,
+  "sources": [
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis0_20261013_220654_694\\round_1.rx.signal.csv",
+      "sha256": "66a4e00ab327e6d379b9d6a52c7ddfd927f60a3c1c15e69f78d3bdf7ca6bdd42",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis100_20261013_235250_866\\round_1.rx.signal.csv",
+      "sha256": "c76f6721aa59b0712775ad8ff47e53e43497c8d6d9588a56ae68a5cf50ba69ff",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis10_20261013_221948_639\\round_1.rx.signal.csv",
+      "sha256": "d1a505df536ccf0c11bab694d9e829a286c96c562c05e4b71306fe7e5089b8ca",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis110_20261014_103023_939\\round_1.rx.signal.csv",
+      "sha256": "5f0bf59a95eec9ef71f50c26b0d84e2003a5a1e7961a563eab5d18ca5411d346",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis120_20261014_104036_181\\round_1.rx.signal.csv",
+      "sha256": "58e462b0389b630a25890e7b1216c62b25b4625c31f4ea159feda1878c5431b6",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis130_20261014_104717_068\\round_1.rx.signal.csv",
+      "sha256": "90f2b049a2f908c0fb59ebba55d9e70a241e8072d14e2f1df983d002e3cf0342",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis140_20261014_105215_652\\round_1.rx.signal.csv",
+      "sha256": "384a5c1394e16361348c8e1d4d50040af63043dbc507f1964aea0f971610a216",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis150_20261014_105722_538\\round_1.rx.signal.csv",
+      "sha256": "c875bff2e9c70832562c74a9d73320409d95e547b1781b81f13f052bcc8be95c",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis15_20261013_222539_450\\round_1.rx.signal.csv",
+      "sha256": "ccf6b0155c8f01b31286c6431f35bde981117e6ea0ca1b50cd2825c7fe6d4e6e",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis160_20261014_110222_501\\round_1.rx.signal.csv",
+      "sha256": "588d97e2100bc3ed51f26fde69c0aa77a6ebef9a9afb941c4eab7a59f4ac2755",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis170_20261014_110754_635\\round_1.rx.signal.csv",
+      "sha256": "228c6ea58002cf991941ad111463e9834b2dc611aebc313d28c48b2faf88e397",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis180_20261014_111254_090\\round_1.rx.signal.csv",
+      "sha256": "b1084aad222b19d6ce86b7b0272c1634d0dd553d02df9d67d7e4e36eb22b1253",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis190_20261014_111825_111\\round_1.rx.signal.csv",
+      "sha256": "803d12b92f22097aa61f2abde3e3bb691194067d645dbb6d9c02cb5c183e4553",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis200_20261014_112329_153\\round_1.rx.signal.csv",
+      "sha256": "98787c6f541764a5f925ac021e9ab6a6ae6486ddafb4a43ed30c0c7aa9f14e83",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis20_20261013_223144_980\\round_1.rx.signal.csv",
+      "sha256": "48bf60ff3c77018ca333e526e41845c4e6dce58dab41104a4102ba66af888658",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis250_20261014_132143_675\\round_1.rx.signal.csv",
+      "sha256": "e7ba17072dada336ae972547a382525c083ffd7ca3752a662a8ea9602318824b",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis25_20261013_223758_572\\round_1.rx.signal.csv",
+      "sha256": "1d650cc0acdaebfc281cf4fc2871f01dcdc00b4b9d56086761958a4eff9390d8",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis300_20261014_133105_209\\round_1.rx.signal.csv",
+      "sha256": "7b6c1b8eb57f56d5e6f6d07878d8d41e00403d356abd91f2cf11cea93735fca3",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis30_20261013_224840_112\\round_1.rx.signal.csv",
+      "sha256": "5aa85d3a86223fb613b1d56896e28f3b3a476b6045e0331116bc852e303e262b",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis35_20261013_225518_469\\round_1.rx.signal.csv",
+      "sha256": "660ca403a7722033ec3bebcfea934ba7d1fe062a75439b2048cb22c20855c101",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis400_20261014_133732_356\\round_1.rx.signal.csv",
+      "sha256": "8d9a5c85f03be4e4d1f4ef64909bc7ea76b9a66b36dee11cb0f51c2fe9194ee1",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis40_20261013_230103_441\\round_1.rx.signal.csv",
+      "sha256": "c70dff98d2849169de423b46bc556512ea51cc901ae8676fcbc81b70610cd7db",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis45_20261013_230658_544\\round_1.rx.signal.csv",
+      "sha256": "c35b772217299df334957b1c424ef8e6241495ca42d33a4c8996abba36d2f7b7",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis50_20261013_232119_052\\round_1.rx.signal.csv",
+      "sha256": "89e58e192859c75280821c0bccb260f75bf3177ca28f13843d91cc91c6241332",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis55_20261013_232651_231\\round_1.rx.signal.csv",
+      "sha256": "391f0c70d5b9efb58cf78c146323e273c86a3ecd0e094bc2a8b64198aa820831",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis5_20261013_221313_383\\round_1.rx.signal.csv",
+      "sha256": "de9d157a5159bce52edabe2c85975e7e75ffdd7b3d59f30017f8d35b63ab03c6",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis60_20261013_233207_248\\round_1.rx.signal.csv",
+      "sha256": "ac778f639b07a9c735d76c114498a7cfee35125b3a2805ee0cc9aac6cfadc37b",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis70_20261013_233805_426\\round_1.rx.signal.csv",
+      "sha256": "56d616e82f1cabb4ce0d4001c84f67240b197099e9b1fead2d14ff3b2e582af7",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis80_20261013_234303_457\\round_1.rx.signal.csv",
+      "sha256": "f156622422a7df186317b9ab7a88536daec63fa888bdd72a8826197f828f52ff",
+      "records": 300
+    },
+    {
+      "source_csv": "C:\\Users\\wangrx\\Desktop\\UWB_project\\DW3_QM33_SDK_1.1.1\\uwb_test_firmware\\repeat_dis90_20261013_234800_746\\round_1.rx.signal.csv",
+      "sha256": "ca96303d4ba056cc1a2da8d49c940ed3076cdf8cc1d4c4b3ac950363156436de",
+      "records": 300
+    }
+  ]
+}

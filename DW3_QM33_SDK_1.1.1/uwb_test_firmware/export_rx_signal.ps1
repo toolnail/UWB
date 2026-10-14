@@ -31,6 +31,7 @@ Get-Content -LiteralPath $InputLog | ForEach-Object {
         $sampleCount++
         [pscustomobject]@{
             sequence = Get-Number $v 'seq'
+            reception_id = if ($v.ContainsKey('reception_id')) { Get-Number $v 'reception_id' } else { $null }
             received_unique = Get-Number $v 'received'
             diag_valid = Get-Number $v 'diag_valid'
             rssi_dbm = Get-Number $v 'rssi_dbm'

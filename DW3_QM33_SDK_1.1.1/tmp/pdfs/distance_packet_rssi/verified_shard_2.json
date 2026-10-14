@@ -1,0 +1,92 @@
+[
+  {
+    "distance_cm": 10,
+    "file": "rssi_dis10cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299782
+  },
+  {
+    "distance_cm": 25,
+    "file": "rssi_dis25cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299924
+  },
+  {
+    "distance_cm": 40,
+    "file": "rssi_dis40cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299979
+  },
+  {
+    "distance_cm": 55,
+    "file": "rssi_dis55cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299971
+  },
+  {
+    "distance_cm": 80,
+    "file": "rssi_dis80cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299976
+  },
+  {
+    "distance_cm": 110,
+    "file": "rssi_dis110cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299986
+  },
+  {
+    "distance_cm": 140,
+    "file": "rssi_dis140cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299995
+  },
+  {
+    "distance_cm": 170,
+    "file": "rssi_dis170cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299964
+  },
+  {
+    "distance_cm": 200,
+    "file": "rssi_dis200cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299995
+  },
+  {
+    "distance_cm": 400,
+    "file": "rssi_dis400cm.pdf",
+    "rendered": true,
+    "vector": true,
+    "font_embedded": true,
+    "no_clipped_text": true,
+    "points": 299995
+  }
+]

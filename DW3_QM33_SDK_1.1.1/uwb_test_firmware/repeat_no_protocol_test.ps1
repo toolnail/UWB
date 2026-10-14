@@ -14,12 +14,14 @@ $ErrorActionPreference = 'Stop'
 $Target = & (Join-Path $PSScriptRoot 'get_packet_target.ps1')
 $jlink = Join-Path $JLinkDirectory 'JLink.exe'
 $logger = Join-Path $JLinkDirectory 'JLinkRTTLogger.exe'
-foreach ($file in @($jlink, $logger)) {
+$collector = Join-Path $PSScriptRoot 'capture_rx_rssi.py'
+$python = (Get-Command python.exe -ErrorAction Stop).Source
+foreach ($file in @($jlink, $logger, $collector)) {
     if (-not (Test-Path -LiteralPath $file)) { throw "Required tool not found: $file" }
 }
 if ($TxSerial -eq $RxSerial) { throw 'TX and RX must use different probes.' }
 $session = Get-Date -Format 'yyyyMMdd_HHmmss_fff'
-$directory = Join-Path $PSScriptRoot "repeat_$session"
+$directory = Join-Path $PSScriptRoot "repeat_complex_envir_$session"
 $null = New-Item -ItemType Directory -Path $directory
 $results = [Collections.Generic.List[object]]::new()
 # Prevent two copies of this script from controlling the same pair concurrently.
@@ -28,6 +30,7 @@ $locked = $false
 $tx = $null
 $rx = $null
 $monitor = $null
+$captureStop = $null
 
 function Start-Commander([string] $Serial, [string] $Log, [string[]] $Commands) {
     $script = "$Log.jlink"
@@ -63,6 +66,11 @@ function Close-Commander($Commander) {
 
 function Stop-Monitor($Process) {
     if ($null -ne $Process) {
+        if ($captureStop -and -not $Process.HasExited) {
+            # Graceful stop drains both RTT channels and finalizes the full CSV.
+            [IO.File]::WriteAllText($captureStop, 'stop')
+            if (-not $Process.WaitForExit(10000)) { $Process.Kill(); $Process.WaitForExit() }
+        }
         if (-not $Process.HasExited) { $Process.Kill(); $Process.WaitForExit() }
         $Process.Dispose()
     }
@@ -107,10 +115,15 @@ try {
         }
         if (-not $resetOk) { throw "RX reset failed. See $prefix.rx_reset_*.log" }
 
-        $monitor = Start-Process -FilePath $logger -ArgumentList @(
-            '-Device', 'Cortex-M4', '-If', 'SWD', '-Speed', '100', '-USB', $RxSerial,
-            '-RTTAddress', $RxRttAddress, '-RTTChannel', '0', ('"' + $data + '"')
-        ) -RedirectStandardOutput "$prefix.rx_status.log" -RedirectStandardError "$prefix.rx_error.log" -WindowStyle Hidden -PassThru
+        $captureStop = "$prefix.capture.stop"
+        # One RX probe connection reads unchanged text channel 0 and binary RSSI
+        # channel 1. Collector output is redirected, never added to the terminal.
+        $monitor = Start-Process -FilePath $python -ArgumentList @(
+            ('"' + $collector + '"'), '--prefix', ('"' + $prefix + '"'),
+            '--serial', $RxSerial, '--address', $RxRttAddress,
+            '--jlink-directory', ('"' + $JLinkDirectory + '"')
+        ) -RedirectStandardOutput "$prefix.rx_collector.log" -RedirectStandardError "$prefix.rx_error.log" -WindowStyle Hidden -PassThru
+        $null = $monitor.Handle
         $ready = $false
         $deadline = (Get-Date).AddSeconds(45)
         while ((Get-Date) -lt $deadline) {
@@ -121,6 +134,12 @@ try {
                 if ($content -match 'TEST START target=(\d+)') {
                     if ([int]$Matches[1] -ne $Target) { throw "Shared config target=$Target differs from installed RX target=$($Matches[1]). Rebuild and flash both boards for the new configuration before repeating." }
                     if ($content -match '(?m)^RX_(SIGNAL seq=|PROGRESS |COMPLETE )') { throw 'RX received data before TX was released. Close other test programs and retry.' }
+                    if (-not (Test-Path -LiteralPath "$prefix.capture.ready.json")) {
+                        Start-Sleep -Milliseconds 200
+                        continue
+                    }
+                    $streamReady = Get-Content -LiteralPath "$prefix.capture.ready.json" -Raw | ConvertFrom-Json
+                    if ($streamReady.target -ne $Target) { throw 'RSSI stream target differs from shared config.' }
                     $ready = $true
                     break
                 }
@@ -164,12 +183,20 @@ try {
         Start-Sleep -Milliseconds 1000
         Stop-Monitor $monitor
         $monitor = $null
+        $captureInfoPath = "$prefix.rx.rssi.capture.json"
+        if (-not (Test-Path -LiteralPath $captureInfoPath)) { throw "RSSI capture was not finalized. See $prefix.rx_error.log" }
+        $captureInfo = Get-Content -LiteralPath $captureInfoPath -Raw | ConvertFrom-Json
+        if (-not $captureInfo.complete) { throw "Full RSSI capture failed: $($captureInfo.error). See $prefix.rx.rssi.partial.csv" }
         $elapsedSeconds = ((Get-Date) - $runStart).TotalSeconds
         # The CRC-protected END marker received by RX is sufficient confirmation
         # of the sender's target. TX RTT may remain inaccessible on these boards
         # even while TX is sending; it is optional evidence, not a result gate.
         $row = & (Join-Path $PSScriptRoot 'read_no_protocol_result.ps1') -InputLog $data `
             -Round $round -ObservedSeconds $elapsedSeconds -TxLog $txData -OutputCsv "$prefix.result.csv"
+        $row | Add-Member -NotePropertyName rssi_records -NotePropertyValue $captureInfo.rows
+        $row | Add-Member -NotePropertyName rssi_capture_complete -NotePropertyValue $captureInfo.complete
+        $row | Add-Member -NotePropertyName rssi_file -NotePropertyValue "$prefix.rx.rssi.csv"
+        $row | Export-Csv -LiteralPath "$prefix.result.csv" -NoTypeInformation -Encoding UTF8
         $results.Add($row)
         $results | Export-Csv -LiteralPath (Join-Path $directory 'results.csv') -NoTypeInformation -Encoding UTF8
         & (Join-Path $PSScriptRoot 'export_rx_signal.ps1') -InputLog $data

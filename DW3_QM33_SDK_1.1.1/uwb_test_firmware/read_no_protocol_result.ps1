@@ -67,6 +67,19 @@ $result = [ordered]@{
     rx_log = (Resolve-Path -LiteralPath $InputLog).Path
     tx_log = $TxLog
 }
+# Older single-buffer logs have no pipeline counters; leave those fields blank.
+$pipelineLine = $lines | Where-Object { $_ -match '^RX_PIPELINE ' } | Select-Object -Last 1
+if ($pipelineLine) {
+    $pipeline = Read-Fields $pipelineLine
+    foreach ($key in @('queue_size', 'queue_high_water', 'queue_drop', 'hw_overrun',
+                      'capture_drop', 'stale_drop', 'restart_err', 'epoch')) {
+        if (-not $pipeline.ContainsKey($key) -or $pipeline[$key] -notmatch '^\d+$') {
+            throw "Missing/invalid pipeline field: $key"
+        }
+        $result[$key] = [long]$pipeline[$key]
+    }
+    if ($result.queue_high_water -gt $result.queue_size) { throw 'Queue occupancy exceeds capacity.' }
+}
 foreach ($key in @('rssi_avg_dbm', 'rssi_min_dbm', 'rssi_max_dbm', 'fp_avg_dbm', 'fp_min_dbm', 'fp_max_dbm', 'gap_avg_db')) {
     if (-not $s.ContainsKey($key)) { throw "Missing signal field: $key" }
     $result[$key] = if ($s[$key] -eq 'NA') { $null } else { [decimal]::Parse($s[$key], [Globalization.CultureInfo]::InvariantCulture) }

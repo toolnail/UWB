@@ -1,0 +1,5 @@
+h
+loadfile "C:\Users\wangrx\Desktop\UWB_project\DW3_QM33_SDK_1.1.1\uwb_test_firmware\nrf52840_dwm3000_5nines_TX_300000_20261013_213031.hex"
+r
+h
+exit
